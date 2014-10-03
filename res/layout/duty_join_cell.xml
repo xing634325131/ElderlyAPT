@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp" >
+
+            <TextView
+                android:id="@+id/duty_join_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:text="职责名称"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/duty_join_state"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="人数已满"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size_12" 
+                android:visibility="invisible"/>
+        </LinearLayout>
+        
+        <TextView
+                android:id="@+id/duty_join_integral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="参与将获得  5  时间币"
+                android:textColor="@color/sec_color"
+                android:textSize="@dimen/text_size_16" 
+                android:paddingBottom="5dp"/>
+    </LinearLayout>
+    
+    <CheckBox
+        android:id="@+id/duty_join_select"
+        android:layout_width="0dp"
+        android:button="@drawable/btn_radio"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"/>
+
+</LinearLayout>

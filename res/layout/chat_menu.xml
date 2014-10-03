@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/chat_menu_play"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_selector"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="播放语音" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="0.2dp"
+        android:background="@color/lightgray" />
+
+    <TextView
+        android:id="@+id/chat_menu_copy"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_selector"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="复制文字" />
+
+</LinearLayout>

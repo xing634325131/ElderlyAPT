@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="HandlerLeak" severity="ignore" />
+    <issue id="SimpleDateFormat" severity="ignore">
+        <ignore path="src/com/kingtime/elderlyapt/util/StringUtils.java" />
+    </issue>
+</lint>

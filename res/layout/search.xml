@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.Search" >
+
+    <FrameLayout
+        android:id="@+id/it_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sec_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:background="@drawable/menu_back"
+            android:clickable="true"
+            android:text="返回"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="invisible" >
+        </Button>
+
+        <TextView
+            android:id="@+id/head_title"
+            style="@style/detail_head_title"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:text="@string/search"
+            android:textColor="@color/white"
+            android:textSize="20sp" >
+        </TextView>
+
+        <Button
+            android:id="@+id/head_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:background="@drawable/head_right"
+            android:text="@string/search"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="invisible" >
+        </Button>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/widget_head_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <EditText
+            android:id="@+id/search_editer"
+            android:layout_width="fill_parent"
+            android:layout_height="30dip"
+            android:layout_gravity="left|center"
+            android:layout_marginRight="36dip"
+            android:background="@drawable/edit_search_bg"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="输入搜索内容"
+            android:imeOptions="actionSearch"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/search_btn"
+            android:layout_width="36dp"
+            android:layout_height="30dip"
+            android:layout_gravity="right|center"
+            android:background="@drawable/btn_search_bg" />
+
+        <ProgressBar
+            android:id="@+id/search_progress"
+            style="@style/loading_small"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="8dip"
+            android:background="@color/white"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/search_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@drawable/reader_item_divider"
+        android:listSelector="@android:color/transparent"
+        android:padding="5dp" />
+
+</LinearLayout>

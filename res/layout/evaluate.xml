@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/evaluate_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/et_bg"
+                    android:gravity="top"
+                    android:hint="觉得活动怎么样，简单评价一下吧~"
+                    android:maxLength="100"
+                    android:minLines="5" />
+
+                <ImageView
+                    android:id="@+id/evaluate_voice_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:clickable="true"
+                    android:padding="5dp"
+                    android:layout_alignBottom="@id/evaluate_content"
+                    android:layout_alignRight="@id/evaluate_content"
+                    android:src="@drawable/voice_input" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_margin="10dp"
+                android:background="@color/lightgray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="为活动发起人打个分吧"
+                android:textSize="@dimen/text_size_18" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp" >
+
+                <RatingBar
+                    android:id="@+id/evaluate_credibility"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="false"
+                    android:numStars="10" />
+
+                <TextView
+                    android:id="@+id/evaluate_credibility_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="评分：10分" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_margin="10dp"
+                android:background="@color/lightgray" />
+
+            <Button
+                android:id="@+id/evaluate_sure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bottom_btn_selector"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="确定"
+                android:textSize="@dimen/text_size_16" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

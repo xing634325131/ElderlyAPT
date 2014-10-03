@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <RadioGroup
+        android:id="@+id/select_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="参与时间币方式" >
+
+        <RadioButton
+            android:id="@+id/select_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="支出时间币" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/select_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获得时间币" >
+        </RadioButton>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/select_num"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:hint="请输入时间币数量"
+        android:inputType="number"
+        android:background="@color/white"
+        android:textColor="@color/trd_color"
+        android:paddingLeft="10dp"
+        android:textSize="@dimen/text_size_16" />
+
+</LinearLayout>

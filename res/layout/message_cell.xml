@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="8dp"
+    android:paddingTop="10dp" >
+
+    <ImageView
+        android:id="@+id/msg_cell_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:src="@drawable/message_activity" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/msg_cell_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:maxLines="3"
+            android:paddingLeft="10dp"
+            android:text="用户“xingpeng”创建了一个新活动：姐妹们吗，我们觉得挺适合你的，快去看一看吧！"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp" >
+
+            <ImageView
+                android:id="@+id/msg_cell_new"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:visibility="gone"
+                android:src="@drawable/icon_new" />
+
+            <ImageView
+                android:id="@+id/msg_play_out"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="0.6"
+                android:clickable="true"
+                android:focusable="false"
+                android:src="@drawable/play_out" />
+
+            <TextView
+                android:id="@+id/msg_cell_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.0"
+                android:gravity="right"
+                android:text="2014-08-25 12:12"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

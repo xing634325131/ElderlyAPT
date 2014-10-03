@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#01458e"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/it_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sec_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/head_title"
+            style="@style/detail_head_title"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:text="@string/service"
+            android:textColor="@color/white"
+            android:textSize="20sp" >
+        </TextView>
+
+        <Button
+            android:id="@+id/head_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:background="@drawable/head_right"
+            android:text="@string/service"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="invisible" >
+        </Button>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <Button
+            android:id="@+id/service_message_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/common_btn_selector"
+            android:drawableLeft="@drawable/icon_message"
+            android:paddingLeft="20dp"
+            android:text="@string/message_center"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2" />
+
+        <Button
+            android:id="@+id/service_push_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/common_btn_selector"
+            android:drawableLeft="@drawable/icon_post"
+            android:paddingLeft="20dp"
+            android:text="@string/post_activity"
+            android:textSize="@dimen/text_size_16" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/service_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:horizontalSpacing="8dp"
+        android:numColumns="3"
+        android:verticalSpacing="8dp" />
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/it_top"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sec_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/head_title"
+        style="@style/detail_head_title"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:text="标题"
+        android:textColor="@color/white"
+        android:textSize="20sp" >
+    </TextView>
+
+    <Button
+        android:id="@+id/head_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:background="@drawable/menu_back"
+        android:clickable="true"
+        android:text="返回"
+        android:textColor="@color/white"
+        android:textSize="14sp" >
+    </Button>
+
+    <Button
+        android:id="@+id/head_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center"
+        android:textColor="@color/white"
+        android:text="右侧按钮"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        android:background="@drawable/head_right" >
+    </Button>
+
+</FrameLayout>

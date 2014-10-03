@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sec_white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/evaluate_integral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="评分"
+            android:textSize="@dimen/text_size_18" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp" >
+
+        <TextView
+            android:id="@+id/evaluate_appraise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="评论"
+            android:textSize="@dimen/text_size_18"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</LinearLayout>

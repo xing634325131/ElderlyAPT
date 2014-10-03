@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="red">#FF0000</color>
+    <color name="gold">#FFD700</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#008000</color>
+    <color name="blue">#0000FF</color>
+    <color name="purple">#800080</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="orange">#FFA500</color>
+    <color name="lemonyellow">#FFFACD</color>
+    <color name="graywhite">#F5F5F5</color>
+    <color name="grayslate">#708090</color>
+    <color name="lightblue">#0083FF</color>
+    <color name="background">#eee</color>
+    <color name="lightgray">#D3D3D3</color><!--亮灰色 -->
+    <color name="full_transparent">#00000000</color>
+    <color name="author_text">#0e5986</color>
+    <color name="listitem_transparent">#00000000</color>
+    <color name="common">#89C8F0</color>
+    <color name="main_color">#01458e</color>
+    <color name="sec_color">#0093dd</color>
+    <color name="main_back">#80858175</color>
+    <color name="trd_color">#6DB529</color>
+    <color name="trans_sec_color">#7f0093dd</color>
+    <color name="sec_white">#F7F7F7</color>
+    <color name="virtual_bg">#666666</color>
+</resources>

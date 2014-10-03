@@ -1,0 +1,114 @@
+android-app应用
+# ElderlyAPT #
+================
+
+# **社区互助老年公寓 Android 客户端项目简析** #
+
+*本应用需配置服务器，服务器端地址：https://github.com/xing634325131/ElderlyAPTServer
+*注：本文假设你已经有Android开发环境*
+
+社区互助老年公寓旨在为社区老年人提供一个邻里互助养老的网络平台。它打破了统筹安排时间和人员的局限性，规范了不同类别的活动，以邻里互助为核心，以社区为主，以第三方参与为辅，不仅传承了“远亲不如近邻”、“我为人人，人人为我”的传统美德，而且增强了老年人与社会的交流，缩短了人与人之间的距离，增强了小区的整体意识。实现了老年人自助养老和邻里互助养老的完美结合，使得小区资源得到最大化发挥。为老年人真正打造一个互帮互助和“我为人人，人人为我”的网络平台。
+
+启动Eclipse，点击菜单并导入Android客户端项目，请确保你当前的Android SDK是最新版。
+如果编译出错，请修改项目根目录下的 project.properties 文件。
+推荐使用Android 4.0 以上版本的SDK：
+
+> target=android-18
+
+**本项目开源，欢迎大家在这个基础上进行改进，并与大家分享。**
+
+下面将简单的解析下项目：
+
+## **一、项目的目录结构** ##
+> 根目录
+> ├ src
+> ├ libs
+> ├ res
+> ├ AndroidManifest.xml
+> └ project.properties
+
+**1、src目录**
+src目录用于存放项目的包及java源码文件。
+
+下面是src目录的子目录：
+> src<br>
+> ├ com.kingtime.elderlyapt
+> ├ com.kingtime.elderlyapt.adapter
+> ├ com.kingtime.elderlyapt.api
+> ├ com.kingtime.elderlyapt.entity
+> ├ com.kingtime.elderlyapt.service
+> ├ com.kingtime.elderlyapt.ui
+> ├ com.kingtime.elderlyapt.util
+> ├ com.kingtime.elderlyapt.widget
+> └ com.widget.time
+
+- com.kingtime.elderlyapt — APP管理包
+- com.kingtime.elderlyapt.adapter — APP列表适配器包
+- com.kingtime.elderlyapt.api — API访问包
+- com.kingtime.elderlyapt.entity — APP实体包
+- com.kingtime.elderlyapt.service - APP
+- com.kingtime.elderlyapt.util — APP工具包
+- com.kingtime.elderlyapt.ui — APP界面包
+- com.kingtime.elderlyapt.widget — APP控件包
+- com.widget.time - 时间日期栏组件
+
+**2、libs目录**
+libs目录用于存放项目引用到的jar包文件。
+
+下面是libs目录里的jar包文件：
+> libs<br>
+> ├ android-support-v4.jar
+> ├ Baidu-SpeechRecognitionUI-SDK-Android-1.6.0.jar
+> ├ baiduspeechsynthesizer.jar
+> ├ galaxy.jar
+> ├ VoiceRecognition-1.6.0.jar
+> └ volley.jar
+
+- android-support-v4.jar — Android系统兼容包
+- Baidu-SpeechRecognitionUI-SDK-Android-1.6.0.jar - 百度语音合成界面包
+- baiduspeechsynthesizer.jar - 百度语音合成权限验证包
+├ galaxy.jar
+└ VoiceRecognition-1.6.0.jar - 百度语音生成包
+- volley.jar- Android网络框架包
+
+**3、res目录**
+res目录用于存放项目的图片、布局、样式等资源文件。
+
+下面是res目录的子目录：
+> res
+> ├ anim
+> ├ drawable
+> ├ drawable-hdpi
+> ├ drawable-ldpi
+> ├ drawable-mdpi
+> ├ layout
+> ├ menu
+> ├ raw
+> ├ values
+
+- anim — 动画效果
+- color — 颜色
+- drawable/drawable-hdpi/drawable-ldpi/drawable-mdpi — 图标、图片
+- layout — 界面布局
+- menu — 菜单
+- raw — 通知音
+- values — 语言包、颜色和样式
+
+**4、AndroidManifest.xml**
+AndroidManifest.xml用于设置应用程序的版本、主题、用户权限及注册Activity等。
+
+## **二、项目的功能流程** ##
+
+#### 1、APP启动流程 ####
+AndroidManifest.xml注册的启动界面为"AppStart"，具体文件为com.kingtime.elderlyapt.ui\AppStart.java文件。启动显示欢迎界面之后，通过意图(Intent)跳转到首页（com.kingtime.elderlyapt.ui\Main.java）。
+*注：所有界面都放在src\com.kingtime.elderlyapt.ui包中。*
+
+#### 2、APP访问API流程 ####
+
+**1) 初始化控件**
+
+**2) 异步线程访问**
+
+**3) 解析数据显示**
+                                     @KingTime所有
+                                     2014年8月29日
