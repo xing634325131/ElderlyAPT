@@ -81,4 +81,40 @@
         android:numColumns="3"
         android:verticalSpacing="8dp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <LinearLayout
+        android:id="@+id/know_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/service_btn_selector"
+        android:clickable="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="#01458e" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.2"
+            android:padding="10dp"
+            android:text="天气早知道"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_18" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.3"
+            android:padding="10dp"
+            android:src="@drawable/arrow_lv" />
+    </LinearLayout>
+
 </LinearLayout>

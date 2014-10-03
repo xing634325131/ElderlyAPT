@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>黑龙江,3113</string>
+  <string>吉林,3114</string>
+  <string>辽宁,3115</string>
+  <string>内蒙古,3116</string>
+  <string>河北,3117</string>
+  <string>河南,3118</string>
+  <string>山东,3119</string>
+  <string>山西,31110</string>
+  <string>江苏,31111</string>
+  <string>安徽,31112</string>
+  <string>陕西,31113</string>
+  <string>宁夏,31114</string>
+  <string>甘肃,31115</string>
+  <string>青海,31116</string>
+  <string>湖北,31117</string>
+  <string>湖南,31118</string>
+  <string>浙江,31119</string>
+  <string>江西,31120</string>
+  <string>福建,31121</string>
+  <string>贵州,31122</string>
+  <string>四川,31123</string>
+  <string>广东,31124</string>
+  <string>广西,31125</string>
+  <string>云南,31126</string>
+  <string>海南,31127</string>
+  <string>新疆,31128</string>
+  <string>西藏,31129</string>
+  <string>台湾,31130</string>
+  <string>北京,311101</string>
+  <string>上海,311102</string>
+  <string>天津,311103</string>
+  <string>重庆,311104</string>
+  <string>香港,311201</string>
+  <string>澳门,311202</string>
+  <string>钓鱼岛,311203</string>
+</ArrayOfString>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>北辰,3417</string>
+  <string>宝坻,804</string>
+  <string>大港,3421</string>
+  <string>东丽,3415</string>
+  <string>汉沽,3418</string>
+  <string>津南,3419</string>
+  <string>蓟县,758</string>
+  <string>静海,847</string>
+  <string>宁河,808</string>
+  <string>天津,797</string>
+  <string>塘沽,3420</string>
+  <string>西青,3416</string>
+  <string>武清,803</string>
+</ArrayOfString>

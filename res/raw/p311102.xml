@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>宝山,2009</string>
+  <string>崇明,2012</string>
+  <string>奉贤,2063</string>
+  <string>嘉定,2011</string>
+  <string>金山,3530</string>
+  <string>闵行,2008</string>
+  <string>南汇,2014</string>
+  <string>浦东,2015</string>
+  <string>青浦,2061</string>
+  <string>上海,2013</string>
+  <string>松江,3413</string>
+  <string>徐家汇,3643</string>
+</ArrayOfString>

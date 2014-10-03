@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>高雄,2425</string>
+  <string>台北,3496</string>
+  <string>台中,2313</string>
+  <string>新竹,3500</string>
+  <string>宜兰,2314</string>
+  <string>嘉义,2377</string>
+  <string>台南,2378</string>
+  <string>台东,2428</string>
+  <string>花莲,2380</string>
+  <string>桃园,3646</string>
+  <string>屏东,3647</string>
+  <string>苗栗,3648</string>
+  <string>彰化,3649</string>
+  <string>南投,3650</string>
+  <string>云林,3651</string>
+</ArrayOfString>

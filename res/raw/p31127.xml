@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>白沙,2460</string>
+  <string>保亭,2470</string>
+  <string>昌江,2459</string>
+  <string>澄迈,2457</string>
+  <string>儋州,2458</string>
+  <string>定安,2462</string>
+  <string>东方,2455</string>
+  <string>海口,2453</string>
+  <string>乐东,2468</string>
+  <string>临高,2456</string>
+  <string>陵水,2473</string>
+  <string>南沙,2477</string>
+  <string>琼海,2465</string>
+  <string>琼中,2461</string>
+  <string>三亚,2471</string>
+  <string>屯昌,2464</string>
+  <string>万宁,2472</string>
+  <string>文昌,2466</string>
+  <string>五指山,3439</string>
+  <string>西沙,2474</string>
+</ArrayOfString>

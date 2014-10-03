@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>北京,792</string>
+  <string>昌平,785</string>
+  <string>大兴,826</string>
+  <string>房山,827</string>
+  <string>怀柔,752</string>
+  <string>门头沟,788</string>
+  <string>密云,751</string>
+  <string>平谷,756</string>
+  <string>顺义,741</string>
+  <string>通州,3409</string>
+  <string>延庆,746</string>
+  <string>海淀,742</string>
+  <string>朝阳,3408</string>
+  <string>丰台,795</string>
+  <string>石景山,794</string>
+</ArrayOfString>

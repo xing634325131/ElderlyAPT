@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+
+    <TextView
+        android:id="@+id/day_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:text="周一"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/day_better_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:text="今日"
+        android:textColor="#7DC5EA"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/day_pic1"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="2"
+        android:gravity="left"
+        android:src="@drawable/sunicon" />
+
+    <ImageView
+        android:id="@+id/day_pic2"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="2"
+        android:gravity="left"
+        android:src="@drawable/sunicon" />
+
+    <TextView
+        android:id="@+id/day_low_temp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:gravity="right"
+        android:text="25"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/day_high_temp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:gravity="right"
+        android:text="33"
+        android:textColor="#7DC5EA"
+        android:textSize="14sp" />
+
+</LinearLayout>

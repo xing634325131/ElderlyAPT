@@ -203,7 +203,7 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
 		titleTV.setText("ÏûÏ¢");
-		backBtn.setOnClickListener(listener);
+		backBtn.setOnClickListener(this);
 	}
 
 	private void initData() {
@@ -343,13 +343,13 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 		}
 
 	};
-	
+
 	private OnItemClickListener evaluateMessageListener = new OnItemClickListener() {
 
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			MessagePush messagePush = evaluatePushs.get(position);
-			Intent intent = new Intent(MessageCenter.this,EvaluateDetails.class);
+			Intent intent = new Intent(MessageCenter.this, EvaluateDetails.class);
 			Bundle bundle = new Bundle();
 			bundle.putString("integralString", messagePush.getPushContent());
 			bundle.putString("appraiseString", messagePush.getRemark());
@@ -361,9 +361,13 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 
 	@Override
 	public void onClick(View v) {
-		int pos = (Integer) (v.getTag());
-		setCurPoint(pos);
-		mScrollLayout.snapToScreen(pos);
+		if (v.getId() == R.id.head_back) {
+			finish();
+		} else {
+			int pos = (Integer) (v.getTag());
+			setCurPoint(pos);
+			mScrollLayout.snapToScreen(pos);
+		}
 	}
 
 	private void setCurPoint(int index) {
@@ -393,19 +397,4 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 	public void OnViewChange(int view) {
 		setCurPoint(view);
 	}
-
-	private OnClickListener listener = new OnClickListener() {
-
-		@Override
-		public void onClick(View v) {
-			switch (v.getId()) {
-			case R.id.head_back:
-				finish();
-				break;
-
-			default:
-				break;
-			}
-		}
-	};
 }

@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -198,5 +199,26 @@ public class StringUtils {
 			e.printStackTrace();
 		}
 		return new String(data);
+	}
+	
+	public static int parseTempToNum(String tempString) {
+		// System.out.println("To parse string:"+tempString);
+		return Integer
+				.valueOf(tempString.substring(0, tempString.indexOf("¡æ")));
+	}
+
+	public static int parsePercentToNum(String percentString) {
+		return Integer.valueOf(percentString.substring(0,
+				percentString.indexOf("%")));
+	}
+
+	public static String replaceBlank(String str) {
+		String dest = "";
+		if (str != null) {
+			Pattern p = Pattern.compile("\\s*|\t|\r|\n");
+			Matcher m = p.matcher(str);
+			dest = m.replaceAll("");
+		}
+		return dest;
 	}
 }

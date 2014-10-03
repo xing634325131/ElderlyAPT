@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>彭阳,545</string>
+  <string>固原,491</string>
+  <string>海原,489</string>
+  <string>贺兰,412</string>
+  <string>惠农,381</string>
+  <string>泾源,548</string>
+  <string>灵武,419</string>
+  <string>隆德,546</string>
+  <string>平罗,413</string>
+  <string>青铜峡,417</string>
+  <string>石嘴山,380</string>
+  <string>陶乐,416</string>
+  <string>同心,490</string>
+  <string>吴忠,414</string>
+  <string>西吉,541</string>
+  <string>盐池,458</string>
+  <string>银川,415</string>
+  <string>永宁,418</string>
+  <string>中宁,456</string>
+  <string>中卫,455</string>
+</ArrayOfString>

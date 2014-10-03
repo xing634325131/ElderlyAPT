@@ -28,4 +28,10 @@
     <color name="trans_sec_color">#7f0093dd</color>
     <color name="sec_white">#F7F7F7</color>
     <color name="virtual_bg">#666666</color>
+    
+    <!-- For FreeWeather -->
+    <color name="suggest_color_bg">#4499F0</color>
+    <color name="suggest_color1">#4499C0</color>
+    <color name="suggest_color2">#604462</color>
+    <color name="suggest_color3">#39A069</color>
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>巴南,1601</string>
+  <string>北碚,1595</string>
+  <string>璧山,1598</string>
+  <string>长寿,1603</string>
+  <string>城口,1511</string>
+  <string>大足,1586</string>
+  <string>垫江,1551</string>
+  <string>丰都,1605</string>
+  <string>奉节,1516</string>
+  <string>涪陵,1604</string>
+  <string>合川,1596</string>
+  <string>江津,1600</string>
+  <string>开县,1512</string>
+  <string>梁平,1552</string>
+  <string>南川,1602</string>
+  <string>彭水,1608</string>
+  <string>綦江,1643</string>
+  <string>黔江,1607</string>
+  <string>荣昌,1589</string>
+  <string>石柱,1556</string>
+  <string>铜梁,1594</string>
+  <string>潼南,1543</string>
+  <string>万盛,1593</string>
+  <string>万州,1554</string>
+  <string>巫山,1517</string>
+  <string>巫溪,1515</string>
+  <string>武隆,1606</string>
+  <string>秀山,3321</string>
+  <string>永川,1590</string>
+  <string>酉阳,1648</string>
+  <string>渝北,1597</string>
+  <string>云阳,1513</string>
+  <string>忠县,1555</string>
+  <string>重庆,1599</string>
+</ArrayOfString>

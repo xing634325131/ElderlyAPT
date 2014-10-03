@@ -90,6 +90,8 @@
         </activity>
         <activity android:name="com.kingtime.elderlyapt.ui.Chat" >
         </activity>
+        <activity android:name="com.kingtime.freeweather.ui.Weather" >
+        </activity>
     </application>
 
 </manifest>
