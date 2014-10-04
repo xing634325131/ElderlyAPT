@@ -72,7 +72,8 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 	private GridView serviceGV;
 	private Button pushActivityBtn;
 	private Button messageCenterBtn;
-	private LinearLayout weatherLayout;
+	private TextView weatherTV;
+	//private LinearLayout weatherLayout;
 
 	// 2.Recommend
 	private ListView recommendLV;
@@ -155,7 +156,8 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 
 	private void initServiceLayout() {
 		serviceGV = (GridView) findViewById(R.id.service_all);
-		weatherLayout = (LinearLayout)findViewById(R.id.know_weather);
+		//weatherLayout = (LinearLayout)findViewById(R.id.know_weather);
+		weatherTV = (TextView)findViewById(R.id.show_weather);
 		for (int i = 0; i < GridViewServiceAdapter.getCellLength(); i++) {
 			serviceCells.add(new ServiceCell(BitmapFactory.decodeResource(getResources(),
 					GridViewServiceAdapter.getServiceImages(i)), GridViewServiceAdapter.getServiceDesc(i)));
@@ -168,7 +170,8 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 		messageCenterBtn = (Button) findViewById(R.id.service_message_center);
 		pushActivityBtn.setOnClickListener(listener);
 		messageCenterBtn.setOnClickListener(listener);
-		weatherLayout.setOnClickListener(listener);
+		//weatherLayout.setOnClickListener(listener);
+		weatherTV.setOnClickListener(listener);
 	}
 
 	private void initRecommendLayout() {
@@ -433,7 +436,7 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 				activityListIntent.putExtras(verifyBundle);
 				startActivity(activityListIntent);
 				break;
-			case R.id.know_weather://Free Weather
+			case R.id.show_weather://Free Weather
 				startActivity(new Intent(Main.this,Weather.class));
 				break;
 			default:

@@ -71,7 +71,7 @@
             android:text="@string/post_activity"
             android:textSize="@dimen/text_size_16" />
     </LinearLayout>
-
+    
     <GridView
         android:id="@+id/service_all"
         android:layout_width="match_parent"
@@ -85,18 +85,17 @@
         android:layout_width="match_parent"
         android:layout_height="8dp" />
 
-    <LinearLayout
+    <!--  <LinearLayout
         android:id="@+id/know_weather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/service_btn_selector"
         android:clickable="true"
         android:orientation="horizontal" >
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.2"
+            android:layout_weight="1.6"
             android:background="#01458e" />
 
         <TextView
@@ -106,7 +105,7 @@
             android:layout_weight="1.2"
             android:padding="10dp"
             android:text="天气早知道"
-            android:textColor="@color/gray"
+            android:textColor="#FFA71F"
             android:textSize="@dimen/text_size_18" />
 
         <ImageView
@@ -114,7 +113,19 @@
             android:layout_height="50dp"
             android:layout_weight="0.3"
             android:padding="10dp"
-            android:src="@drawable/arrow_lv" />
-    </LinearLayout>
-
+            android:src="@drawable/weather_sun" />
+    </LinearLayout>-->
+    
+    <TextView
+        android:id="@+id/show_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:clickable="true"
+        android:text="天气"
+        android:textColor="#FFA71F"
+        android:drawableRight="@drawable/weather_sun"
+        android:textSize="@dimen/text_size_25" />
+    
 </LinearLayout>

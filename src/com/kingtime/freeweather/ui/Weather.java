@@ -197,12 +197,22 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 	private void loadWeatherInfoData() {
 		Log.i("Weather", "Loading data...");
 		locationTV.setText(info.getPosition().getCityName());
-		tempTV.setText(info.getDayDetail().getCommonTemp() + "℃");
+		int nowTemp = info.getDayDetail().getCommonTemp();
+		if(nowTemp == 999){
+			tempTV.setText("暂无实况");
+		}else{
+			tempTV.setText(info.getDayDetail().getCommonTemp() + "℃");
+		}
 		// predictTV.setText("");
 		descTV.setText(info.getDayWeathers().get(0).getWeatherDesc());
 		// windTV.setText("");
 		windDrectionTV.setText(info.getDayDetail().getWindDirection());
-		humidityTV.setText(info.getDayDetail().getHumidityPercent() + "%");
+		int humidity = info.getDayDetail().getHumidityPercent();
+		if(humidity == 101){
+			humidityTV.setText("暂无实况");
+		} else{
+			humidityTV.setText(info.getDayDetail().getHumidityPercent() + "%");
+		}
 		airQualityTV.setText(info.getDayDetail().getAirQuality());
 		raysTV.setText(info.getDayDetail().getUVIntensity());
 		lastRefreshTV.setText("刷新于" + info.getLastRefreshTime());

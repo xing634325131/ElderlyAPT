@@ -41,11 +41,18 @@ public class WeatherInfo {
 		String[] dayDetailStrings2 = weatherDetailList.get(5).split("；");
 		dayDetail.setCommonTemp(StringUtils
 				.parseTempToNum(splitWithCommon(dayDetailStrings1[0])));
-		dayDetail.setWindDirection(splitWithCommon(dayDetailStrings1[1]));
-		dayDetail.setHumidityPercent(StringUtils
+		if(dayDetailStrings1.length < 2){
+			dayDetail.setWindDirection("暂无实况");
+			dayDetail.setHumidityPercent(101);
+			dayDetail.setAirQuality("暂无实况");
+			dayDetail.setUVIntensity("暂无实况");
+		} else{
+			dayDetail.setWindDirection(splitWithCommon(dayDetailStrings1[1]));
+			dayDetail.setHumidityPercent(StringUtils
 				.parsePercentToNum(splitWithCommon(dayDetailStrings1[2])));
-		dayDetail.setAirQuality(splitWithCommon(dayDetailStrings2[0]));
-		dayDetail.setUVIntensity(splitWithCommon(dayDetailStrings2[1]));
+			dayDetail.setAirQuality(splitWithCommon(dayDetailStrings2[0]));
+			dayDetail.setUVIntensity(splitWithCommon(dayDetailStrings2[1]));
+		}
 		System.out.println(dayDetail.toString());
 
 		// 6 Line

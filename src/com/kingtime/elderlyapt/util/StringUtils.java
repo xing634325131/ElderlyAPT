@@ -203,8 +203,10 @@ public class StringUtils {
 	
 	public static int parseTempToNum(String tempString) {
 		System.out.println("To parse string:"+tempString);
-		return Integer
-				.valueOf(tempString.substring(0, tempString.indexOf("¡æ")));
+		if(tempString.contains("¡æ")){
+			return Integer.valueOf(tempString.substring(0, tempString.indexOf("¡æ")));
+		}
+		return 999;
 	}
 
 	public static int parsePercentToNum(String percentString) {
