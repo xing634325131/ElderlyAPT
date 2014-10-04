@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingTop="20dp"
+            android:paddingTop="10dp"
             android:text="深圳"
             android:textColor="#ffffff"
             android:textSize="30sp" />
@@ -195,7 +195,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp" >
+        android:layout_margin="5dp" >
 
         <TextView
             android:id="@+id/info_refresh_time"
@@ -213,7 +213,8 @@
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/sunicon"/>
+            android:onClick="true"
+            android:src="@drawable/refresh_btn"/>
     </RelativeLayout>
 
 </LinearLayout>

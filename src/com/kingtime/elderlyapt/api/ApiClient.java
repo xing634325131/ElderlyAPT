@@ -680,4 +680,20 @@ public class ApiClient {
 		params.put("content", chatRecord.getContent());
 		return StringUtils.parse(_post(URLs.CHAT_RECORD, params, null)).equals("true")?true:false;
 	}
+	
+
+	public static InputStream getRegionProvince() throws IOException{
+		return _get(com.kingtime.freeweather.api.URLs.GET_REGION_PROVINCE);
+	}
+	
+	public static InputStream getSupportCity(int provinceCode) throws IOException{
+		String actionURL = com.kingtime.freeweather.api.URLs.GET_SUPPORTCITY + String.valueOf(provinceCode);
+		return _get(actionURL);
+	}
+	
+	public static InputStream getWeather(int cityCode) throws IOException{
+		String actionURL = com.kingtime.freeweather.api.URLs.GET_WEATHER  + String.valueOf(cityCode);
+		return _get(actionURL);
+	}
+	
 }

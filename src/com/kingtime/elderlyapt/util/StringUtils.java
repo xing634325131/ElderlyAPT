@@ -202,7 +202,7 @@ public class StringUtils {
 	}
 	
 	public static int parseTempToNum(String tempString) {
-		// System.out.println("To parse string:"+tempString);
+		System.out.println("To parse string:"+tempString);
 		return Integer
 				.valueOf(tempString.substring(0, tempString.indexOf("¡æ")));
 	}

@@ -16,14 +16,17 @@
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/day_better_name"
+        android:id="@+id/day_wind"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:text="今日"
+        android:layout_weight="3.5"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="北风3级"
         android:textColor="#7DC5EA"
         android:textSize="14sp" />
 
+    <!--
     <ImageView
         android:id="@+id/day_pic1"
         android:layout_width="0dp"
@@ -39,6 +42,19 @@
         android:layout_weight="2"
         android:gravity="left"
         android:src="@drawable/sunicon" />
+    -->
+
+    <TextView
+        android:id="@+id/day_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.5"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="晴"
+        android:textColor="@color/yellow"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/day_low_temp"

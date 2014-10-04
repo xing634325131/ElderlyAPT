@@ -47,6 +47,10 @@
         <item name="android:windowBackground">@color/full_transparent</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+    
+    <style name="SelectDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
 
     <style name="loading_small" parent="@android:style/Widget.ProgressBar.Small">
         <item name="android:indeterminateDrawable">@anim/loading</item>
