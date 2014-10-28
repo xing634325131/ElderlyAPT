@@ -13,9 +13,9 @@ android-app应用
 如果编译出错，请修改项目根目录下的 project.properties 文件。
 推荐使用Android 4.0 以上版本的SDK：
 
-> target=android-18
+> target=android-14
 
-**本项目开源，欢迎大家在这个基础上进行改进，并与大家分享。**
+**欢迎大家在这个基础上进行改进，并与大家分享。**
 
 下面将简单的解析下项目：
 
@@ -40,6 +40,10 @@ src目录用于存放项目的包及java源码文件。
 > ├ com.kingtime.elderlyapt.ui
 > ├ com.kingtime.elderlyapt.util
 > ├ com.kingtime.elderlyapt.widget
+> ├ com.kingtime.freeweather.entity
+> ├ com.kingtime.freeweather.helper
+> ├ com.kingtime.freeweather.ui
+> ├ com.kingtime.freeweather.utils
 > └ com.widget.time
 
 - com.kingtime.elderlyapt — APP管理包
@@ -50,6 +54,7 @@ src目录用于存放项目的包及java源码文件。
 - com.kingtime.elderlyapt.util — APP工具包
 - com.kingtime.elderlyapt.ui — APP界面包
 - com.kingtime.elderlyapt.widget — APP控件包
+- com.kingtime.freeweather.* - 天气组件相关
 - com.widget.time - 时间日期栏组件
 
 **2、libs目录**
