@@ -62,49 +62,49 @@ public class WheelMain {
 	}
 
 	/**
-	 * @Description: TODO µ¯³öÈÕÆÚÊ±¼äÑ¡ÔñÆ÷
+	 * @Description: TODO å¼¹å‡ºæ—¥æœŸæ—¶é—´é€‰æ‹©å™¨
 	 */
 	public void initDateTimePicker(int year, int month, int day, int h, int m) {
 		// int year = calendar.get(Calendar.YEAR);
 		// int month = calendar.get(Calendar.MONTH);
 		// int day = calendar.get(Calendar.DATE);
-		// Ìí¼Ó´óĞ¡ÔÂÔÂ·İ²¢½«Æä×ª»»Îªlist,·½±ãÖ®ºóµÄÅĞ¶Ï
+		// æ·»åŠ å¤§å°æœˆæœˆä»½å¹¶å°†å…¶è½¬æ¢ä¸ºlist,æ–¹ä¾¿ä¹‹åçš„åˆ¤æ–­
 		String[] months_big = { "1", "3", "5", "7", "8", "10", "12" };
 		String[] months_little = { "4", "6", "9", "11" };
 
 		final List<String> list_big = Arrays.asList(months_big);
 		final List<String> list_little = Arrays.asList(months_little);
 
-		// Äê
+		// å¹´
 		wv_year = (WheelView) view.findViewById(R.id.year);
-		wv_year.setAdapter(new NumericWheelAdapter(START_YEAR, END_YEAR));// ÉèÖÃ"Äê"µÄÏÔÊ¾Êı¾İ
-		wv_year.setCyclic(true);// ¿ÉÑ­»·¹ö¶¯
-		wv_year.setLabel("Äê");// Ìí¼ÓÎÄ×Ö
-		wv_year.setCurrentItem(year - START_YEAR);// ³õÊ¼»¯Ê±ÏÔÊ¾µÄÊı¾İ
+		wv_year.setAdapter(new NumericWheelAdapter(START_YEAR, END_YEAR));// è®¾ç½®"å¹´"çš„æ˜¾ç¤ºæ•°æ®
+		wv_year.setCyclic(true);// å¯å¾ªç¯æ»šåŠ¨
+		wv_year.setLabel("å¹´");// æ·»åŠ æ–‡å­—
+		wv_year.setCurrentItem(year - START_YEAR);// åˆå§‹åŒ–æ—¶æ˜¾ç¤ºçš„æ•°æ®
 
-		// ÔÂ
+		// æœˆ
 		wv_month = (WheelView) view.findViewById(R.id.month);
 		wv_month.setAdapter(new NumericWheelAdapter(1, 12));
 		wv_month.setCyclic(true);
-		wv_month.setLabel("ÔÂ");
+		wv_month.setLabel("æœˆ");
 		wv_month.setCurrentItem(month);
 
-		// ÈÕ
+		// æ—¥
 		wv_day = (WheelView) view.findViewById(R.id.day);
 		wv_day.setCyclic(true);
-		// ÅĞ¶Ï´óĞ¡ÔÂ¼°ÊÇ·ñÈòÄê,ÓÃÀ´È·¶¨"ÈÕ"µÄÊı¾İ
+		// åˆ¤æ–­å¤§å°æœˆåŠæ˜¯å¦é—°å¹´,ç”¨æ¥ç¡®å®š"æ—¥"çš„æ•°æ®
 		if (list_big.contains(String.valueOf(month + 1))) {
 			wv_day.setAdapter(new NumericWheelAdapter(1, 31));
 		} else if (list_little.contains(String.valueOf(month + 1))) {
 			wv_day.setAdapter(new NumericWheelAdapter(1, 30));
 		} else {
-			// ÈòÄê
+			// é—°å¹´
 			if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
 				wv_day.setAdapter(new NumericWheelAdapter(1, 29));
 			else
 				wv_day.setAdapter(new NumericWheelAdapter(1, 28));
 		}
-		wv_day.setLabel("ÈÕ");
+		wv_day.setLabel("æ—¥");
 		wv_day.setCurrentItem(day - 1);
 
 		wv_hours = (WheelView) view.findViewById(R.id.hour);
@@ -114,24 +114,24 @@ public class WheelMain {
 			wv_mins.setVisibility(View.VISIBLE);
 
 			wv_hours.setAdapter(new NumericWheelAdapter(0, 23));
-			wv_hours.setCyclic(true);// ¿ÉÑ­»·¹ö¶¯
-			wv_hours.setLabel("Ê±");// Ìí¼ÓÎÄ×Ö
+			wv_hours.setCyclic(true);// å¯å¾ªç¯æ»šåŠ¨
+			wv_hours.setLabel("æ—¶");// æ·»åŠ æ–‡å­—
 			wv_hours.setCurrentItem(h);
 
 			wv_mins.setAdapter(new NumericWheelAdapter(0, 59));
-			wv_mins.setCyclic(true);// ¿ÉÑ­»·¹ö¶¯
-			wv_mins.setLabel("·Ö");// Ìí¼ÓÎÄ×Ö
+			wv_mins.setCyclic(true);// å¯å¾ªç¯æ»šåŠ¨
+			wv_mins.setLabel("åˆ†");// æ·»åŠ æ–‡å­—
 			wv_mins.setCurrentItem(m);
 		} else {
 			wv_hours.setVisibility(View.GONE);
 			wv_mins.setVisibility(View.GONE);
 		}
 
-		// Ìí¼Ó"Äê"¼àÌı
+		// æ·»åŠ "å¹´"ç›‘å¬
 		OnWheelChangedListener wheelListener_year = new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				int year_num = newValue + START_YEAR;
-				// ÅĞ¶Ï´óĞ¡ÔÂ¼°ÊÇ·ñÈòÄê,ÓÃÀ´È·¶¨"ÈÕ"µÄÊı¾İ
+				// åˆ¤æ–­å¤§å°æœˆåŠæ˜¯å¦é—°å¹´,ç”¨æ¥ç¡®å®š"æ—¥"çš„æ•°æ®
 				if (list_big.contains(String.valueOf(wv_month.getCurrentItem() + 1))) {
 					wv_day.setAdapter(new NumericWheelAdapter(1, 31));
 				} else if (list_little.contains(String.valueOf(wv_month.getCurrentItem() + 1))) {
@@ -144,11 +144,11 @@ public class WheelMain {
 				}
 			}
 		};
-		// Ìí¼Ó"ÔÂ"¼àÌı
+		// æ·»åŠ "æœˆ"ç›‘å¬
 		OnWheelChangedListener wheelListener_month = new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				int month_num = newValue + 1;
-				// ÅĞ¶Ï´óĞ¡ÔÂ¼°ÊÇ·ñÈòÄê,ÓÃÀ´È·¶¨"ÈÕ"µÄÊı¾İ
+				// åˆ¤æ–­å¤§å°æœˆåŠæ˜¯å¦é—°å¹´,ç”¨æ¥ç¡®å®š"æ—¥"çš„æ•°æ®
 				if (list_big.contains(String.valueOf(month_num))) {
 					wv_day.setAdapter(new NumericWheelAdapter(1, 31));
 				} else if (list_little.contains(String.valueOf(month_num))) {
@@ -165,7 +165,7 @@ public class WheelMain {
 		wv_year.addChangingListener(wheelListener_year);
 		wv_month.addChangingListener(wheelListener_month);
 
-		// ¸ù¾İÆÁÄ»ÃÜ¶ÈÀ´Ö¸¶¨Ñ¡ÔñÆ÷×ÖÌåµÄ´óĞ¡(²»Í¬ÆÁÄ»¿ÉÄÜ²»Í¬)
+		// æ ¹æ®å±å¹•å¯†åº¦æ¥æŒ‡å®šé€‰æ‹©å™¨å­—ä½“çš„å¤§å°(ä¸åŒå±å¹•å¯èƒ½ä¸åŒ)
 		int textSize = 0;
 		if (hasSelectTime)
 			textSize = (screenheight / 100) * 3;
@@ -195,7 +195,7 @@ public class WheelMain {
 	// }
 
 	/**
-	 * Changed:ÏÔÊ¾¸üÎªºÏÀí
+	 * Changed:æ˜¾ç¤ºæ›´ä¸ºåˆç†
 	 * 
 	 * @since 2014-8-7
 	 * @author 634325131@163.com

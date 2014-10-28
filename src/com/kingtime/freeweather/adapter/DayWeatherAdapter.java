@@ -58,8 +58,8 @@ public class DayWeatherAdapter extends BaseAdapter{
 			holder = (ViewHolder)convertView.getTag();
 		}
 		holder.dayNameTextView.setText(dayWeather.getDayName());
-		holder.lowTempTextView.setText(dayWeather.getLowTemp() + "¡æ");
-		holder.highTempTextView.setText(dayWeather.getHighTemp() + "¡æ");
+		holder.lowTempTextView.setText(dayWeather.getLowTemp() + "â„ƒ");
+		holder.highTempTextView.setText(dayWeather.getHighTemp() + "â„ƒ");
 		holder.detailsTextView.setText(dayWeather.getWeatherDesc());
 		//holder.detailsTextView.setSelected(true);
 		holder.windTextView.setText(dayWeather.getWindDesc());

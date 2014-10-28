@@ -11,10 +11,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * È«¾ÖÓ¦ÓÃ³ÌĞòÀà£ºÓÃÓÚ±£´æºÍµ÷ÓÃÈ«¾ÖÓ¦ÓÃÅäÖÃ¼°·ÃÎÊÍøÂçÊı¾İ
+ * å…¨å±€åº”ç”¨ç¨‹åºç±»ï¼šç”¨äºä¿å­˜å’Œè°ƒç”¨å…¨å±€åº”ç”¨é…ç½®åŠè®¿é—®ç½‘ç»œæ•°æ®
  * 
  * @author xp
- * @created 2014Äê4ÔÂ26ÈÕ
+ * @created 2014å¹´4æœˆ26æ—¥
  */
 public class AppContext extends Application {
 	public static final int NETTYPE_WIFI = 0x01;
@@ -22,9 +22,9 @@ public class AppContext extends Application {
 	public static final int NETTYPE_CMNET = 0x03;
 
 	/**
-	 * »ñÈ¡µ±Ç°ÍøÂçÀàĞÍ
+	 * è·å–å½“å‰ç½‘ç»œç±»å‹
 	 * 
-	 * @return 0£ºÃ»ÓĞÍøÂç 1£ºWIFIÍøÂç 2£ºWAPÍøÂç 3£ºNETÍøÂç
+	 * @return 0ï¼šæ²¡æœ‰ç½‘ç»œ 1ï¼šWIFIç½‘ç»œ 2ï¼šWAPç½‘ç»œ 3ï¼šNETç½‘ç»œ
 	 */
 	public int getNetworkType() {
 		int netType = 0;
@@ -50,7 +50,7 @@ public class AppContext extends Application {
 	}
 
 	/**
-	 * »ñÈ¡µÇÂ¼ĞÅÏ¢
+	 * è·å–ç™»å½•ä¿¡æ¯
 	 * 
 	 * @return
 	 */
@@ -75,7 +75,7 @@ public class AppContext extends Application {
 	}
 
 	/**
-	 * Çå³ıµÇÂ¼ĞÅÏ¢
+	 * æ¸…é™¤ç™»å½•ä¿¡æ¯
 	 */
 	public void clearLoginInfo() {
 		removeProperty("uid", "roleId", "locationId", "name", "gender",
@@ -84,7 +84,7 @@ public class AppContext extends Application {
 	}
 
 	/**
-	 * ±£´æµÇÂ¼ĞÅÏ¢
+	 * ä¿å­˜ç™»å½•ä¿¡æ¯
 	 * 
 	 * @param user
 	 */

@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ11ÈÕ
+ * @created 2014å¹´8æœˆ11æ—¥
  */
 public class ListViewShowAddDutyAdapter extends BaseAdapter {
 
@@ -66,8 +66,8 @@ public class ListViewShowAddDutyAdapter extends BaseAdapter {
 		}
 		holder.nameTV.setText(duty.getDutyName());
 		//System.out.println(duty.getDutyIntegral());
-		String integral = duty.getDutyIntegral() > 0 ? "»ñµÃ" + duty.getDutyIntegral() : "ÏûºÄ" + Math.abs(duty.getDutyIntegral());
-		holder.descTV.setText(duty.getNeedNum() + "ÈË," + integral + "Ê±¼ä±Ò/ÈË");
+		String integral = duty.getDutyIntegral() > 0 ? "è·å¾—" + duty.getDutyIntegral() : "æ¶ˆè€—" + Math.abs(duty.getDutyIntegral());
+		holder.descTV.setText(duty.getNeedNum() + "äºº," + integral + "æ—¶é—´å¸/äºº");
 		holder.deleteIV.setOnClickListener(new OnClickListener() {
 			
 			@Override

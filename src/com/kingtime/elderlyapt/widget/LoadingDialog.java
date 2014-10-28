@@ -27,10 +27,10 @@ public class LoadingDialog extends Dialog {
 		loadtext = (TextView) layout.findViewById(R.id.loading_text);
 		setContentView(layout);
 		
-		// ÉèÖÃwindowÊôĞÔ
+		// è®¾ç½®windowå±æ€§
 		lp = getWindow().getAttributes();
 		lp.gravity = Gravity.CENTER;
-		lp.dimAmount = 0; // È¥±³¾°ÕÚ¸Ç
+		lp.dimAmount = 0; // å»èƒŒæ™¯é®ç›–
 		lp.alpha = 1.0f;
 		getWindow().setAttributes(lp);
 

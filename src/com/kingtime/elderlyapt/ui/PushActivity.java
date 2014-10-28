@@ -74,35 +74,35 @@ public class PushActivity extends Activity {
 	private ImageView voiceInputBtn;
 
 	private WheelMain wheelMain;
-	private BaiduASRDigitalDialog mDialog;// ÓïÒôÊ¶±ğ¶Ô»°¿ò
+	private BaiduASRDigitalDialog mDialog;// è¯­éŸ³è¯†åˆ«å¯¹è¯æ¡†
 	/**
-	 * ¿ªÊ¼Ê±¼ä
+	 * å¼€å§‹æ—¶é—´
 	 */
 	private static final int SELECT_START_TIME = 0x01;
 	/**
-	 * ½áÊøÊ±¼ä
+	 * ç»“æŸæ—¶é—´
 	 */
 	private static final int SELECT_END_TIME = 0x02;
 	/**
-	 * ½ØÖ¹Ê±¼ä
+	 * æˆªæ­¢æ—¶é—´
 	 */
 	private static final int SELECT_CLOSE_TIME = 0x03;
 
 	/**
-	 * Ñ¡ÔñÀà±ğ
+	 * é€‰æ‹©ç±»åˆ«
 	 */
 	private static final int SELECT_CATEGORY = 0x04;
 	/**
-	 * Ìí¼ÓÖ°Ôğ
+	 * æ·»åŠ èŒè´£
 	 */
 	private static final int ADD_DUTY = 0x05;
 	/**
-	 * Ä¬ÈÏÎ»ÖÃID£¬32´ú±íºâÑô
+	 * é»˜è®¤ä½ç½®IDï¼Œ32ä»£è¡¨è¡¡é˜³
 	 */
 	private static final int DEFAULT_LOCATIONID = 32;
 	private int timeState;
 
-	// Í¼ÏñĞÅÏ¢´¦Àí
+	// å›¾åƒä¿¡æ¯å¤„ç†
 	private final static int CROP = 200;
 	private final static String FILE_SAVEPATH = Environment.getExternalStorageDirectory().getAbsolutePath()
 			+ "/ElderlyAPT/Activity/";
@@ -117,7 +117,7 @@ public class PushActivity extends Activity {
 	private int categoryId;
 	AppContext appContext;
 
-	// Ìí¼ÓÖ°Ôğ
+	// æ·»åŠ èŒè´£
 	private Duty addDuty;
 	private List<Duty> addDutyList;
 	private ListViewShowAddDutyAdapter addDutyAdapter;
@@ -153,7 +153,7 @@ public class PushActivity extends Activity {
 		createContentET = (EditText) findViewById(R.id.push_content);
 		voiceInputBtn = (ImageView) findViewById(R.id.push_voice_input);
 
-		titleTV.setText("´´½¨»î¶¯");
+		titleTV.setText("åˆ›å»ºæ´»åŠ¨");
 		backBtn.setOnClickListener(listener);
 		setActivityImageLayout.setOnClickListener(listener);
 		setStartTimeLayout.setOnClickListener(listener);
@@ -226,7 +226,7 @@ public class PushActivity extends Activity {
 	}
 
 	/**
-	 * Æô¶¯ÓïÒôÊ¶±ğ
+	 * å¯åŠ¨è¯­éŸ³è¯†åˆ«
 	 */
 	protected void startVoiceInput() {
 		DialogRecognitionListener mRecognitionListener = new DialogRecognitionListener() {
@@ -243,14 +243,14 @@ public class PushActivity extends Activity {
 	}
 
 	/**
-	 * Í¼Æ¬Ñ¡Ôñ
+	 * å›¾ç‰‡é€‰æ‹©
 	 */
 	protected void selectImage() {
 		CharSequence[] items = { getString(R.string.img_from_album), getString(R.string.img_from_camera) };
-		AlertDialog imageDialog = new AlertDialog.Builder(this).setTitle("Ìí¼ÓÍ¼Æ¬")
+		AlertDialog imageDialog = new AlertDialog.Builder(this).setTitle("æ·»åŠ å›¾ç‰‡")
 				.setItems(items, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int item) {
-						// ÅĞ¶ÏÊÇ·ñ¹ÒÔØÁËSD¿¨
+						// åˆ¤æ–­æ˜¯å¦æŒ‚è½½äº†SDå¡
 						String storageState = Environment.getExternalStorageState();
 						if (storageState.equals(Environment.MEDIA_MOUNTED)) {
 							File savedir = new File(FILE_SAVEPATH);
@@ -258,28 +258,28 @@ public class PushActivity extends Activity {
 								savedir.mkdirs();
 							}
 						} else {
-							Toast.makeText(getApplicationContext(), "ÎŞ·¨±£´æÉÏ´«µÄÍ·Ïñ£¬Çë¼ì²éSD¿¨ÊÇ·ñ¹ÒÔØ", Toast.LENGTH_SHORT).show();
+							Toast.makeText(getApplicationContext(), "æ— æ³•ä¿å­˜ä¸Šä¼ çš„å¤´åƒï¼Œè¯·æ£€æŸ¥SDå¡æ˜¯å¦æŒ‚è½½", Toast.LENGTH_SHORT).show();
 							return;
 						}
 
-						// Êä³ö²Ã¼ôµÄÁÙÊ±ÎÄ¼ş
+						// è¾“å‡ºè£å‰ªçš„ä¸´æ—¶æ–‡ä»¶
 						String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-						// ÕÕÆ¬ÃüÃû
+						// ç…§ç‰‡å‘½å
 						String origFileName = "eapt_ac_" + timeStamp + ".jpg";
 						String cropFileName = "eapt_ac_crop_" + timeStamp + ".jpg";
 
-						// ²Ã¼ôÍ·ÏñµÄ¾ø¶ÔÂ·¾¶
+						// è£å‰ªå¤´åƒçš„ç»å¯¹è·¯å¾„
 						protraitPath = FILE_SAVEPATH + cropFileName;
 						protraitFile = new File(protraitPath);
 
 						origUri = Uri.fromFile(new File(FILE_SAVEPATH, origFileName));
 						cropUri = Uri.fromFile(protraitFile);
 
-						// Ïà²áÑ¡Í¼
+						// ç›¸å†Œé€‰å›¾
 						if (item == 0) {
 							startActionPickCrop(cropUri);
 						}
-						// ÊÖ»úÅÄÕÕ
+						// æ‰‹æœºæ‹ç…§
 						else if (item == 1) {
 							startActionCamera(origUri);
 						}
@@ -290,7 +290,7 @@ public class PushActivity extends Activity {
 	}
 
 	/**
-	 * Ñ¡ÔñÍ¼Æ¬²Ã¼ô
+	 * é€‰æ‹©å›¾ç‰‡è£å‰ª
 	 * 
 	 * @param output
 	 */
@@ -299,15 +299,15 @@ public class PushActivity extends Activity {
 		intent.setType("image/*");
 		intent.putExtra("output", output);
 		intent.putExtra("crop", "true");
-		intent.putExtra("aspectX", 1);// ²Ã¼ô¿ò±ÈÀı
+		intent.putExtra("aspectX", 1);// è£å‰ªæ¡†æ¯”ä¾‹
 		intent.putExtra("aspectY", 1);
-		intent.putExtra("outputX", CROP);// Êä³öÍ¼Æ¬´óĞ¡
+		intent.putExtra("outputX", CROP);// è¾“å‡ºå›¾ç‰‡å¤§å°
 		intent.putExtra("outputY", CROP);
-		startActivityForResult(Intent.createChooser(intent, "Ñ¡ÔñÍ¼Æ¬"), ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD);
+		startActivityForResult(Intent.createChooser(intent, "é€‰æ‹©å›¾ç‰‡"), ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD);
 	}
 
 	/**
-	 * Ïà»úÅÄÕÕ
+	 * ç›¸æœºæ‹ç…§
 	 * 
 	 * @param output
 	 */
@@ -318,30 +318,30 @@ public class PushActivity extends Activity {
 	}
 
 	/**
-	 * ÅÄÕÕºó²Ã¼ô
+	 * æ‹ç…§åè£å‰ª
 	 * 
 	 * @param data
-	 *            Ô­Ê¼Í¼Æ¬
+	 *            åŸå§‹å›¾ç‰‡
 	 * @param output
-	 *            ²Ã¼ôºóÍ¼Æ¬
+	 *            è£å‰ªåå›¾ç‰‡
 	 */
 	private void startActionCrop(Uri data, Uri output) {
 		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(data, "image/*");
 		intent.putExtra("output", output);
 		intent.putExtra("crop", "true");
-		intent.putExtra("aspectX", 1);// ²Ã¼ô¿ò±ÈÀı
+		intent.putExtra("aspectX", 1);// è£å‰ªæ¡†æ¯”ä¾‹
 		intent.putExtra("aspectY", 1);
-		intent.putExtra("outputX", CROP);// Êä³öÍ¼Æ¬´óĞ¡
+		intent.putExtra("outputX", CROP);// è¾“å‡ºå›¾ç‰‡å¤§å°
 		intent.putExtra("outputY", CROP);
 		startActivityForResult(intent, ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP);
 	}
 
 	/**
-	 * ÉÏ´«ĞÂÕÕÆ¬
+	 * ä¸Šä¼ æ–°ç…§ç‰‡
 	 */
 	private void uploadNewPhoto() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -351,27 +351,27 @@ public class PushActivity extends Activity {
 				if (loading != null)
 					loading.dismiss();
 				if (msg.what == 1) {
-					// ÏÔÊ¾Í¼Æ¬
+					// æ˜¾ç¤ºå›¾ç‰‡
 					setImageView.setImageBitmap(protraitBitmap);
 					boolean uploadResult = (boolean) msg.obj;
-					String toaString = uploadResult ? "»î¶¯Í¼Æ¬ÉÏ´«³É¹¦" : "»î¶¯Í¼Æ¬ÉÏ´«Ê§°Ü£¬ÇëÖØĞÂÑ¡ÔñÍ¼Æ¬ÉÏ´«";
+					String toaString = uploadResult ? "æ´»åŠ¨å›¾ç‰‡ä¸Šä¼ æˆåŠŸ" : "æ´»åŠ¨å›¾ç‰‡ä¸Šä¼ å¤±è´¥ï¼Œè¯·é‡æ–°é€‰æ‹©å›¾ç‰‡ä¸Šä¼ ";
 					Toast.makeText(getApplication(), toaString, Toast.LENGTH_LONG).show();
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 			}
 		};
 
 		if (loading != null) {
-			loading.setLoadText("ÕıÔÚÉÏ´«»î¶¯Í¼Æ¬¡¤¡¤¡¤");
+			loading.setLoadText("æ­£åœ¨ä¸Šä¼ æ´»åŠ¨å›¾ç‰‡Â·Â·Â·");
 			loading.show();
 		}
 
 		new Thread() {
 			public void run() {
-				// »ñÈ¡Í·ÏñËõÂÔÍ¼
+				// è·å–å¤´åƒç¼©ç•¥å›¾
 				if (!StringUtils.isEmpty(protraitPath) && protraitFile.exists()) {
 					protraitBitmap = ImageUtils.loadImgThumbnail(protraitPath, 200, 200);
 				}
@@ -387,7 +387,7 @@ public class PushActivity extends Activity {
 						e.printStackTrace();
 					}
 					// if(res!=null && res.OK()){
-					// //±£´æĞÂÍ·Ïñµ½»º´æ
+					// //ä¿å­˜æ–°å¤´åƒåˆ°ç¼“å­˜
 					// String filename = FileUtils.getFileName(user.getFace());
 					// ImageUtils.saveImage(UserInfo.this, filename,
 					// protraitBitmap);
@@ -407,11 +407,11 @@ public class PushActivity extends Activity {
 
 		switch (requestCode) {
 		case ImageUtils.REQUEST_CODE_GETIMAGE_BYCAMERA:
-			startActionCrop(origUri, cropUri);// ÅÄÕÕºó²Ã¼ô
+			startActionCrop(origUri, cropUri);// æ‹ç…§åè£å‰ª
 			break;
 		case ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD:
 		case ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP:
-			uploadNewPhoto();// ÉÏ´«ĞÂÕÕÆ¬
+			uploadNewPhoto();// ä¸Šä¼ æ–°ç…§ç‰‡
 			break;
 		case SELECT_CATEGORY:
 			Bundle categorybBundle = data.getExtras();
@@ -427,7 +427,7 @@ public class PushActivity extends Activity {
 			addDuty.setNeedNum(addDutyBundle.getInt("dutyNeedNum"));
 			addDuty.setDutyIntegral(addDutyBundle.getInt("dutyIntegral"));
 			addDutyList.add(addDuty);
-			addDutyAdapter.notifyDataSetChanged();// ¸üĞÂÖ°Ôğ½çÃæ
+			addDutyAdapter.notifyDataSetChanged();// æ›´æ–°èŒè´£ç•Œé¢
 			dutyListView.setCacheColorHint(0);
 			dutyListView.setLayoutParams(ListViewTool.setLvHeight(dutyListView));
 			;
@@ -439,7 +439,7 @@ public class PushActivity extends Activity {
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÉÏµÄ×ÜÈËÊıºÍ×Ü²ÎÓëÊ±¼ä±Ò
+	 * æ›´æ–°ç•Œé¢ä¸Šçš„æ€»äººæ•°å’Œæ€»å‚ä¸æ—¶é—´å¸
 	 */
 	private void updateSumDuty() {
 		int sumNum = 0;
@@ -449,18 +449,18 @@ public class PushActivity extends Activity {
 			sumIntegral += updateDuty.getDutyIntegral() * updateDuty.getNeedNum();
 		}
 		if (sumNum > 0) {
-			createSumNumTV.setText(sumNum + "ÈË");
+			createSumNumTV.setText(sumNum + "äºº");
 			createSumNumTV.setTextColor(getResources().getColor(R.color.trd_color));
-			String integralString = sumIntegral > 0 ? "Äã½«ÏûºÄ" + sumIntegral : "Äã½«»ñµÃ" + Math.abs(sumIntegral);
-			createSumIntegralTV.setText(integralString + "Ê±¼ä±Ò");
+			String integralString = sumIntegral > 0 ? "ä½ å°†æ¶ˆè€—" + sumIntegral : "ä½ å°†è·å¾—" + Math.abs(sumIntegral);
+			createSumIntegralTV.setText(integralString + "æ—¶é—´å¸");
 		} else {
-			createSumNumTV.setText("ÇëÌí¼Ó»î¶¯Ö°Ôğ");
+			createSumNumTV.setText("è¯·æ·»åŠ æ´»åŠ¨èŒè´£");
 			createSumNumTV.setTextColor(getResources().getColor(R.color.red));
 		}
 	}
 
 	/**
-	 * ÈÕÆÚÑ¡Ôñ
+	 * æ—¥æœŸé€‰æ‹©
 	 */
 	protected void selectDate() {
 		View timepickerview = View.inflate(this, R.layout.timepicker, null);
@@ -481,8 +481,8 @@ public class PushActivity extends Activity {
 		int hour = calendar.get(Calendar.HOUR_OF_DAY);
 		int min = calendar.get(Calendar.MINUTE);
 		wheelMain.initDateTimePicker(year, month, day, hour, min);
-		new AlertDialog.Builder(PushActivity.this).setTitle("Ñ¡ÔñÊ±¼ä").setView(timepickerview)
-				.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+		new AlertDialog.Builder(PushActivity.this).setTitle("é€‰æ‹©æ—¶é—´").setView(timepickerview)
+				.setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						if (timeState == SELECT_START_TIME) {
@@ -499,7 +499,7 @@ public class PushActivity extends Activity {
 							setCloseTimeTV.setTextColor(getResources().getColor(R.color.trd_color));
 						}
 					}
-				}).setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+				}).setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// if (timeState == SELECT_START_TIME) {
@@ -514,10 +514,10 @@ public class PushActivity extends Activity {
 	}
 
 	/**
-	 * ·µ»ØÈ·ÈÏ
+	 * è¿”å›ç¡®è®¤
 	 */
 	protected void confirmBack() {
-		DialogTool.createConfirmDialog(PushActivity.this, "ÌáÊ¾", "È·¶¨Òª·ÅÆú´´½¨»î¶¯Âğ£¿", "È·¶¨", "È¡Ïû", new DialogInterface.OnClickListener() {
+		DialogTool.createConfirmDialog(PushActivity.this, "æç¤º", "ç¡®å®šè¦æ”¾å¼ƒåˆ›å»ºæ´»åŠ¨å—ï¼Ÿ", "ç¡®å®š", "å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -547,19 +547,19 @@ public class PushActivity extends Activity {
 		pushActivity.setNeedNum(Integer.valueOf(sumNum.substring(0, sumNum.length() - 1)));
 		pushActivity.setPostUserId(nowUser.getUid());
 		pushActivity.setSumIntegral(Integer.valueOf(sumIntegral.substring(4, sumIntegral.length() - 3)));
-		if (sumIntegral.substring(2, 3).equals("»ñµÃ")) {
+		if (sumIntegral.substring(2, 3).equals("è·å¾—")) {
 			pushActivity.setSumIntegral(-pushActivity.getSumIntegral());
 		}
 		final String createActivityJSON = MyActivity.getJSON(pushActivity, addDutyList);
 		System.out.println("Post JOSN:" + createActivityJSON);
 
 		if (nowUser.getIntegral() < pushActivity.getSumIntegral()) {
-			DialogTool.createMessageDialog(this, "ÌáÊ¾", "ÄúµÄÊ±¼ä±Ò²»¹»´´½¨´Ë»î¶¯£¬ÇëÁªÏµÉçÇø¹ÜÀíÔ±»ñÈ¡¸ü¶àÊ±¼ä±Ò£¡", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(this, "æç¤º", "æ‚¨çš„æ—¶é—´å¸ä¸å¤Ÿåˆ›å»ºæ­¤æ´»åŠ¨ï¼Œè¯·è”ç³»ç¤¾åŒºç®¡ç†å‘˜è·å–æ›´å¤šæ—¶é—´å¸ï¼", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			return;
 		}
 
-		// Á¬½ÓÍøÂç¡£´«µİÊı¾İ
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		// è¿æ¥ç½‘ç»œã€‚ä¼ é€’æ•°æ®
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -574,16 +574,16 @@ public class PushActivity extends Activity {
 
 				if (msg.what == 1) {
 					MyActivity newActivity = (MyActivity) msg.obj;
-					Toast.makeText(getApplicationContext(), "»î¶¯´´½¨³É¹¦", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "æ´»åŠ¨åˆ›å»ºæˆåŠŸ", Toast.LENGTH_LONG).show();
 					Intent newActivityIntent = new Intent(PushActivity.this, ActivityDetails.class);
 					Bundle newActivityBundle = new Bundle();
 					newActivityBundle.putInt("activityId", newActivity.getActivityId());
 					newActivityIntent.putExtras(newActivityBundle);
 					startActivity(newActivityIntent);
 					finish();
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -591,7 +591,7 @@ public class PushActivity extends Activity {
 		};
 
 		if (loading != null) {
-			loading.setLoadText("´´½¨»î¶¯ÖĞ...");
+			loading.setLoadText("åˆ›å»ºæ´»åŠ¨ä¸­...");
 			loading.show();
 		}
 

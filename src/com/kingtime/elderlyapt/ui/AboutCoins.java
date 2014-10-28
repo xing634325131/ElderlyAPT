@@ -11,7 +11,7 @@ import com.kingtime.elderlyapt.R;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ14ÈÕ
+ * @created 2014å¹´8æœˆ14æ—¥
  */
 public class AboutCoins extends Activity {
 

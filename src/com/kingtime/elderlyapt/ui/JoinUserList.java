@@ -35,7 +35,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ8ÈÕ
+ * @created 2014å¹´8æœˆ8æ—¥
  */
 public class JoinUserList extends Activity {
 
@@ -75,7 +75,7 @@ public class JoinUserList extends Activity {
 
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
-		titleTV.setText("ÒÑ²Î¼Ó»î¶¯ÈËÔ±");
+		titleTV.setText("å·²å‚åŠ æ´»åŠ¨äººå‘˜");
 		backBtn.setOnClickListener(listener);
 
 		loadingDialog = new LoadingDialog(this);
@@ -87,7 +87,7 @@ public class JoinUserList extends Activity {
 
 	private void initData() {
 		AppContext appContext = (AppContext) getApplication();
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -101,14 +101,14 @@ public class JoinUserList extends Activity {
 					if (loadingDialog != null) {
 						loadingDialog.dismiss();
 					}
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else if (msg.what == 0) {// ·şÎñÆ÷·µ»ØÊı¾İÎª¿Õ£¬¼´ÔİÎŞÈËÔ±²Î¼Ó
+				} else if (msg.what == 0) {// æœåŠ¡å™¨è¿”å›æ•°æ®ä¸ºç©ºï¼Œå³æš‚æ— äººå‘˜å‚åŠ 
 					if (loadingDialog != null) {
 						loadingDialog.dismiss();
 					}
-					Toast.makeText(getApplicationContext(), "ÔİÎŞÈËÔ±²Î¼Ó£¡", Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+					Toast.makeText(getApplicationContext(), "æš‚æ— äººå‘˜å‚åŠ ï¼", Toast.LENGTH_LONG).show();
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -116,7 +116,7 @@ public class JoinUserList extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("»ñÈ¡ÓÃ»§ÁĞ±í...");
+			loadingDialog.setLoadText("è·å–ç”¨æˆ·åˆ—è¡¨...");
 			loadingDialog.show();
 		}
 
@@ -155,14 +155,14 @@ public class JoinUserList extends Activity {
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
 		rightBtn = (Button) findViewById(R.id.head_right);
-		titleTV.setText("ÒÑ²Î¼Ó»î¶¯ÈËÔ±");
+		titleTV.setText("å·²å‚åŠ æ´»åŠ¨äººå‘˜");
 		backBtn.setOnClickListener(listener);
 		deleteUserBtn.setOnClickListener(listener);
 
 		AppContext appContext = (AppContext) getApplication();
 		User userRecord = appContext.getLoginInfo();
 		if (userRecord.getUid() == postUserId) {
-			rightBtn.setText("¹ÜÀí");
+			rightBtn.setText("ç®¡ç†");
 			rightBtn.setVisibility(View.VISIBLE);
 			rightBtn.setOnClickListener(listener);
 		}
@@ -182,7 +182,7 @@ public class JoinUserList extends Activity {
 			case R.id.head_back:
 				finish();
 				break;
-			case R.id.head_right:// ¹ÜÀí²ÎÓëÓÃ»§
+			case R.id.head_right:// ç®¡ç†å‚ä¸ç”¨æˆ·
 				if(checkState()){
 					refreshLayout();
 				}
@@ -210,12 +210,12 @@ public class JoinUserList extends Activity {
 	};
 	
 	/**
-	 * ¼ì²â»î¶¯×´Ì¬ÊÇ·ñÊÊºÏ½øĞĞÈËÔ±¹ÜÀí
+	 * æ£€æµ‹æ´»åŠ¨çŠ¶æ€æ˜¯å¦é€‚åˆè¿›è¡Œäººå‘˜ç®¡ç†
 	 * @return
 	 */
 	private boolean checkState(){
 		if(myActivity.getStateId() == MyActivity.ACTIVITY_END){
-			DialogTool.createMessageDialog(this, "ÌáÊ¾", "»î¶¯ÒÑ½áÊø£¬ÎŞ·¨½øĞĞ¹ÜÀí¡£", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(this, "æç¤º", "æ´»åŠ¨å·²ç»“æŸï¼Œæ— æ³•è¿›è¡Œç®¡ç†ã€‚", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			return false;
 		}
 		return true;
@@ -224,8 +224,8 @@ public class JoinUserList extends Activity {
 	private void refreshLayout() {
 		boolean flag = recordList.get(0).getStateId() == Record.RECORD_COMMON ? true : false;
 		joinInfoDeleteLayout.setVisibility(flag ? View.VISIBLE : View.INVISIBLE);
-		rightBtn.setText(flag ? "È¡Ïû" : "¹ÜÀí");
-		// ½«recordId¸üĞÂÎªRECORD_MANAGEING»ò¸üĞÂÎªRECORD_COMMON
+		rightBtn.setText(flag ? "å–æ¶ˆ" : "ç®¡ç†");
+		// å°†recordIdæ›´æ–°ä¸ºRECORD_MANAGEINGæˆ–æ›´æ–°ä¸ºRECORD_COMMON
 		for (int i = 0; i < recordList.size(); i++) {
 			recordList.get(i).setStateId(flag ? Record.RECORD_MANAGEING : Record.RECORD_COMMON);
 		}
@@ -233,7 +233,7 @@ public class JoinUserList extends Activity {
 	}
 
 	/**
-	 * È¡ÏûÓÃ»§²ÎÓë
+	 * å–æ¶ˆç”¨æˆ·å‚ä¸
 	 */
 	private void deleteJoinUser() {
 		List<Record> deleteRecords = joinUserAdapter.getDeleteRecords();
@@ -247,7 +247,7 @@ public class JoinUserList extends Activity {
 		}
 		deleteRecordIdBuilder.deleteCharAt(deleteRecordIdBuilder.length() - 1);
 		deleteRecordIdBuilder.append("]");
-		DialogTool.createConfirmDialog(this, "¾¯¸æ", "È·¶¨ÒªÈ¡ÏûÕâĞ©ÓÃ»§µÄ»î¶¯²ÎÓëÉêÇë£¿", "È·¶¨", "È¡Ïû", deleteUserListener, null,
+		DialogTool.createConfirmDialog(this, "è­¦å‘Š", "ç¡®å®šè¦å–æ¶ˆè¿™äº›ç”¨æˆ·çš„æ´»åŠ¨å‚ä¸ç”³è¯·ï¼Ÿ", "ç¡®å®š", "å–æ¶ˆ", deleteUserListener, null,
 				android.R.drawable.ic_delete).show();
 	}
 
@@ -257,7 +257,7 @@ public class JoinUserList extends Activity {
 		public void onClick(DialogInterface dialog, int which) {
 			Log.i(TAG, "deleteUserJoin,recordId:" + deleteRecordIdBuilder);
 			AppContext appContext = (AppContext) getApplication();
-			if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+			if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 				Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 				return;
 			}
@@ -270,13 +270,13 @@ public class JoinUserList extends Activity {
 						loadingDialog.dismiss();
 					}
 					if (msg.what == 1) {
-						Toast.makeText(getApplicationContext(), "É¾³ı³É¹¦£¡", Toast.LENGTH_LONG).show();
-						initData();// É¾³ı³É¹¦ºóË¢ĞÂ½çÃæ
+						Toast.makeText(getApplicationContext(), "åˆ é™¤æˆåŠŸï¼", Toast.LENGTH_LONG).show();
+						initData();// åˆ é™¤æˆåŠŸååˆ·æ–°ç•Œé¢
 					} else if (msg.what == 0) {
-						Toast.makeText(getApplicationContext(), "É¾³ıÊ§°Ü£¬ÇëÉÔºóÔÙÊÔ£¡", Toast.LENGTH_LONG).show();
-					} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+						Toast.makeText(getApplicationContext(), "åˆ é™¤å¤±è´¥ï¼Œè¯·ç¨åå†è¯•ï¼", Toast.LENGTH_LONG).show();
+					} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 						Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-					} else {// Î´Öª´íÎó
+					} else {// æœªçŸ¥é”™è¯¯
 						Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 					}
 					super.handleMessage(msg);
@@ -284,7 +284,7 @@ public class JoinUserList extends Activity {
 			};
 
 			if (loadingDialog != null) {
-				loadingDialog.setLoadText("É¾³ıÖĞ...");
+				loadingDialog.setLoadText("åˆ é™¤ä¸­...");
 				loadingDialog.show();
 			}
 

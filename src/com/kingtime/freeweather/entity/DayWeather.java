@@ -74,7 +74,7 @@ public class DayWeather {
 
 	public String toString() {
 		return "Date :" + getDayName() + ",Temperature range :" + getLowTemp()
-				+ "-" + getHighTemp() + "¡æ,Details :" + getWeatherDesc()
+				+ "-" + getHighTemp() + "â„ƒ,Details :" + getWeatherDesc()
 				+ ",Wind :" + getWindDesc() + ",Pic :(" + getWeatherPics()[0]
 				+ "," + getWeatherPics()[1] + ").";
 	}

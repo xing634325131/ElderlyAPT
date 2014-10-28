@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ14ÈÕ
+ * @created 2014å¹´8æœˆ14æ—¥
  */
 public class MyCoins extends Activity {
 
@@ -52,15 +52,15 @@ public class MyCoins extends Activity {
 		mycoinsTV = (TextView) findViewById(R.id.mycoins_my);
 		aboutCoinsTV = (TextView) findViewById(R.id.about_coins);
 
-		titleTV.setText("ÎÒµÄÊ±¼ä±Ò");
+		titleTV.setText("æˆ‘çš„æ—¶é—´å¸");
 		backBtn.setOnClickListener(listener);
 		acquireLayout.setOnClickListener(listener);
 		aboutCoinsTV.setOnClickListener(listener);
-		mycoinsTV.setText(user.getIntegral() + " Ê±¼ä±Ò");
+		mycoinsTV.setText(user.getIntegral() + " æ—¶é—´å¸");
 	}
 
 	private void initData() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -72,9 +72,9 @@ public class MyCoins extends Activity {
 
 				if (msg.what == 1) {
 					appContext.saveLoginInfo(user);
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);

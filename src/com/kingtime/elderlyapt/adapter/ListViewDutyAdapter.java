@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ8ÈÕ
+ * @created 2014å¹´8æœˆ8æ—¥
  */
 public class ListViewDutyAdapter extends BaseAdapter {
 
@@ -34,7 +34,7 @@ public class ListViewDutyAdapter extends BaseAdapter {
 	public ListViewDutyAdapter(Context c, List<Duty> duties) {
 		this.context = c;
 		this.dutyList = duties;
-		// activityName = "»î¶¯Ãû³Æ";
+		// activityName = "æ´»åŠ¨åç§°";
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class ListViewDutyAdapter extends BaseAdapter {
 		}
 		holder.titleTV.setText(duty.getDutyName());
 		holder.contentTV.setText(duty.getDutyContent());
-		holder.integralTV.setText("²ÎÓë½«»ñµÃ  " + duty.getDutyIntegral() + "  Ê±¼ä±Ò");
+		holder.integralTV.setText("å‚ä¸å°†è·å¾—  " + duty.getDutyIntegral() + "  æ—¶é—´å¸");
 		holder.needNumTV.setText(String.valueOf(duty.getNeedNum()));
 		holder.nowNumTV.setText(String.valueOf(duty.getNowNum()));
 

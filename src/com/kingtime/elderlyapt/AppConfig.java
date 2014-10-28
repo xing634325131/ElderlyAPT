@@ -9,10 +9,10 @@ import java.util.Properties;
 import android.content.Context;
 
 /**
- * Ó¦ÓÃ³ÌÐòÅäÖÃÀà£ºÓÃÓÚ±£´æÓÃ»§Ïà¹ØÐÅÏ¢¼°ÉèÖÃ
+ * åº”ç”¨ç¨‹åºé…ç½®ç±»ï¼šç”¨äºŽä¿å­˜ç”¨æˆ·ç›¸å…³ä¿¡æ¯åŠè®¾ç½®
  * 
  * @author xp
- * @created 2014Äê4ÔÂ26ÈÕ
+ * @created 2014å¹´4æœˆ26æ—¥
  */
 public class AppConfig {
 	private final static String APP_CONFIG = "config";
@@ -31,7 +31,7 @@ public class AppConfig {
 		FileInputStream fis = null;
 		Properties props = new Properties();
 		try {
-			// ¶ÁÈ¡app_configÄ¿Â¼ÏÂµÄconfig
+			// è¯»å–app_configç›®å½•ä¸‹çš„config
 			File dirConf = mContext.getDir(APP_CONFIG, Context.MODE_PRIVATE);
 			System.out.println("Path-->>" + dirConf.getPath());
 			File conf = new File(dirConf.getPath() + File.separator
@@ -72,10 +72,10 @@ public class AppConfig {
 	}
 
 	/**
-	 * ÒÆ³ýÅäÖÃÐÅÏ¢
+	 * ç§»é™¤é…ç½®ä¿¡æ¯
 	 * 
 	 * @param key
-	 *            ÒªÉ¾³ýµÄÅäÖÃÊý×é
+	 *            è¦åˆ é™¤çš„é…ç½®æ•°ç»„
 	 */
 	public void remove(String... key) {
 		Properties props = get();
@@ -86,14 +86,14 @@ public class AppConfig {
 	}
 
 	/**
-	 * ±£´æÅäÖÃ
+	 * ä¿å­˜é…ç½®
 	 * 
 	 * @param props
 	 */
 	private void setProps(Properties props) {
 		FileOutputStream fos = null;
 		try {
-			// ¶ÁÈ¡app_configÄ¿Â¼ÏÂµÄconfig
+			// è¯»å–app_configç›®å½•ä¸‹çš„config
 			File dirConf = mContext.getDir(APP_CONFIG, Context.MODE_PRIVATE);
 			System.out.println("Path1-->>" + dirConf.getPath());
 			File conf = new File(dirConf, APP_CONFIG);

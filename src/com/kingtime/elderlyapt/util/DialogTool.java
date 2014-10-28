@@ -11,30 +11,30 @@ import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 
 /**
- * ¶Ô»°¿ò·â×°Àà
+ * å¯¹è¯æ¡†å°è£…ç±»
  * 
  * @author xp
- * @created 2014Äê6ÔÂ13ÈÕ
+ * @created 2014å¹´6æœˆ13æ—¥
  */
 public class DialogTool {
 
-	public static final int NO_ICON = -1; // ÎŞÍ¼±ê
+	public static final int NO_ICON = -1; // æ— å›¾æ ‡
 
 	/**
-	 * ´´½¨ÏûÏ¢¶Ô»°¿ò
+	 * åˆ›å»ºæ¶ˆæ¯å¯¹è¯æ¡†
 	 * 
 	 * @param context
-	 *            ÉÏÏÂÎÄ ±ØÌî
+	 *            ä¸Šä¸‹æ–‡ å¿…å¡«
 	 * @param iconId
-	 *            Í¼±ê£¬Èç£ºR.drawable.icon »ò DialogTool.NO_ICON ±ØÌî
+	 *            å›¾æ ‡ï¼Œå¦‚ï¼šR.drawable.icon æˆ– DialogTool.NO_ICON å¿…å¡«
 	 * @param title
-	 *            ±êÌâ ±ØÌî
+	 *            æ ‡é¢˜ å¿…å¡«
 	 * @param message
-	 *            ÏÔÊ¾ÄÚÈİ ±ØÌî
+	 *            æ˜¾ç¤ºå†…å®¹ å¿…å¡«
 	 * @param btnName
-	 *            °´Å¥Ãû³Æ ±ØÌî
+	 *            æŒ‰é’®åç§° å¿…å¡«
 	 * @param listener
-	 *            ¼àÌıÆ÷£¬ĞèÊµÏÖandroid.content.DialogInterface.OnClickListener½Ó¿Ú ±ØÌî
+	 *            ç›‘å¬å™¨ï¼Œéœ€å®ç°android.content.DialogInterface.OnClickListeneræ¥å£ å¿…å¡«
 	 * @return
 	 */
 	public static Dialog createMessageDialog(Context context, String title,
@@ -54,24 +54,24 @@ public class DialogTool {
 	}
 
 	/**
-	 * ´´½¨¾¯Ê¾£¨È·ÈÏ¡¢È¡Ïû£©¶Ô»°¿ò
+	 * åˆ›å»ºè­¦ç¤ºï¼ˆç¡®è®¤ã€å–æ¶ˆï¼‰å¯¹è¯æ¡†
 	 * 
 	 * @param context
-	 *            ÉÏÏÂÎÄ ±ØÌî
+	 *            ä¸Šä¸‹æ–‡ å¿…å¡«
 	 * @param iconId
-	 *            Í¼±ê£¬Èç£ºR.drawable.icon »ò DialogTool.NO_ICON ±ØÌî
+	 *            å›¾æ ‡ï¼Œå¦‚ï¼šR.drawable.icon æˆ– DialogTool.NO_ICON å¿…å¡«
 	 * @param title
-	 *            ±êÌâ ±ØÌî
+	 *            æ ‡é¢˜ å¿…å¡«
 	 * @param message
-	 *            ÏÔÊ¾ÄÚÈİ ±ØÌî
+	 *            æ˜¾ç¤ºå†…å®¹ å¿…å¡«
 	 * @param positiveBtnName
-	 *            È·¶¨°´Å¥Ãû³Æ ±ØÌî
+	 *            ç¡®å®šæŒ‰é’®åç§° å¿…å¡«
 	 * @param negativeBtnName
-	 *            È¡Ïû°´Å¥Ãû³Æ ±ØÌî
+	 *            å–æ¶ˆæŒ‰é’®åç§° å¿…å¡«
 	 * @param positiveBtnListener
-	 *            ¼àÌıÆ÷£¬ĞèÊµÏÖandroid.content.DialogInterface.OnClickListener½Ó¿Ú ±ØÌî
+	 *            ç›‘å¬å™¨ï¼Œéœ€å®ç°android.content.DialogInterface.OnClickListeneræ¥å£ å¿…å¡«
 	 * @param negativeBtnListener
-	 *            ¼àÌıÆ÷£¬ĞèÊµÏÖandroid.content.DialogInterface.OnClickListener½Ó¿Ú ±ØÌî
+	 *            ç›‘å¬å™¨ï¼Œéœ€å®ç°android.content.DialogInterface.OnClickListeneræ¥å£ å¿…å¡«
 	 * @return
 	 */
 	public static Dialog createConfirmDialog(Context context, String title,
@@ -94,36 +94,36 @@ public class DialogTool {
 	}
 
 	/**
-	 * ´´½¨°Ù¶ÈÓïÒôÊ¶±ğ¶Ô»°¿ò
+	 * åˆ›å»ºç™¾åº¦è¯­éŸ³è¯†åˆ«å¯¹è¯æ¡†
 	 * 
 	 * @param context
-	 *            ÉÏÏÂÎÄ
+	 *            ä¸Šä¸‹æ–‡
 	 * @param mRecognitionListener
-	 *            »Øµ÷¼àÌıÆ÷
+	 *            å›è°ƒç›‘å¬å™¨
 	 * @return
 	 */
 	public static BaiduASRDigitalDialog createBaiduASRDigitalDialog(
 			Context context, DialogRecognitionListener mRecognitionListener) {
 		Bundle params = new Bundle();
 		BaiduASRDigitalDialog mDialog;
-		// ÉèÖÃ¿ª·ÅAPI Key
+		// è®¾ç½®å¼€æ”¾API Key
 		params.putString(BaiduASRDigitalDialog.PARAM_API_KEY,
 				"kslfNHwxFVQG1GWrIOriNWvq");
-		// ÉèÖÃ¿ª·ÅÆ½Ì¨Secret Key
+		// è®¾ç½®å¼€æ”¾å¹³å°Secret Key
 		params.putString(BaiduASRDigitalDialog.PARAM_SECRET_KEY,
 				"P8sh8YnPqG0DSqWCpU0ck9sSqgBedzj1");
-		// ÉèÖÃÊ¶±ğÁìÓò£ºËÑË÷¡¢ÊäÈë¡¢µØÍ¼¡¢ÒôÀÖ¡­¡­£¬¿ÉÑ¡¡£Ä¬ÈÏÎªÊäÈë¡£
+		// è®¾ç½®è¯†åˆ«é¢†åŸŸï¼šæœç´¢ã€è¾“å…¥ã€åœ°å›¾ã€éŸ³ä¹â€¦â€¦ï¼Œå¯é€‰ã€‚é»˜è®¤ä¸ºè¾“å…¥ã€‚
 		params.putInt(BaiduASRDigitalDialog.PARAM_PROP,
 				VoiceRecognitionConfig.PROP_INPUT);
-		// ÉèÖÃÓïÖÖÀàĞÍ£ºÖĞÎÄÆÕÍ¨»°£¬ÖĞÎÄÔÁÓï£¬Ó¢ÎÄ£¬¿ÉÑ¡¡£Ä¬ÈÏÎªÖĞÎÄÆÕÍ¨»°
+		// è®¾ç½®è¯­ç§ç±»å‹ï¼šä¸­æ–‡æ™®é€šè¯ï¼Œä¸­æ–‡ç²¤è¯­ï¼Œè‹±æ–‡ï¼Œå¯é€‰ã€‚é»˜è®¤ä¸ºä¸­æ–‡æ™®é€šè¯
 		params.putString(BaiduASRDigitalDialog.PARAM_LANGUAGE,
 				VoiceRecognitionConfig.LANGUAGE_CHINESE);
 
-		// Èç¹ûĞèÒªÓïÒå½âÎö£¬ÉèÖÃÏÂ·½²ÎÊı¡£ÁìÓòÎªÊäÈë²»Ö§³Ö
+		// å¦‚æœéœ€è¦è¯­ä¹‰è§£æï¼Œè®¾ç½®ä¸‹æ–¹å‚æ•°ã€‚é¢†åŸŸä¸ºè¾“å…¥ä¸æ”¯æŒ
 		// params.putBoolean(BaiduASRDigitalDialog.PARAM_NLU_ENABLE,true);
-		// ÉèÖÃ¶Ô»°¿òÖ÷Ìâ£¬¿ÉÑ¡¡£BaiduASRDigitalDialogÌá¹©ÁËÀ¶¡¢°µ¡¢ºì¡¢ÂÌ¡¢³ÈËÄÖĞÑÕÉ«£¬Ã¿ÖÖÑÕ
-		// É«ÓÖ·ÖÁÁ¡¢°µÁ½ÖÖÉ«µ÷¡£¹²8ÖÖÖ÷Ìâ£¬¿ª·¢Õß¿ÉÒÔ°´ĞèÑ¡Ôñ£¬È¡Öµ²Î¿¼BaiduASRDigitalDialogÖĞ
-		// Ç°×ºÎªTHEME_µÄ³£Á¿¡£Ä¬ÈÏÎªÁÁÀ¶É«
+		// è®¾ç½®å¯¹è¯æ¡†ä¸»é¢˜ï¼Œå¯é€‰ã€‚BaiduASRDigitalDialogæä¾›äº†è“ã€æš—ã€çº¢ã€ç»¿ã€æ©™å››ä¸­é¢œè‰²ï¼Œæ¯ç§é¢œ
+		// è‰²åˆåˆ†äº®ã€æš—ä¸¤ç§è‰²è°ƒã€‚å…±8ç§ä¸»é¢˜ï¼Œå¼€å‘è€…å¯ä»¥æŒ‰éœ€é€‰æ‹©ï¼Œå–å€¼å‚è€ƒBaiduASRDigitalDialogä¸­
+		// å‰ç¼€ä¸ºTHEME_çš„å¸¸é‡ã€‚é»˜è®¤ä¸ºäº®è“è‰²
 		// params.putInt(BaiduASRDigitalDialog.PARAM_DIALOG_THEME,
 		// BaiduASRDigitalDialog.THEME_RED_DEEPBG);
 		mDialog = new BaiduASRDigitalDialog(context, params);

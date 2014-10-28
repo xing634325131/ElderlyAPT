@@ -74,7 +74,7 @@ public class ListViewDutyJoinAdapter extends BaseAdapter {
 			holder.selectedCB.setVisibility(View.INVISIBLE);
 			holder.stateTV.setVisibility(View.VISIBLE);
 		}
-		holder.integralTV.setText("²ÎÓë½«»ñµÃ  " + duty.getDutyIntegral() + "  Ê±¼ä±Ò");
+		holder.integralTV.setText("å‚ä¸å°†è·å¾—  " + duty.getDutyIntegral() + "  æ—¶é—´å¸");
 		holder.selectedCB.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 					@Override

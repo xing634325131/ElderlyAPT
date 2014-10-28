@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ14ÈÕ
+ * @created 2014å¹´8æœˆ14æ—¥
  */
 public class Setting extends Activity {
 
@@ -34,7 +34,7 @@ public class Setting extends Activity {
 		logoutLayout = (LinearLayout)findViewById(R.id.setting_logout);
 		logoutTV = (TextView)findViewById(R.id.setting_text_logout);
 		
-		titleTV.setText("ÉèÖÃ");
+		titleTV.setText("è®¾ç½®");
 		backBtn.setOnClickListener(listener);
 		logoutLayout.setOnClickListener(listener);
 		logoutLayout.setOnTouchListener(new OnTouchListener() {

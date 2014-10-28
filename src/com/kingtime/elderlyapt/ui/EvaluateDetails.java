@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ14ÈÕ
+ * @created 2014å¹´8æœˆ14æ—¥
  */
 public class EvaluateDetails extends Activity {
 
@@ -38,11 +38,11 @@ public class EvaluateDetails extends Activity {
 		integralTV = (TextView) findViewById(R.id.evaluate_integral);
 		appraiseTV = (TextView) findViewById(R.id.evaluate_appraise);
 
-		titleTV.setText("ÆÀÂÛÏêÇé");
+		titleTV.setText("è¯„è®ºè¯¦æƒ…");
 		backBtn.setOnClickListener(listener);
 		integralTV.setText(integralString);
 		if (!StringUtils.isEmpty(appraiseString) && !appraiseString.equals("null")) {
-			appraiseTV.setText("Ëû¸øÄã»î¶¯µÄÆÀ¼ÛÎª£º" + appraiseString);
+			appraiseTV.setText("ä»–ç»™ä½ æ´»åŠ¨çš„è¯„ä»·ä¸ºï¼š" + appraiseString);
 			appraiseTV.setVisibility(View.VISIBLE);
 		}
 	}

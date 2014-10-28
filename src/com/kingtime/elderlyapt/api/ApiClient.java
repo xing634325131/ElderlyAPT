@@ -33,19 +33,19 @@ import com.kingtime.elderlyapt.util.StringUtils;
 
 /**
  * @author xp
- * @created 2014Äê7ÔÂ25ÈÕ
+ * @created 2014å¹´7æœˆ25æ—¥
  */
 public class ApiClient {
 	/**
-	 * ¹²ÓÃpost·½·¨£¬¿ÉÒÔÉÏ´«ÎÄ¼ş
+	 * å…±ç”¨postæ–¹æ³•ï¼Œå¯ä»¥ä¸Šä¼ æ–‡ä»¶
 	 * 
 	 * @param actionURL
-	 *            ÇëÇóÂ·¾¶
+	 *            è¯·æ±‚è·¯å¾„
 	 * @param params
-	 *            ÆÕÍ¨ÎÄ±¾¼¯ºÏ
+	 *            æ™®é€šæ–‡æœ¬é›†åˆ
 	 * @param files
-	 *            ÉÏ´«ÎÄ¼şÊı×é
-	 * @return ÇëÇóÊäÈëÁ÷
+	 *            ä¸Šä¼ æ–‡ä»¶æ•°ç»„
+	 * @return è¯·æ±‚è¾“å…¥æµ
 	 * @throws IOException
 	 */
 	private static InputStream _post(String actionURL, Map<String, String> params, FormFile[] files) throws IOException {
@@ -61,7 +61,7 @@ public class ApiClient {
 		connection.setDoOutput(true);
 		connection.setConnectTimeout(5000);
 		connection.setReadTimeout(5000);
-		connection.setUseCaches(false);// ½ûÖ¹Ê¹ÓÃ»º´æ
+		connection.setUseCaches(false);// ç¦æ­¢ä½¿ç”¨ç¼“å­˜
 		connection.setRequestMethod("POST");
 		connection.setRequestProperty("Connection", "Keep-Alive");
 		connection.setRequestProperty("Charset", "UTF-8");
@@ -71,7 +71,7 @@ public class ApiClient {
 		Set<String> keySet = params.keySet();
 		Iterator<String> iterator = keySet.iterator();
 
-		// Ñ­»·Ğ´ÈëÆÕÍ¨ÎÄ±¾Óò
+		// å¾ªç¯å†™å…¥æ™®é€šæ–‡æœ¬åŸŸ
 		while (iterator.hasNext()) {
 			String key = iterator.next();
 			String value = params.get(key);
@@ -83,7 +83,7 @@ public class ApiClient {
 			ds.writeBytes(enterNewLine);
 		}
 
-		// Ñ­»·Ğ´ÈëÉÏ´«ÎÄ¼ş
+		// å¾ªç¯å†™å…¥ä¸Šä¼ æ–‡ä»¶
 		if (files != null && files.length > 0) {
 			// System.out.println(files.length);
 			for (int i = 0; i < files.length; i++) {
@@ -107,10 +107,10 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¹«ÓÃGET·½·¨
+	 * å…¬ç”¨GETæ–¹æ³•
 	 * 
 	 * @param actionURL
-	 *            ÇëÇóÂ·¾¶
+	 *            è¯·æ±‚è·¯å¾„
 	 * @return
 	 * @throws IOException
 	 */
@@ -127,13 +127,13 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İÍ¼Æ¬Â·¾¶»ñÈ¡·şÎñÆ÷Í¼Æ¬
+	 * æ ¹æ®å›¾ç‰‡è·¯å¾„è·å–æœåŠ¡å™¨å›¾ç‰‡
 	 * 
 	 * @param actionURL
-	 *            ÇëÇóÂ·¾¶
+	 *            è¯·æ±‚è·¯å¾„
 	 * @return
 	 * @throws IOException
-	 *             ÍøÂçÒì³£
+	 *             ç½‘ç»œå¼‚å¸¸
 	 */
 	public static InputStream getPic(String actionURL) throws IOException {
 
@@ -147,13 +147,13 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İ¾ÉÍøÖ·¼ÓĞÂÌí¼Ó²ÎÊı×é³ÉĞÂÍøÖ·
+	 * æ ¹æ®æ—§ç½‘å€åŠ æ–°æ·»åŠ å‚æ•°ç»„æˆæ–°ç½‘å€
 	 * 
 	 * @param oldURL
-	 *            ¾ÉÍøÖ·
+	 *            æ—§ç½‘å€
 	 * @param addParameters
-	 *            ĞÂÌí¼Ó²ÎÊı
-	 * @return ĞÂÍøÖ·
+	 *            æ–°æ·»åŠ å‚æ•°
+	 * @return æ–°ç½‘å€
 	 */
 	private static String formCommonNewURL(String oldURL, Map<String, String> addParameters) {
 		StringBuilder newURL = new StringBuilder();
@@ -177,13 +177,13 @@ public class ApiClient {
 	}
 
 	/**
-	 * ÎªÇëÇóÍ¼Æ¬Éú³ÉÍ¼Æ¬ÍøÖ·
+	 * ä¸ºè¯·æ±‚å›¾ç‰‡ç”Ÿæˆå›¾ç‰‡ç½‘å€
 	 * 
 	 * @param requestImageCategory
-	 *            ÇëÇóÍ¼Æ¬ÖÖÀà
+	 *            è¯·æ±‚å›¾ç‰‡ç§ç±»
 	 * @param imageName
-	 *            ÇëÇóÍ¼Æ¬Ãû³Æ
-	 * @return Í¼Æ¬ÍøÖ·
+	 *            è¯·æ±‚å›¾ç‰‡åç§°
+	 * @return å›¾ç‰‡ç½‘å€
 	 */
 	public static String formImageURL(int requestImageCategory, String imageName) {
 		// StringBuilder newImageURL = new StringBuilder();
@@ -207,7 +207,7 @@ public class ApiClient {
 	}
 
 	/**
-	 * µÇÂ¼
+	 * ç™»å½•
 	 * 
 	 * @param username
 	 * @param pwd
@@ -229,10 +229,10 @@ public class ApiClient {
 	}
 
 	/**
-	 * ×¢²á ¸ù¾İ×¢²áÓÃ»§ĞÅÏ¢·µ»Ø×¢²áºóÔÚÏµÍ³ÖĞ´æÔÚµÄÓÃ»§ĞÅÏ¢ÊµÀı
+	 * æ³¨å†Œ æ ¹æ®æ³¨å†Œç”¨æˆ·ä¿¡æ¯è¿”å›æ³¨å†Œååœ¨ç³»ç»Ÿä¸­å­˜åœ¨çš„ç”¨æˆ·ä¿¡æ¯å®ä¾‹
 	 * 
 	 * @param user
-	 * @return ×¢²áºóÓÃ»§
+	 * @return æ³¨å†Œåç”¨æˆ·
 	 * @throws JSONException
 	 * @throws IOException
 	 */
@@ -246,7 +246,7 @@ public class ApiClient {
 	}
 
 	/**
-	 * °´»î¶¯Àà±ğÇëÇó»î¶¯ÁĞ±í
+	 * æŒ‰æ´»åŠ¨ç±»åˆ«è¯·æ±‚æ´»åŠ¨åˆ—è¡¨
 	 * 
 	 * @param requestCategory
 	 * @return
@@ -258,10 +258,10 @@ public class ApiClient {
 	}
 
 	/**
-	 * °´»î¶¯Àà±ğ±àºÅÇëÇó»î¶¯ÁĞ±í
+	 * æŒ‰æ´»åŠ¨ç±»åˆ«ç¼–å·è¯·æ±‚æ´»åŠ¨åˆ—è¡¨
 	 * 
 	 * @param requestCategoryId
-	 *            ÇëÇóÀà±ğId
+	 *            è¯·æ±‚ç±»åˆ«Id
 	 * @return
 	 * @throws IOException
 	 * @throws JSONException
@@ -275,13 +275,13 @@ public class ApiClient {
 	}
 
 	/**
-	 * ÇëÇó»î¶¯ÁĞ±í
+	 * è¯·æ±‚æ´»åŠ¨åˆ—è¡¨
 	 * 
 	 * @param requestName
-	 *            ÇëÇóÃû³Æ
+	 *            è¯·æ±‚åç§°
 	 * @param uid
-	 *            ÇëÇóÓÃ»§±àºÅ
-	 * @return »î¶¯ÁĞ±í
+	 *            è¯·æ±‚ç”¨æˆ·ç¼–å·
+	 * @return æ´»åŠ¨åˆ—è¡¨
 	 * @throws IOException
 	 * @throws JSONException
 	 */
@@ -294,10 +294,10 @@ public class ApiClient {
 	}
 
 	/**
-	 * ÇëÇó»î¶¯ÁĞ±íÊäÈëÁ÷
+	 * è¯·æ±‚æ´»åŠ¨åˆ—è¡¨è¾“å…¥æµ
 	 * 
 	 * @param requestCategoryName
-	 *            ÇëÇóÀà±ğÃû³Æ
+	 *            è¯·æ±‚ç±»åˆ«åç§°
 	 * @return
 	 * @throws IOException
 	 */
@@ -310,12 +310,12 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İ»î¶¯±àºÅ»ñÈ¡»î¶¯ÊµÀı
+	 * æ ¹æ®æ´»åŠ¨ç¼–å·è·å–æ´»åŠ¨å®ä¾‹
 	 * 
-	 * @param activityId»î¶¯±àºÅ
+	 * @param activityIdæ´»åŠ¨ç¼–å·
 	 * @throws IOException
 	 * @throws JSONException
-	 * @return »î¶¯ÊµÀı
+	 * @return æ´»åŠ¨å®ä¾‹
 	 */
 	public static MyActivity getActivity(int activityId) throws JSONException, IOException {
 		Map<String, String> params = new HashMap<String, String>();
@@ -326,11 +326,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İ»î¶¯±àºÅ»ñÈ¡»î¶¯·¢ÆğÈËĞÅÏ¢
+	 * æ ¹æ®æ´»åŠ¨ç¼–å·è·å–æ´»åŠ¨å‘èµ·äººä¿¡æ¯
 	 * 
 	 * @param activityId
-	 *            »î¶¯±àºÅ
-	 * @return ·¢ÆğÈËĞÅÏ¢
+	 *            æ´»åŠ¨ç¼–å·
+	 * @return å‘èµ·äººä¿¡æ¯
 	 * @throws IOException
 	 * @throws JSONException
 	 */
@@ -342,11 +342,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İ·¢ÆğÈË±àºÅ»ñÈ¡»î¶¯·¢ÆğÈËĞÅÏ¢
+	 * æ ¹æ®å‘èµ·äººç¼–å·è·å–æ´»åŠ¨å‘èµ·äººä¿¡æ¯
 	 * 
 	 * @param uid
-	 *            ·¢ÆğÈË±àºÅ
-	 * @return ·¢ÆğÈËĞÅÏ¢
+	 *            å‘èµ·äººç¼–å·
+	 * @return å‘èµ·äººä¿¡æ¯
 	 * @throws JSONException
 	 * @throws IOException
 	 */
@@ -358,11 +358,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İ»î¶¯±àºÅ»ñÈ¡ÒÑ²ÎÓë»î¶¯ÈËÔ±
+	 * æ ¹æ®æ´»åŠ¨ç¼–å·è·å–å·²å‚ä¸æ´»åŠ¨äººå‘˜
 	 * 
 	 * @param activityId
-	 *            »î¶¯±àºÅ
-	 * @return ²ÎÓë»î¶¯ÈËÔ±
+	 *            æ´»åŠ¨ç¼–å·
+	 * @return å‚ä¸æ´»åŠ¨äººå‘˜
 	 * @throws JSONException
 	 * @throws IOException
 	 */
@@ -375,11 +375,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İ»î¶¯±àºÅ»ñÈ¡ËùÓĞ¸Ã»î¶¯Ö°Ôğ
+	 * æ ¹æ®æ´»åŠ¨ç¼–å·è·å–æ‰€æœ‰è¯¥æ´»åŠ¨èŒè´£
 	 * 
 	 * @param activityId
-	 *            »î¶¯±àºÅ
-	 * @return »î¶¯Ö°ÔğÁĞ±í
+	 *            æ´»åŠ¨ç¼–å·
+	 * @return æ´»åŠ¨èŒè´£åˆ—è¡¨
 	 * @throws JSONException
 	 * @throws IOException
 	 */
@@ -392,11 +392,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * È¡ÏûÓÃ»§»î¶¯ÉêÇë
+	 * å–æ¶ˆç”¨æˆ·æ´»åŠ¨ç”³è¯·
 	 * 
 	 * @param cancelRecordIdList
-	 *            ¼ÇÂ¼±àºÅÁĞ±í
-	 * @return ·µ»Ø²Ù×÷½á¹û
+	 *            è®°å½•ç¼–å·åˆ—è¡¨
+	 * @return è¿”å›æ“ä½œç»“æœ
 	 * @throws IOException
 	 */
 	public static boolean cancelUserJoin(String cancelRecordIdList) throws IOException {
@@ -408,12 +408,12 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İÓÃ»§±àºÅºÍ»î¶¯±àºÅ»ñÈ¡¸ÃÓÃ»§²Î¼Ó¸Ã»î¶¯×´Ì¬
+	 * æ ¹æ®ç”¨æˆ·ç¼–å·å’Œæ´»åŠ¨ç¼–å·è·å–è¯¥ç”¨æˆ·å‚åŠ è¯¥æ´»åŠ¨çŠ¶æ€
 	 * 
 	 * @param uid
-	 *            ÓÃ»§±àºÅ
+	 *            ç”¨æˆ·ç¼–å·
 	 * @param activityId
-	 *            »î¶¯±àºÅ
+	 *            æ´»åŠ¨ç¼–å·
 	 * @return
 	 * @throws IOException
 	 * @throws NumberFormatException
@@ -428,13 +428,13 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İÓÃ»§±àºÅ£¬Ö°Ôğ±àºÅ´¦ÀíÓÃ»§µÄ¼ÓÈë»î¶¯ÉêÇë
+	 * æ ¹æ®ç”¨æˆ·ç¼–å·ï¼ŒèŒè´£ç¼–å·å¤„ç†ç”¨æˆ·çš„åŠ å…¥æ´»åŠ¨ç”³è¯·
 	 * 
 	 * @param uid
-	 *            ÓÃ»§±àºÅ
+	 *            ç”¨æˆ·ç¼–å·
 	 * @param dutyId
-	 *            Ö°Ôğ±àºÅ
-	 * @return ²Ù×÷½á¹û
+	 *            èŒè´£ç¼–å·
+	 * @return æ“ä½œç»“æœ
 	 * @throws IOException
 	 */
 	public static boolean selectDutyJoin(int uid, int dutyId) throws IOException {
@@ -470,10 +470,10 @@ public class ApiClient {
 	}
 
 	/**
-	 * ´´½¨»î¶¯
+	 * åˆ›å»ºæ´»åŠ¨
 	 * 
 	 * @param createActivityJSON
-	 *            ´´½¨»î¶¯JSONÊı¾İ
+	 *            åˆ›å»ºæ´»åŠ¨JSONæ•°æ®
 	 * @return
 	 * @throws JSONException
 	 * @throws IOException
@@ -486,12 +486,12 @@ public class ApiClient {
 	}
 
 	/**
-	 * ÉÏ´«ÓÃ»§Í·Ïñ
+	 * ä¸Šä¼ ç”¨æˆ·å¤´åƒ
 	 * 
 	 * @param uid
-	 *            ÓÃ»§ID
+	 *            ç”¨æˆ·ID
 	 * @param protraitFile
-	 *            Í·ÏñÎÄ¼ş
+	 *            å¤´åƒæ–‡ä»¶
 	 * @return
 	 * @throws IOException
 	 */
@@ -519,11 +519,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸üĞÂ¸öÈËĞÅÏ¢£¬ÒÔpostÇëÇóÌá½»
+	 * æ›´æ–°ä¸ªäººä¿¡æ¯ï¼Œä»¥postè¯·æ±‚æäº¤
 	 * 
 	 * @param nowUser
-	 *            ÓÃ»§ÊµÌå
-	 * @return ·µ»Ø¸üĞÂÊµÌå
+	 *            ç”¨æˆ·å®ä½“
+	 * @return è¿”å›æ›´æ–°å®ä½“
 	 * @throws JSONException
 	 * @throws IOException
 	 */
@@ -542,12 +542,12 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸üĞÂ»î¶¯×´Ì¬
+	 * æ›´æ–°æ´»åŠ¨çŠ¶æ€
 	 * 
 	 * @param activityId
-	 *            »î¶¯±àºÅ
+	 *            æ´»åŠ¨ç¼–å·
 	 * @param stateId
-	 *            »î¶¯×´Ì¬±àºÅ
+	 *            æ´»åŠ¨çŠ¶æ€ç¼–å·
 	 * @return
 	 * @throws IOException
 	 */
@@ -561,11 +561,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ÓÃ»§ÆÀ¼Û·¢ÆğÈË·¢ÆğµÄ»î¶¯
+	 * ç”¨æˆ·è¯„ä»·å‘èµ·äººå‘èµ·çš„æ´»åŠ¨
 	 * 
 	 * @param evaluate
-	 *            ÆÀ¼ÛÊµÌå
-	 * @return ²Ù×÷½á¹û
+	 *            è¯„ä»·å®ä½“
+	 * @return æ“ä½œç»“æœ
 	 * @throws IOException
 	 */
 	public static boolean evaluateActivity(Evaluate evaluate) throws IOException {
@@ -580,11 +580,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¼ì²â´´½¨ÕßÊÇ·ñÆÀÂÛ¹ı¸Ã»î¶¯
+	 * æ£€æµ‹åˆ›å»ºè€…æ˜¯å¦è¯„è®ºè¿‡è¯¥æ´»åŠ¨
 	 * 
 	 * @param activityId
-	 *            »î¶¯±àºÅ
-	 * @return ²ÎÓëÆÀÂÛ×´Ì¬
+	 *            æ´»åŠ¨ç¼–å·
+	 * @return å‚ä¸è¯„è®ºçŠ¶æ€
 	 * @throws IOException
 	 */
 	public static boolean getAppraiseState(int activityId) throws IOException {
@@ -596,13 +596,13 @@ public class ApiClient {
 	}
 
 	/**
-	 * »î¶¯´´½¨ÕßÆÀ¼Û»î¶¯²ÎÓëÕß
+	 * æ´»åŠ¨åˆ›å»ºè€…è¯„ä»·æ´»åŠ¨å‚ä¸è€…
 	 * 
 	 * @param appraiseJson
-	 *            ÆÀ¼Û·â×°Êı¾İ
+	 *            è¯„ä»·å°è£…æ•°æ®
 	 * @param activityId
-	 *            »î¶¯±àºÅ
-	 * @return ²Ù×÷½á¹û
+	 *            æ´»åŠ¨ç¼–å·
+	 * @return æ“ä½œç»“æœ
 	 * @throws IOException
 	 */
 	public static boolean appriaseActivity(String appraiseJson, int activityId) throws IOException {
@@ -614,11 +614,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ËÑË÷»î¶¯
+	 * æœç´¢æ´»åŠ¨
 	 * 
 	 * @param searchString
-	 *            ËÑË÷¹Ø¼ü×Ö
-	 * @return ËÑË÷½á¹û£º»î¶¯ÁĞ±í
+	 *            æœç´¢å…³é”®å­—
+	 * @return æœç´¢ç»“æœï¼šæ´»åŠ¨åˆ—è¡¨
 	 * @throws JSONException
 	 * @throws IOException
 	 */
@@ -631,13 +631,13 @@ public class ApiClient {
 	}
 
 	/**
-	 * Í¨¹ıÀà±ğ±àºÅ»ñÈ¡²»Í¬ÖÖÀàÏûÏ¢
+	 * é€šè¿‡ç±»åˆ«ç¼–å·è·å–ä¸åŒç§ç±»æ¶ˆæ¯
 	 * 
 	 * @param uid
-	 *            ÓÃ»§±àºÅ
+	 *            ç”¨æˆ·ç¼–å·
 	 * @param requestCategoryId
-	 *            ÏûÏ¢Àà±ğ
-	 * @return ÊäÈëÁ÷
+	 *            æ¶ˆæ¯ç±»åˆ«
+	 * @return è¾“å…¥æµ
 	 * @throws IOException
 	 */
 	public static InputStream getMessageStreamByCategory(int uid, String requestCategory) throws IOException {
@@ -650,11 +650,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * ¸ù¾İ»î¶¯±àºÅ»ñÈ¡»î¶¯ÌÖÂÛ¼ÇÂ¼
+	 * æ ¹æ®æ´»åŠ¨ç¼–å·è·å–æ´»åŠ¨è®¨è®ºè®°å½•
 	 * 
 	 * @param activityId
-	 *            »î¶¯±àºÅ
-	 * @return ÌÖÂÛ¼ÇÂ¼
+	 *            æ´»åŠ¨ç¼–å·
+	 * @return è®¨è®ºè®°å½•
 	 * @throws JSONException
 	 * @throws IOException
 	 */
@@ -667,9 +667,9 @@ public class ApiClient {
 	}
 
 	/**
-	 * ·¢ËÍÏûÏ¢
-	 * @param chatRecord ÏûÏ¢ÊµÌå
-	 * @return ·¢ËÍ½á¹û
+	 * å‘é€æ¶ˆæ¯
+	 * @param chatRecord æ¶ˆæ¯å®ä½“
+	 * @return å‘é€ç»“æœ
 	 * @throws IOException
 	 */
 	public static boolean sendChatMessage(ChatRecord chatRecord) throws IOException {

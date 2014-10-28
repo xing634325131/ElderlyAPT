@@ -31,7 +31,7 @@ public class AppStart extends Activity {
 		setContentView(view);
 		recommendContent = null;
 
-		// ½¥±äÕ¹Ê¾Æô¶¯ÆÁ
+		// æ¸å˜å±•ç¤ºå¯åŠ¨å±
 		AlphaAnimation aa = new AlphaAnimation(0.3f, 1.0f);
 		aa.setDuration(2000);
 		view.startAnimation(aa);
@@ -46,12 +46,12 @@ public class AppStart extends Activity {
 						if (msg.what == 1) {
 							Log.i("AppStart", "Start");
 							FileUtils.write(AppStart.this, "recommend", recommendContent);
-						} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+						} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 							Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-						} else {// Î´Öª´íÎó
+						} else {// æœªçŸ¥é”™è¯¯
 							Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 						}
-						Intent intent = new Intent(AppStart.this, Main.class);
+						Intent intent = new Intent(AppStart.this, Login.class);
 						startActivity(intent);
 						finish();
 						super.handleMessage(msg);

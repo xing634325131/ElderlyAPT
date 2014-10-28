@@ -12,33 +12,33 @@ import com.kingtime.elderlyapt.util.StreamTool;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ17ÈÕ
+ * @created 2014å¹´8æœˆ17æ—¥
  */
 public class Record {
 
 	/**
-	 * Î´¼ÓÈë¹ı
+	 * æœªåŠ å…¥è¿‡
 	 */
 	public static final int RECORD_NOT_JOIN = 0x00;
 	/**
-	 * Õı³£²ÎÓë
+	 * æ­£å¸¸å‚ä¸
 	 */
 	public static final int RECORD_COMMON = 0x01;
 	/**
-	 * ±»È¡Ïû²ÎÓë
+	 * è¢«å–æ¶ˆå‚ä¸
 	 */
 	public static final int RECORD_CANCLED = 0x02;
 	/**
-	 * ÕıÔÚ±»¹ÜÀí
+	 * æ­£åœ¨è¢«ç®¡ç†
 	 */
 	public static final int RECORD_MANAGEING = 0x03;
 
 	/**
-	 * Î´ÆÀ¼Û
+	 * æœªè¯„ä»·
 	 */
 	public static final int RECORD_NOT_EVALUATED = 0x04;
 	/**
-	 * ÒÑÆÀ¼Û
+	 * å·²è¯„ä»·
 	 */
 	public static final int RECORD_EVALUATED = 0x05;
 
@@ -122,11 +122,11 @@ public class Record {
 	}
 
 	/**
-	 * ½âÎöJSONÊı¾İ
+	 * è§£æJSONæ•°æ®
 	 * 
 	 * @param stream
-	 *            ÊäÈëÁ÷
-	 * @return ²ÎÓë¼ÇÂ¼ĞÅÏ¢
+	 *            è¾“å…¥æµ
+	 * @return å‚ä¸è®°å½•ä¿¡æ¯
 	 * @throws JSONException
 	 */
 	public static List<Record> parse(InputStream stream) throws JSONException {

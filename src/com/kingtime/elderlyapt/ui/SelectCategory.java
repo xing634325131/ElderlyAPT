@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ11ÈÕ
+ * @created 2014å¹´8æœˆ11æ—¥
  */
 public class SelectCategory extends ListActivity {
 
@@ -19,8 +19,8 @@ public class SelectCategory extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		categoryList = new String[] { "»¥Öú", "ÓéÀÖ", "¼ÒÎñ", "Åã»¤", "Ë®µçÎ¬ĞŞ", "Ò½ÁÆ",
-				"Ö¾Ô¸»î¶¯", "´ú°ì", "¶ÌÍ¾ÂÃÓÎ" };
+		categoryList = new String[] { "äº’åŠ©", "å¨±ä¹", "å®¶åŠ¡", "é™ªæŠ¤", "æ°´ç”µç»´ä¿®", "åŒ»ç–—",
+				"å¿—æ„¿æ´»åŠ¨", "ä»£åŠ", "çŸ­é€”æ—…æ¸¸" };
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, categoryList);
 		setListAdapter(adapter);

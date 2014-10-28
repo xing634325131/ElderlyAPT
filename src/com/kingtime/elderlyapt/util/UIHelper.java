@@ -4,15 +4,15 @@ import android.app.Activity;
 import android.graphics.Rect;
 
 /**
- * ½çÃæ¹¤¾ßÀà
+ * ç•Œé¢å·¥å…·ç±»
  * 
  * @author xp
- * @created 2014Äê4ÔÂ28ÈÕ
+ * @created 2014å¹´4æœˆ28æ—¥
  */
 public class UIHelper {
 	
 	/**
-	 * »ñÈ¡ÏµÍ³×´Ì¬À¸¸ß¶È
+	 * è·å–ç³»ç»ŸçŠ¶æ€æ é«˜åº¦
 	 * 
 	 * @param activity
 	 * @return

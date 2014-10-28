@@ -33,7 +33,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ26ÈÕ
+ * @created 2014å¹´8æœˆ26æ—¥
  */
 public class Chat extends Activity {
 	private TextView titleTV;
@@ -57,8 +57,8 @@ public class Chat extends Activity {
 	private Timer refreshTimer;
 	private TimerTask recordTask;
 	private static final int REFRESH_DELAY = 5 * 1000;
-	private static int remember_size;// ¼ÇÂ¼ÏûÏ¢ÌõÊı£¬ÊÇ·ñĞèÒª¸üĞÂ
-	private static int times;// Ë¢ĞÂ´ÎÊı
+	private static int remember_size;// è®°å½•æ¶ˆæ¯æ¡æ•°ï¼Œæ˜¯å¦éœ€è¦æ›´æ–°
+	private static int times;// åˆ·æ–°æ¬¡æ•°
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,7 @@ public class Chat extends Activity {
 	private void initPreLayout() {
 		titleTV = (TextView) findViewById(R.id.head_title);
 		backBtn = (Button) findViewById(R.id.head_back);
-		titleTV.setText("»î¶¯ÌÖÂÛ");
+		titleTV.setText("æ´»åŠ¨è®¨è®º");
 		backBtn.setOnClickListener(listener);
 
 		users = new ArrayList<User>();
@@ -87,13 +87,13 @@ public class Chat extends Activity {
 		times = 0;
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("¼ÓÔØÊı¾İ...");
+			loadingDialog.setLoadText("åŠ è½½æ•°æ®...");
 			loadingDialog.show();
 		}
 	}
 
 	private void initData() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -124,7 +124,7 @@ public class Chat extends Activity {
 						}
 						Log.i("Chat", String.valueOf(users.size()));
 						msg.what = 1;
-					} else {// Ã»ÓĞÏûÏ¢¸üĞÂ
+					} else {// æ²¡æœ‰æ¶ˆæ¯æ›´æ–°
 						msg.what = 2;
 					}
 					remember_size = records.size();
@@ -156,7 +156,7 @@ public class Chat extends Activity {
 			sendBtn = (Button) findViewById(R.id.chat_send);
 			notiveLayout = (LinearLayout) findViewById(R.id.chat_notice);
 
-			titleTV.setText("»î¶¯ÌÖÂÛ");
+			titleTV.setText("æ´»åŠ¨è®¨è®º");
 			backBtn.setOnClickListener(listener);
 			sendBtn.setOnClickListener(listener);
 			msgAdapter = new ListViewChatMsgAdapter(Chat.this, getApplicationContext(), records, users);
@@ -164,7 +164,7 @@ public class Chat extends Activity {
 		}
 
 		switch (what) {
-		case 1:// Õı³£Çé¿ö
+		case 1:// æ­£å¸¸æƒ…å†µ
 			if (records.size() == 0) {
 				notiveLayout.setVisibility(View.VISIBLE);
 			} else {
@@ -173,15 +173,15 @@ public class Chat extends Activity {
 				chatListView.setCacheColorHint(0);
 			}
 			break;
-		case 2:// ÎŞĞè¸üĞÂ½çÃæ
+		case 2:// æ— éœ€æ›´æ–°ç•Œé¢
 			break;
-		case -1:// ·şÎñÆ÷ÎŞÏìÓ¦
+		case -1:// æœåŠ¡å™¨æ— å“åº”
 			Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
 			break;
-		case 0:// ·şÎñÆ÷ÎŞ·µ»ØÊı¾İ
+		case 0:// æœåŠ¡å™¨æ— è¿”å›æ•°æ®
 			notiveLayout.setVisibility(View.VISIBLE);
 			break;
-		default:// Î´Öª´íÎó
+		default:// æœªçŸ¥é”™è¯¯
 			Toast.makeText(getApplication(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 			break;
 		}
@@ -215,7 +215,7 @@ public class Chat extends Activity {
 		chatRecord.setUid(user.getUid());
 		chatRecord.setContent(content);
 
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -226,13 +226,13 @@ public class Chat extends Activity {
 				if (msg.what == 1) {
 					boolean result = (boolean) msg.obj;
 					if (result == false) {
-						Toast.makeText(getApplicationContext(), "·¢ËÍÊ§°Ü", Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), "å‘é€å¤±è´¥", Toast.LENGTH_LONG).show();
 					} else {
 
 					}
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);

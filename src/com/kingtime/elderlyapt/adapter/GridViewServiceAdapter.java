@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê7ÔÂ29ÈÕ
+ * @created 2014å¹´7æœˆ29æ—¥
  */
 public class GridViewServiceAdapter extends BaseAdapter {
 
@@ -29,8 +29,8 @@ public class GridViewServiceAdapter extends BaseAdapter {
 			R.drawable.service2, R.drawable.service3, R.drawable.service4,
 			R.drawable.service5, R.drawable.service6, R.drawable.service7,
 			R.drawable.service8, R.drawable.service9 };
-	private static String[] mServiceDesc = new String[] { "»¥Öú", "ÓéÀÖ", "¼ÒÎñ", "Åã»¤",
-		"Ë®µçÎ¬ĞŞ", "Ò½ÁÆ", "Ö¾Ô¸»î¶¯", "´ú°ì", "¶ÌÍ¾ÂÃÓÎ" };
+	private static String[] mServiceDesc = new String[] { "äº’åŠ©", "å¨±ä¹", "å®¶åŠ¡", "é™ªæŠ¤",
+		"æ°´ç”µç»´ä¿®", "åŒ»ç–—", "å¿—æ„¿æ´»åŠ¨", "ä»£åŠ", "çŸ­é€”æ—…æ¸¸" };
 
 	public static int getServiceImages(int position){
 		return mServiceImages[position];

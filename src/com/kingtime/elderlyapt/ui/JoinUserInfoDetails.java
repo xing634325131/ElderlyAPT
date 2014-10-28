@@ -34,7 +34,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ8ÈÕ
+ * @created 2014å¹´8æœˆ8æ—¥
  */
 public class JoinUserInfoDetails extends Activity {
 
@@ -61,7 +61,7 @@ public class JoinUserInfoDetails extends Activity {
 	private LoadingDialog loadingDialog;
 	private User postUser;
 
-	// ÍøÂçÍ¼Æ¬»ñÈ¡
+	// ç½‘ç»œå›¾ç‰‡è·å–
 	private RequestQueue rQueue;
 	private ImageLoader imageLoader;
 
@@ -88,7 +88,7 @@ public class JoinUserInfoDetails extends Activity {
 
 	private void initData() {
 		AppContext appContext = (AppContext) getApplication();
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK,
 					Toast.LENGTH_LONG).show();
 			return;
@@ -103,11 +103,11 @@ public class JoinUserInfoDetails extends Activity {
 					if (loadingDialog != null) {
 						loadingDialog.dismiss();
 					}
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG)
 							.show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
@@ -116,7 +116,7 @@ public class JoinUserInfoDetails extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("»ñÈ¡ÓÃ»§ĞÅÏ¢...");
+			loadingDialog.setLoadText("è·å–ç”¨æˆ·ä¿¡æ¯...");
 			loadingDialog.show();
 		}
 
@@ -143,7 +143,7 @@ public class JoinUserInfoDetails extends Activity {
 	}
 
 	protected void initLayout() {
-		if (postUser.getRoleId() == User.COMMON_USER) {//ÆÕÍ¨ÓÃ»§²¼¾Ö
+		if (postUser.getRoleId() == User.COMMON_USER) {//æ™®é€šç”¨æˆ·å¸ƒå±€
 			setContentView(R.layout.join_common_userinfo);
 			photoImageView = (NetworkImageView) findViewById(R.id.userinfo_photo);
 			userNameTV = (TextView) findViewById(R.id.userinfo_name);
@@ -161,7 +161,7 @@ public class JoinUserInfoDetails extends Activity {
 			resPhoneTV.setText(postUser.getResPhone());
 			credibilityTV.setRating(postUser.getCredibility());
 			interestTV.setText(postUser.getInterest());
-		} else {//·ÇÆÕÍ¨ÓÃ»§²¼¾Ö
+		} else {//éæ™®é€šç”¨æˆ·å¸ƒå±€
 			setContentView(R.layout.join_outside_userinfo);
 			photoImageView = (NetworkImageView) findViewById(R.id.outside_userinfo_photo);
 			userNameTV = (TextView) findViewById(R.id.outside_userinfo_name);
@@ -182,7 +182,7 @@ public class JoinUserInfoDetails extends Activity {
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
 		backBtn.setOnClickListener(listener);
-		titleTV.setText("ÓÃ»§ĞÅÏ¢");
+		titleTV.setText("ç”¨æˆ·ä¿¡æ¯");
 
 		String imageURL = ApiClient.formImageURL(URLs.REQUEST_PHOTO_IMAGE,
 				postUser.getPhotoName());
@@ -213,8 +213,8 @@ public class JoinUserInfoDetails extends Activity {
 				Intent data = new Intent(Intent.ACTION_SENDTO);
 				data.setData(Uri.parse("mailto:" + postUser.getEmail()));
 				Log.i("SendMail", String.valueOf(postUser.getEmail()));
-				data.putExtra(Intent.EXTRA_SUBJECT, "·¢ËÍ¸ø" + postUser.getName());
-				data.putExtra(Intent.EXTRA_TEXT, postUser.getName() + ",ÄãºÃ,ÎÒÊÇÔÚÉçÇøÀÏÄê»¥Öú¹«Ô¢ÉÏ¿´¼ûÄúµÄ¡£");
+				data.putExtra(Intent.EXTRA_SUBJECT, "å‘é€ç»™" + postUser.getName());
+				data.putExtra(Intent.EXTRA_TEXT, postUser.getName() + ",ä½ å¥½,æˆ‘æ˜¯åœ¨ç¤¾åŒºè€å¹´äº’åŠ©å…¬å¯“ä¸Šçœ‹è§æ‚¨çš„ã€‚");
 				startActivity(data);
 				break;
 			case R.id.outside_click_phone:

@@ -37,15 +37,15 @@ public class WeatherInfo {
 		lastRefreshTime = weatherDetailList.get(3);
 
 		// 4-5 Line
-		String[] dayDetailStrings1 = weatherDetailList.get(4).split("£»");
-		String[] dayDetailStrings2 = weatherDetailList.get(5).split("£»");
+		String[] dayDetailStrings1 = weatherDetailList.get(4).split("ï¼›");
+		String[] dayDetailStrings2 = weatherDetailList.get(5).split("ï¼›");
 		dayDetail.setCommonTemp(StringUtils
 				.parseTempToNum(splitWithCommon(dayDetailStrings1[0])));
 		if(dayDetailStrings1.length < 2){
-			dayDetail.setWindDirection("ÔÝÎÞÊµ¿ö");
+			dayDetail.setWindDirection("æš‚æ— å®žå†µ");
 			dayDetail.setHumidityPercent(101);
-			dayDetail.setAirQuality("ÔÝÎÞÊµ¿ö");
-			dayDetail.setUVIntensity("ÔÝÎÞÊµ¿ö");
+			dayDetail.setAirQuality("æš‚æ— å®žå†µ");
+			dayDetail.setUVIntensity("æš‚æ— å®žå†µ");
 		} else{
 			dayDetail.setWindDirection(splitWithCommon(dayDetailStrings1[1]));
 			dayDetail.setHumidityPercent(StringUtils
@@ -56,20 +56,20 @@ public class WeatherInfo {
 		System.out.println(dayDetail.toString());
 
 		// 6 Line
-		String[] tipStrings = weatherDetailList.get(6).split("£º");
+		String[] tipStrings = weatherDetailList.get(6).split("ï¼š");
 		int tipsLength = tipStrings.length;
 		// System.out.println("tips split length:" + tipStrings.length);
 		// System.out.println("tips length:"+tipsLength);
 		for (int i = 1; i < tipsLength; i++) {
 			WeatherTips weatherTips = new WeatherTips();
 
-			String[] tipInfo1 = tipStrings[i - 1].split("¡£");
+			String[] tipInfo1 = tipStrings[i - 1].split("ã€‚");
 			weatherTips.setTipsName(StringUtils
 					.replaceBlank(tipInfo1[tipInfo1.length - 1]));
-			if(weatherTips.getTipsName().equals("¿ÕÆøÎÛÈ¾Ö¸Êý")){
+			if(weatherTips.getTipsName().equals("ç©ºæ°”æ±¡æŸ“æŒ‡æ•°")){
 				continue;
 			}
-			String[] tipInfo2 = tipStrings[i].split("¡£");
+			String[] tipInfo2 = tipStrings[i].split("ã€‚");
 			weatherTips.setDetails(tipInfo2[0]);
 			weatherTips.setSuggest(tipInfo2.length > 2 ? tipInfo2[1] : null);
 			System.out.println(weatherTips.toString());
@@ -95,7 +95,7 @@ public class WeatherInfo {
 	}
 
 	private String splitWithCommon(String input) {
-		String[] outputs = input.split("£º");
+		String[] outputs = input.split("ï¼š");
 		return outputs[outputs.length - 1];
 	}
 

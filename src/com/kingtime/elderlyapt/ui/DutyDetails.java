@@ -11,10 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * Ö°ÔğÏêÇéÃèÊö
+ * èŒè´£è¯¦æƒ…æè¿°
  * 
  * @author xp
- * @created 2014Äê8ÔÂ8ÈÕ
+ * @created 2014å¹´8æœˆ8æ—¥
  */
 public class DutyDetails extends Activity {
 
@@ -36,7 +36,7 @@ public class DutyDetails extends Activity {
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
 		contentTV = (TextView) findViewById(R.id.duty_details_content);
-		titleTV.setText("Ö°ÔğÏêÇéÃèÊö");
+		titleTV.setText("èŒè´£è¯¦æƒ…æè¿°");
 		backBtn.setOnClickListener(listener);
 		contentTV.setText(dutyContent);
 	}

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ26ÈÕ
+ * @created 2014å¹´8æœˆ26æ—¥
  */
 public class MenuDialog extends Dialog {
 
@@ -33,10 +33,10 @@ public class MenuDialog extends Dialog {
 		chatPlayTV = (TextView) layout.findViewById(R.id.chat_menu_play);
 		setContentView(layout);
 
-		// ÉèÖÃwindowÊôĞÔ
+		// è®¾ç½®windowå±æ€§
 		lp = getWindow().getAttributes();
 		lp.gravity = Gravity.CENTER;
-		lp.dimAmount = (float) 0.5; // È¥±³¾°ÕÚ¸Ç
+		lp.dimAmount = (float) 0.5; // å»èƒŒæ™¯é®ç›–
 		lp.alpha = 1.0f;
 		getWindow().setAttributes(lp);
 	}

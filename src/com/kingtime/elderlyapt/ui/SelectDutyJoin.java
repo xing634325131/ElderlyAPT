@@ -65,7 +65,7 @@ public class SelectDutyJoin extends Activity{
 
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
-		titleTV.setText("¼ÓÈë»î¶¯");
+		titleTV.setText("åŠ å…¥æ´»åŠ¨");
 		backBtn.setOnClickListener(listener);
 
 		loadingDialog = new LoadingDialog(this);
@@ -75,7 +75,7 @@ public class SelectDutyJoin extends Activity{
 
 	private void initData() {
 		AppContext appContext = (AppContext) getApplication();
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK,
 					Toast.LENGTH_LONG).show();
 			return;
@@ -90,11 +90,11 @@ public class SelectDutyJoin extends Activity{
 					if (loadingDialog != null) {
 						loadingDialog.dismiss();
 					}
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG)
 							.show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
@@ -103,7 +103,7 @@ public class SelectDutyJoin extends Activity{
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("»ñÈ¡»î¶¯Ö°Ôğ...");
+			loadingDialog.setLoadText("è·å–æ´»åŠ¨èŒè´£...");
 			loadingDialog.show();
 		}
 
@@ -137,7 +137,7 @@ public class SelectDutyJoin extends Activity{
 
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
-		titleTV.setText("¼ÓÈë»î¶¯");
+		titleTV.setText("åŠ å…¥æ´»åŠ¨");
 		backBtn.setOnClickListener(listener);
 		applyBtn = (Button)findViewById(R.id.duty_join_apply);
 		applyBtn.setOnClickListener(listener);
@@ -182,12 +182,12 @@ public class SelectDutyJoin extends Activity{
 	private void toApply() {
 		final Map<String, String> selectedDutyId = dutyJoinAdapter.getSelectedDutyId();
 		if(selectedDutyId.size() < 1){
-			DialogTool.createMessageDialog(this, "ÌáÊ¾", "ÇëÑ¡ÔñÒªÉêÇëµÄ»î¶¯Ö°Ôğ£¡", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(this, "æç¤º", "è¯·é€‰æ‹©è¦ç”³è¯·çš„æ´»åŠ¨èŒè´£ï¼", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 		} else if(selectedDutyId.size() > 1){
-			DialogTool.createMessageDialog(this, "ÌáÊ¾", "²»ÒªÌ«Ì°ĞÄÅ¶£¬Ö»ÄÜÑ¡ÔñÒ»ÏîÉêÇë¼ÓÈë£¡", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(this, "æç¤º", "ä¸è¦å¤ªè´ªå¿ƒå“¦ï¼Œåªèƒ½é€‰æ‹©ä¸€é¡¹ç”³è¯·åŠ å…¥ï¼", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 		} else{
 			final AppContext appContext = (AppContext) getApplication();
-			if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+			if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 				Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK,
 						Toast.LENGTH_LONG).show();
 				return;
@@ -203,16 +203,16 @@ public class SelectDutyJoin extends Activity{
 					if (msg.what == 1) {
 						boolean result = (boolean)msg.obj;
 						if(result == true){
-							Toast.makeText(getApplicationContext(), "ÉêÇëÒÑÌá½»", Toast.LENGTH_SHORT).show();
+							Toast.makeText(getApplicationContext(), "ç”³è¯·å·²æäº¤", Toast.LENGTH_SHORT).show();
 						} else{
-							Toast.makeText(getApplicationContext(), "ÉêÇëÊ§°Ü£¬ÇëÉÔºóÔÙÊÔ", Toast.LENGTH_SHORT).show();
+							Toast.makeText(getApplicationContext(), "ç”³è¯·å¤±è´¥ï¼Œè¯·ç¨åå†è¯•", Toast.LENGTH_SHORT).show();
 						}
 						finish();
-					} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+					} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 						Toast.makeText(getApplicationContext(),
 								R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG)
 								.show();
-					} else {// Î´Öª´íÎó
+					} else {// æœªçŸ¥é”™è¯¯
 						Toast.makeText(getApplicationContext(),
 								R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 					}
@@ -221,7 +221,7 @@ public class SelectDutyJoin extends Activity{
 			};
 
 			if (loadingDialog != null) {
-				loadingDialog.setLoadText("ÉêÇëÖĞ...");
+				loadingDialog.setLoadText("ç”³è¯·ä¸­...");
 				loadingDialog.show();
 			}
 
@@ -233,7 +233,7 @@ public class SelectDutyJoin extends Activity{
 						Set<String> keySet = selectedDutyId.keySet();
 						Iterator<String> iterator = keySet.iterator();
 						String value = null;
-						while(iterator.hasNext()){//»ñÈ¡selectedDutyId
+						while(iterator.hasNext()){//è·å–selectedDutyId
 							String key = iterator.next();
 							value = selectedDutyId.get(key);
 						}

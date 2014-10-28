@@ -82,7 +82,7 @@ public class ActivityList extends Activity {
 	private void initData() {
 		AppContext appContext = (AppContext) getApplication();
 		final User user = appContext.getLoginInfo();
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -97,11 +97,11 @@ public class ActivityList extends Activity {
 
 				if (msg.what == 1) {
 					initLayout();
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else if (msg.what == 0) {// ·şÎñÆ÷ÎŞ·µ»ØÊı¾İ
-					Toast.makeText(getApplicationContext(), "ÔİÎŞ´ËÀà»î¶¯£¡", Toast.LENGTH_SHORT).show();
-				} else {// Î´Öª´íÎó
+				} else if (msg.what == 0) {// æœåŠ¡å™¨æ— è¿”å›æ•°æ®
+					Toast.makeText(getApplicationContext(), "æš‚æ— æ­¤ç±»æ´»åŠ¨ï¼", Toast.LENGTH_SHORT).show();
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -109,7 +109,7 @@ public class ActivityList extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("»ñÈ¡»î¶¯ÁĞ±í...");
+			loadingDialog.setLoadText("è·å–æ´»åŠ¨åˆ—è¡¨...");
 			loadingDialog.show();
 		}
 
@@ -193,7 +193,7 @@ public class ActivityList extends Activity {
 
 		switch (requestCode) {
 		case 0x01:
-			onCreate(null);// Ë¢ĞÂ½çÃæ
+			onCreate(null);// åˆ·æ–°ç•Œé¢
 			break;
 
 		default:

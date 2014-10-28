@@ -52,14 +52,14 @@ public class VerifyActivityDetails extends Activity {
 	private Button sureVerifyBtn;
 	private Button cancleVerifyBtn;
 
-	// ¼ÓÔØ¶Ô»°¿ò
+	// åŠ è½½å¯¹è¯æ¡†
 	private LoadingDialog loadingDialog;
 
-	// ÍøÂçÍ¼Æ¬»ñÈ¡
+	// ç½‘ç»œå›¾ç‰‡è·å–
 	private RequestQueue rQueue;
 	private ImageLoader imageLoader;
 
-	// Êı¾İ
+	// æ•°æ®
 	private int activityId;
 	private MyActivity nowActivity;
 	private User postUser;
@@ -83,7 +83,7 @@ public class VerifyActivityDetails extends Activity {
 
 		titleTV = (TextView) findViewById(R.id.head_title);
 		backBtn = (Button) findViewById(R.id.head_back);
-		titleTV.setText("´ıÉóºË»î¶¯ÏêÇé");
+		titleTV.setText("å¾…å®¡æ ¸æ´»åŠ¨è¯¦æƒ…");
 		backBtn.setOnClickListener(listener);
 		appContext = (AppContext) getApplication();
 		nowActivity = new MyActivity();
@@ -92,7 +92,7 @@ public class VerifyActivityDetails extends Activity {
 	}
 
 	private void initData() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK,
 					Toast.LENGTH_LONG).show();
 			return;
@@ -107,29 +107,29 @@ public class VerifyActivityDetails extends Activity {
 				}
 				if (msg.what == 1) {
 					initLayout();
-					detailAddressTV.setText("¼¯ºÏµØµã£º" + nowActivity.getAddress());
+					detailAddressTV.setText("é›†åˆåœ°ç‚¹ï¼š" + nowActivity.getAddress());
 					detailCategoryTV.setText(nowActivity.getCategory());
-					detailCloseTimeTV.setText("½ØÖ¹±¨Ãû£º"
+					detailCloseTimeTV.setText("æˆªæ­¢æŠ¥åï¼š"
 							+ nowActivity.getCloseTime());
 					detailContactTV.setText(postUser.getPhone());
 					detailContentTV.setText(nowActivity.getContent());
-					detailEndTimeTV.setText("½áÊøÊ±¼ä£º" + nowActivity.getEndTime());
+					detailEndTimeTV.setText("ç»“æŸæ—¶é—´ï¼š" + nowActivity.getEndTime());
 					detailNameTV.setText(nowActivity.getPostName());
 					detailNeedNumTV.setText(String.valueOf(nowActivity
-							.getNeedNum()) + "ÈË");
+							.getNeedNum()) + "äºº");
 					detailPostUserTV.setText(postUser.getName());
-					detailStartTimeTV.setText("¿ªÊ¼Ê±¼ä£º"
+					detailStartTimeTV.setText("å¼€å§‹æ—¶é—´ï¼š"
 							+ nowActivity.getBeginTime());
 
 					String imageURL = ApiClient
 							.formImageURL(URLs.REQUEST_COMMON_IMAGE,
 									nowActivity.getMainPic());
 					detailImageIV.setImageUrl(imageURL, imageLoader);
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG)
 							.show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
@@ -138,7 +138,7 @@ public class VerifyActivityDetails extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("»ñÈ¡»î¶¯ÏêÇé...");
+			loadingDialog.setLoadText("è·å–æ´»åŠ¨è¯¦æƒ…...");
 			loadingDialog.show();
 		}
 
@@ -192,7 +192,7 @@ public class VerifyActivityDetails extends Activity {
 		sureVerifyBtn = (Button)findViewById(R.id.verify_detail_pass);
 		cancleVerifyBtn = (Button)findViewById(R.id.verify_detail_not_pass);
 
-		titleTV.setText("´ıÉóºË»î¶¯ÏêÇé");
+		titleTV.setText("å¾…å®¡æ ¸æ´»åŠ¨è¯¦æƒ…");
 		backBtn.setOnClickListener(listener);
 		postUserLinearLayout.setOnClickListener(listener);
 		phoneLinearLayout.setOnClickListener(listener);
@@ -246,7 +246,7 @@ public class VerifyActivityDetails extends Activity {
 	protected void verifyActivity(final boolean temp) {
 		System.out.println("temp----->>>" + temp);
 		
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK,
 					Toast.LENGTH_LONG).show();
 			return;
@@ -264,18 +264,18 @@ public class VerifyActivityDetails extends Activity {
 					boolean result = (boolean)msg.obj;
 					String tipsString = null;
 					if(result == true){
-						tipsString = "²Ù×÷³É¹¦£¡";
+						tipsString = "æ“ä½œæˆåŠŸï¼";
 					}else{
-						tipsString = "²Ù×÷Ê§°Ü£¬ÇëÉÔºóÔÙÊÔ£¡";
+						tipsString = "æ“ä½œå¤±è´¥ï¼Œè¯·ç¨åå†è¯•ï¼";
 					}
 					Toast.makeText(VerifyActivityDetails.this, tipsString, Toast.LENGTH_SHORT).show();
 					setResult(RESULT_OK);
 					finish();
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG)
 							.show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
@@ -284,7 +284,7 @@ public class VerifyActivityDetails extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("²Ù×÷ÖĞ...");
+			loadingDialog.setLoadText("æ“ä½œä¸­...");
 			loadingDialog.show();
 		}
 

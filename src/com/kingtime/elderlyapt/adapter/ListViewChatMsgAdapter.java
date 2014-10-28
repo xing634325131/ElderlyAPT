@@ -37,7 +37,7 @@ public class ListViewChatMsgAdapter extends BaseAdapter {
 	private Handler uiHandler;
 	private Context activity;
 
-	// ÓïÒôºÏ³É
+	// è¯­éŸ³åˆæˆ
 	private SpeechSynthesizer newspeechSynthesizer;
 
 	public ListViewChatMsgAdapter(Context activity, Context context, List<ChatRecord> recordList, List<User> users) {
@@ -67,15 +67,15 @@ public class ListViewChatMsgAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * ÅĞ¶ÏÏûÏ¢µÄÀàĞÍ£¬ÊÇÆäËûÈË·¢¹ıÀ´µÄÏûÏ¢£¬»¹ÊÇ×Ô¼ºµÄ
+	 * åˆ¤æ–­æ¶ˆæ¯çš„ç±»å‹ï¼Œæ˜¯å…¶ä»–äººå‘è¿‡æ¥çš„æ¶ˆæ¯ï¼Œè¿˜æ˜¯è‡ªå·±çš„
 	 */
 	public boolean isFromOthers(int position) {
 		ChatRecord record = (ChatRecord) getItem(position);
 		AppContext aContext = (AppContext) context;
 		User user = aContext.getLoginInfo();
-		if (record.getUid() == user.getUid()) {// ×Ô¼º·¢³öµÄÏûÏ¢
+		if (record.getUid() == user.getUid()) {// è‡ªå·±å‘å‡ºçš„æ¶ˆæ¯
 			return false;
-		} else {// ÆäËûÈËµÄÏûÏ¢
+		} else {// å…¶ä»–äººçš„æ¶ˆæ¯
 			return true;
 		}
 	}
@@ -123,7 +123,7 @@ public class ListViewChatMsgAdapter extends BaseAdapter {
 //
 //			@Override
 //			public void onClick(View v) {
-//				Toast.makeText(context, "ÎÄ×ÖÒÑ¸´ÖÆµ½¼ôÇĞ°å", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(context, "æ–‡å­—å·²å¤åˆ¶åˆ°å‰ªåˆ‡æ¿", Toast.LENGTH_SHORT).show();
 //			}
 //		};
 //
@@ -131,7 +131,7 @@ public class ListViewChatMsgAdapter extends BaseAdapter {
 //
 //			@Override
 //			public void onClick(View v) {
-//				Toast.makeText(context, "ÎÄ×ÖÒÑ¸´ÖÆµ½¼ôÇĞ°å", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(context, "æ–‡å­—å·²å¤åˆ¶åˆ°å‰ªåˆ‡æ¿", Toast.LENGTH_SHORT).show();
 //			}
 //		};
 
@@ -139,7 +139,7 @@ public class ListViewChatMsgAdapter extends BaseAdapter {
 
 			@Override
 			public boolean onLongClick(View v) {
-				uiHandler = new Handler(activity.getMainLooper()) {// ½çÃæ¿ØÖÆÆ÷
+				uiHandler = new Handler(activity.getMainLooper()) {// ç•Œé¢æ§åˆ¶å™¨
 
 					@Override
 					public void handleMessage(Message msg) {

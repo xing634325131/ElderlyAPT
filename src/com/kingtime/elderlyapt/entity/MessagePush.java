@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import com.kingtime.elderlyapt.util.StringUtils;
 
 /**
- * ÏûÏ¢ÍÆËÍÊµÌå
+ * æ¶ˆæ¯æ¨é€å®ä½“
  * 
  * @author xp
  * 
@@ -19,33 +19,33 @@ import com.kingtime.elderlyapt.util.StringUtils;
 public class MessagePush {
 
 	/**
-	 * »î¶¯²ÎÓëÍÆËÍ[REMARK:activityId]
+	 * æ´»åŠ¨å‚ä¸æ¨é€[REMARK:activityId]
 	 */
 	public static final int CATEGORY_JOIN = 0x01;
 	/**
-	 * »î¶¯×´Ì¬[REMARK:activityId]
+	 * æ´»åŠ¨çŠ¶æ€[REMARK:activityId]
 	 */
 	public static final int CATEGORY_STATE = 0x02;
 	/**
-	 * »ı·Ö±ä»¯[REMARK:uid,& unnecessary]
+	 * ç§¯åˆ†å˜åŒ–[REMARK:uid,& unnecessary]
 	 */
 	public static final int CATEGORY_INTEGRAL = 0x03;
 	/**
-	 * ÏµÍ³ÏûÏ¢
+	 * ç³»ç»Ÿæ¶ˆæ¯
 	 */
 	public static final int CATEGORY_SYSTEM = 0x04;
 	/**
-	 * ÓÃ»§ÏûÏ¢£¬Ôİ¶¨ÓÚ¸ø´´½¨Õß·¢ÓÃ»§²ÎÓëÏûÏ¢[REMARK:activityId]
+	 * ç”¨æˆ·æ¶ˆæ¯ï¼Œæš‚å®šäºç»™åˆ›å»ºè€…å‘ç”¨æˆ·å‚ä¸æ¶ˆæ¯[REMARK:activityId]
 	 */
 	public static final int CATEGORY_USER = 0x05;
 	
 	/**
-	 * »î¶¯´ıÉóºË[REMARK:activityId]
+	 * æ´»åŠ¨å¾…å®¡æ ¸[REMARK:activityId]
 	 */
 	public static final int CATEGORY_VERIFY = 0x06;
 	
 	/**
-	 * »î¶¯ÆÀÂÛ×´¿ö[REMARK:evaluateContent,& part]
+	 * æ´»åŠ¨è¯„è®ºçŠ¶å†µ[REMARK:evaluateContent,& part]
 	 */
 	public static final int CATEGORY_CREDIBILITY = 0x07;
 
@@ -123,7 +123,7 @@ public class MessagePush {
 	}
 
 	/*
-	 * Éú³ÉJSONÊı¾İ
+	 * ç”ŸæˆJSONæ•°æ®
 	 */
 	public String toString() {
 		List<MessagePush> pushList = new ArrayList<MessagePush>();
@@ -132,11 +132,11 @@ public class MessagePush {
 	}
 	
 	/**
-	 * ½âÎöJSONÊı¾İ
+	 * è§£æJSONæ•°æ®
 	 * 
 	 * @param stream
-	 *            ÊäÈëÁ÷
-	 * @return ÏûÏ¢ĞÅÏ¢
+	 *            è¾“å…¥æµ
+	 * @return æ¶ˆæ¯ä¿¡æ¯
 	 * @throws JSONException
 	 */
 	public static List<MessagePush> parse(String content) throws JSONException {
@@ -164,7 +164,7 @@ public class MessagePush {
 	}
 
 	/**
-	 * ÓÉMessagePushÊµÌåÉú³ÉJSONÊı¾İ
+	 * ç”±MessagePushå®ä½“ç”ŸæˆJSONæ•°æ®
 	 * 
 	 * @param pushList
 	 * @return

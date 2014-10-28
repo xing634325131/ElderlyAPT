@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 /**
  * @author xp
- * @created 2014Äê4ÔÂ24ÈÕ
+ * @created 2014å¹´4æœˆ24æ—¥
  */
 public class StringUtils {
 
@@ -28,7 +28,7 @@ public class StringUtils {
 	};
 
 	/**
-	 * ÅĞ¶ÏÊäÈë×Ö·û´®ÊÇ·ñÎª¿Õ
+	 * åˆ¤æ–­è¾“å…¥å­—ç¬¦ä¸²æ˜¯å¦ä¸ºç©º
 	 * 
 	 * @param input
 	 * @return
@@ -49,8 +49,8 @@ public class StringUtils {
 	/**
 	 * 
 	 * @param plainText
-	 *            Ã÷ÎÄ
-	 * @return 32Î»ÃÜÎÄ
+	 *            æ˜æ–‡
+	 * @return 32ä½å¯†æ–‡
 	 */
 	public static String toMD5(String plainText) {
 		String re_md5 = new String();
@@ -80,7 +80,7 @@ public class StringUtils {
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ²»ÊÇÒ»¸öºÏ·¨µÄµç×ÓÓÊ¼şµØÖ·
+	 * åˆ¤æ–­æ˜¯ä¸æ˜¯ä¸€ä¸ªåˆæ³•çš„ç”µå­é‚®ä»¶åœ°å€
 	 * 
 	 * @param email
 	 * @return
@@ -92,7 +92,7 @@ public class StringUtils {
 	}
 
 	/**
-	 * ×Ö·û´®×ªÕûÊı
+	 * å­—ç¬¦ä¸²è½¬æ•´æ•°
 	 * 
 	 * @param str
 	 * @param defValue
@@ -107,10 +107,10 @@ public class StringUtils {
 	}
 
 	/**
-	 * ¶ÔÏó×ªÕûÊı
+	 * å¯¹è±¡è½¬æ•´æ•°
 	 * 
 	 * @param obj
-	 * @return ×ª»»Òì³£·µ»Ø 0
+	 * @return è½¬æ¢å¼‚å¸¸è¿”å› 0
 	 */
 	public static int toInt(Object obj) {
 		if (obj == null)
@@ -119,7 +119,7 @@ public class StringUtils {
 	}
 
 	/**
-	 * ×Ö·û´®×ª¸¡µãĞÍ
+	 * å­—ç¬¦ä¸²è½¬æµ®ç‚¹å‹
 	 * 
 	 * @param str
 	 * @param defValue
@@ -134,10 +134,10 @@ public class StringUtils {
 	}
 
 	/**
-	 * ¶ÔÏó×ª¸¡µãĞÍ
+	 * å¯¹è±¡è½¬æµ®ç‚¹å‹
 	 * 
 	 * @param obj
-	 * @return ×ª»»Òì³£·µ»Ø 0
+	 * @return è½¬æ¢å¼‚å¸¸è¿”å› 0
 	 */
 	public static float toFloat(Object obj) {
 		if (obj == null)
@@ -146,10 +146,10 @@ public class StringUtils {
 	}
 
 	/**
-	 * ×Ö·û´®×ª²¼¶ûÖµ
+	 * å­—ç¬¦ä¸²è½¬å¸ƒå°”å€¼
 	 * 
 	 * @param b
-	 * @return ×ª»»Òì³£·µ»Ø false
+	 * @return è½¬æ¢å¼‚å¸¸è¿”å› false
 	 */
 	public static boolean toBoolean(String key) {
 		try {
@@ -160,9 +160,9 @@ public class StringUtils {
 	}
 
 	/**
-	 * ÒÔyyyy-MM-dd HH:mm:ss¸ñÊ½»ñÈ¡µ±Ç°ÈÕÆÚ
+	 * ä»¥yyyy-MM-dd HH:mm:ssæ ¼å¼è·å–å½“å‰æ—¥æœŸ
 	 * 
-	 * @return ÈÕÆÚ×Ö·û´®
+	 * @return æ—¥æœŸå­—ç¬¦ä¸²
 	 */
 	public static String getFormatNowDate() {
 		Date now = new Date();
@@ -172,7 +172,7 @@ public class StringUtils {
 	}
 
 	/**
-	 * ½«×Ö·û´®×ªÎ»ÈÕÆÚÀàĞÍ
+	 * å°†å­—ç¬¦ä¸²è½¬ä½æ—¥æœŸç±»å‹
 	 * 
 	 * @param sdate
 	 * @return
@@ -186,10 +186,10 @@ public class StringUtils {
 	}
 
 	/**
-	 * Í¨ÓÃ×Ö½ÚÁ÷×ª»»º¯Êı£¬·µ»Ø²Ù×÷½á¹û
+	 * é€šç”¨å­—èŠ‚æµè½¬æ¢å‡½æ•°ï¼Œè¿”å›æ“ä½œç»“æœ
 	 * 
-	 * @param ×Ö½ÚÁ÷
-	 * @return ²Ù×÷½á¹û
+	 * @param å­—èŠ‚æµ
+	 * @return æ“ä½œç»“æœ
 	 */
 	public static String parse(InputStream inputStream) {
 		byte[] data = null;
@@ -203,8 +203,8 @@ public class StringUtils {
 	
 	public static int parseTempToNum(String tempString) {
 		System.out.println("To parse string:"+tempString);
-		if(tempString.contains("¡æ")){
-			return Integer.valueOf(tempString.substring(0, tempString.indexOf("¡æ")));
+		if(tempString.contains("â„ƒ")){
+			return Integer.valueOf(tempString.substring(0, tempString.indexOf("â„ƒ")));
 		}
 		return 999;
 	}

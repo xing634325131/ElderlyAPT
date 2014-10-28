@@ -4,20 +4,20 @@ import android.app.Activity;
 import android.util.DisplayMetrics;
 
 /**
- * µÃµ½ÆÁÄ»¿í¸ßÃÜ¶ÈµÈ
+ * å¾—åˆ°å±å¹•å®½é«˜å¯†åº¦ç­‰
  * @author 
  * @email chenshi011@163.com
  *
  */
 public class ScreenInfo {
 	 private Activity activity;
-	 /** ÆÁÄ»¿í¶È£¨ÏñËØ£©*/
+	 /** å±å¹•å®½åº¦ï¼ˆåƒç´ ï¼‰*/
 	 private int width;
-	 /**ÆÁÄ»¸ß¶È£¨ÏñËØ£©*/
+	 /**å±å¹•é«˜åº¦ï¼ˆåƒç´ ï¼‰*/
 	 private int height;
-	 /**ÆÁÄ»ÃÜ¶È£¨0.75 / 1.0 / 1.5£©*/
+	 /**å±å¹•å¯†åº¦ï¼ˆ0.75 / 1.0 / 1.5ï¼‰*/
 	 private float density;
-	 /**ÆÁÄ»ÃÜ¶ÈDPI£¨120 / 160 / 240£©*/
+	 /**å±å¹•å¯†åº¦DPIï¼ˆ120 / 160 / 240ï¼‰*/
 	 private int densityDpi;
 	 public Activity getActivity() {
 		return activity;

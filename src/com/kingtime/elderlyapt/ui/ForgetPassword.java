@@ -10,10 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * ÕÒ»ØÃÜÂë½çÃæ
+ * æ‰¾å›å¯†ç ç•Œé¢
  * 
  * @author xp
- * @created 2014Äê7ÔÂ27ÈÕ
+ * @created 2014å¹´7æœˆ27æ—¥
  */
 public class ForgetPassword extends Activity {
 

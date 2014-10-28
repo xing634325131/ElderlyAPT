@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * SharedPreferences¹ÜÀíÀà
+ * SharedPreferencesç®¡ç†ç±»
  * */
 public class SharedPreferencesMgr {
 
@@ -13,7 +13,7 @@ public class SharedPreferencesMgr {
 
 	private SharedPreferencesMgr(Context context, String fileName) {
 		this.context = context;
-		// ³õÊ¼»¯Ò»¸öSharedPreferences¶ÔÏó£¬¿ÉÒÔ¶ÁĞ´¡£
+		// åˆå§‹åŒ–ä¸€ä¸ªSharedPreferenceså¯¹è±¡ï¼Œå¯ä»¥è¯»å†™ã€‚
 		sPrefs = context.getSharedPreferences(fileName, context.MODE_PRIVATE);
 		System.out.println("Create");
 	}
@@ -25,7 +25,7 @@ public class SharedPreferencesMgr {
 	public static String fileName;
 
 	/**
-	 * ´ÓPreferences»º´æµÃµ½Ò»¸öÕûĞÎ
+	 * ä»Preferencesç¼“å­˜å¾—åˆ°ä¸€ä¸ªæ•´å½¢
 	 * 
 	 * @param key
 	 * @param defaultValue
@@ -36,7 +36,7 @@ public class SharedPreferencesMgr {
 	}
 
 	/**
-	 * ±£´æÒ»¸öÕûĞÎµ½PreferencesÖĞ
+	 * ä¿å­˜ä¸€ä¸ªæ•´å½¢åˆ°Preferencesä¸­
 	 * 
 	 * @param key
 	 * @param value

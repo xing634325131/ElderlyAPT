@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê7ÔÂ27ÈÕ
+ * @created 2014å¹´7æœˆ27æ—¥
  */
 public class Register extends Activity {
 
@@ -99,7 +99,7 @@ public class Register extends Activity {
 		}
 
 		private void goRegister() {
-			if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+			if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 				Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK,
 						Toast.LENGTH_LONG).show();
 				return;
@@ -116,16 +116,16 @@ public class Register extends Activity {
 						Toast.makeText(getApplicationContext(), R.string.REGISTER_SUCCESS, Toast.LENGTH_LONG).show();
 						finish();
 						break;
-					case -2://×¢²áÓÃ»§ÒÑ´æÔÚ
+					case -2://æ³¨å†Œç”¨æˆ·å·²å­˜åœ¨
 						Toast.makeText(getApplicationContext(), R.string.ERROR_REGISTER_INFO, Toast.LENGTH_LONG).show();
 						accoutET.setText("");
 						passwordET.setText("");
 						passwordConfirmET.setText("");
 						break;
-					case -1://·şÎñÆ÷ÎŞÏìÓ¦
+					case -1://æœåŠ¡å™¨æ— å“åº”
 						Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
 						break;
-					default://Î´Öª´íÎó
+					default://æœªçŸ¥é”™è¯¯
 						Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 						break;
 					}
@@ -134,7 +134,7 @@ public class Register extends Activity {
 
 			
 			if(loadingDialog != null){
-				loadingDialog.setLoadText("ÕıÔÚ×¢²á...");
+				loadingDialog.setLoadText("æ­£åœ¨æ³¨å†Œ...");
 				loadingDialog.show();
 			}
 			
@@ -167,24 +167,24 @@ public class Register extends Activity {
 			password = passwordET.getText().toString();
 			passwordConfirm = passwordConfirmET.getText().toString();
 			if (StringUtils.isEmpty(account)) {
-				DialogTool.createMessageDialog(Register.this, "ÌáÊ¾", "ÕÊºÅÃû³Æ²»ÄÜÎª¿Õ",
-						"È·¶¨", null, DialogTool.NO_ICON).show();
+				DialogTool.createMessageDialog(Register.this, "æç¤º", "å¸å·åç§°ä¸èƒ½ä¸ºç©º",
+						"ç¡®å®š", null, DialogTool.NO_ICON).show();
 				return false;
 			} else if (StringUtils.isEmpty(password)
 					|| StringUtils.isEmpty(passwordConfirm)) {
-				DialogTool.createMessageDialog(Register.this, "ÌáÊ¾", "ÃÜÂë²»ÄÜÎª¿Õ",
-						"È·¶¨", null, DialogTool.NO_ICON).show();
+				DialogTool.createMessageDialog(Register.this, "æç¤º", "å¯†ç ä¸èƒ½ä¸ºç©º",
+						"ç¡®å®š", null, DialogTool.NO_ICON).show();
 				return false;
 			} else if (!password.equals(passwordConfirm)) {
-				DialogTool.createMessageDialog(Register.this, "ÌáÊ¾",
-						"Á½´ÎÊäÈëµÄÃÜÂë²»ÏàÍ¬£¬ÇëÖØĞÂÊäÈë", "È·¶¨", null, DialogTool.NO_ICON)
+				DialogTool.createMessageDialog(Register.this, "æç¤º",
+						"ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ç›¸åŒï¼Œè¯·é‡æ–°è¾“å…¥", "ç¡®å®š", null, DialogTool.NO_ICON)
 						.show();
 				passwordET.setText("");
 				passwordConfirmET.setText("");
 				return false;
 			} else if (password.length() < 8) {
-				DialogTool.createMessageDialog(Register.this, "ÌáÊ¾",
-						"ÃÜÂë³¤¶È²»ÄÜÉÙÓÚ8Î»", "È·¶¨", null, DialogTool.NO_ICON).show();
+				DialogTool.createMessageDialog(Register.this, "æç¤º",
+						"å¯†ç é•¿åº¦ä¸èƒ½å°‘äº8ä½", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 				passwordET.setText("");
 				passwordConfirmET.setText("");
 				return false;

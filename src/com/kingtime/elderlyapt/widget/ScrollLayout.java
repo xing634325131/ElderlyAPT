@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Scroller;
 
 /**
- * ×óÓÒ»¬¶¯ÇĞ»»ÆÁÄ»¿Ø¼ş
+ * å·¦å³æ»‘åŠ¨åˆ‡æ¢å±å¹•æ§ä»¶
  * 
  * @author Yao.GUET date: 2011-05-04
  * @modify xp
@@ -29,8 +29,8 @@ public class ScrollLayout extends ViewGroup {
 	private boolean isPass = false;
 
 	/**
-	 * ÉèÖÃÊÇ·ñ¿ÉÒÔ»¬¶¯ 2014-7-29
-	 * Ä¬ÈÏÎª²»¿É»¬¶¯
+	 * è®¾ç½®æ˜¯å¦å¯ä»¥æ»‘åŠ¨ 2014-7-29
+	 * é»˜è®¤ä¸ºä¸å¯æ»‘åŠ¨
 	 * @author xingpeng
 	 */
 	private boolean canScroll = false;
@@ -64,16 +64,16 @@ public class ScrollLayout extends ViewGroup {
 
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-		// ÎªÃ¿Ò»¸öº¢×ÓÉèÖÃËüÃÇµÄÎ»ÖÃ
+		// ä¸ºæ¯ä¸€ä¸ªå­©å­è®¾ç½®å®ƒä»¬çš„ä½ç½®
 		if (changed) {
 			int childLeft = 0;
 			final int childCount = getChildCount();
 			for (int i = 0; i < childCount; i++) {
 				final View childView = getChildAt(i);
 				if (childView.getVisibility() != View.GONE) {
-					// ´Ë´¦»ñÈ¡µ½µÄ¿í¶È¾ÍÊÇÔÚonMeasureÖĞÉèÖÃµÄÖµ
+					// æ­¤å¤„è·å–åˆ°çš„å®½åº¦å°±æ˜¯åœ¨onMeasureä¸­è®¾ç½®çš„å€¼
 					final int childWidth = childView.getMeasuredWidth();
-					// ÎªÃ¿Ò»¸ö×ÓView²¼¾Ö
+					// ä¸ºæ¯ä¸€ä¸ªå­Viewå¸ƒå±€
 					childView.layout(childLeft, 0, childLeft + childWidth,
 							childView.getMeasuredHeight());
 					childLeft += childWidth;
@@ -85,10 +85,10 @@ public class ScrollLayout extends ViewGroup {
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		// ÔÚonlayoutÖ®Ç°Ö´ĞĞ£¬»ñÈ¡ViewÉêÇëµÄ´óĞ¡£¬°ÑËüÃÇ±£´æÏÂÀ´£¬·½ÃæºóÃæÊ¹ÓÃ
+		// åœ¨onlayoutä¹‹å‰æ‰§è¡Œï¼Œè·å–Viewç”³è¯·çš„å¤§å°ï¼ŒæŠŠå®ƒä»¬ä¿å­˜ä¸‹æ¥ï¼Œæ–¹é¢åé¢ä½¿ç”¨
 		final int width = MeasureSpec.getSize(widthMeasureSpec);
 		final int count = getChildCount();
-		// ÎªÃ¿Ò»¸öº¢×ÓÉèÖÃËüÃÇµÄ´óĞ¡ÎªScrollLayoutµÄ´óĞ¡
+		// ä¸ºæ¯ä¸€ä¸ªå­©å­è®¾ç½®å®ƒä»¬çš„å¤§å°ä¸ºScrollLayoutçš„å¤§å°
 		for (int i = 0; i < count; i++) {
 			getChildAt(i).measure(widthMeasureSpec, heightMeasureSpec);
 		}
@@ -96,22 +96,22 @@ public class ScrollLayout extends ViewGroup {
 	}
 
 	public void snapToDestination() {
-		final int screenWidth = getWidth();// ×ÓviewµÄ¿í¶È£¬´ËÀıÖĞÎªËûÊÊÅäµÄ¸¸viewµÄ¿í¶È
+		final int screenWidth = getWidth();// å­viewçš„å®½åº¦ï¼Œæ­¤ä¾‹ä¸­ä¸ºä»–é€‚é…çš„çˆ¶viewçš„å®½åº¦
 		final int destScreen = (getScrollX() + screenWidth / 2) / screenWidth;
 		snapToScreen(destScreen);
 	}
 
 	public void snapToScreen(int whichScreen) {
-		// »ñÈ¡Òª¹ö¶¯µ½µÄÄ¿±êscreen
+		// è·å–è¦æ»šåŠ¨åˆ°çš„ç›®æ ‡screen
 		whichScreen = Math.max(0, Math.min(whichScreen, getChildCount() - 1));
 		if (getScrollX() != (whichScreen * getWidth())) {
-			// »ñÈ¡ÆÁÄ»ÒÆµ½Ä¿µÄview»¹ĞèÒªÒÆ¶¯¶àÉÙ¾àÀë
+			// è·å–å±å¹•ç§»åˆ°ç›®çš„viewè¿˜éœ€è¦ç§»åŠ¨å¤šå°‘è·ç¦»
 			final int delta = whichScreen * getWidth() - getScrollX();
-			// Ê¹ÓÃScroller¸¨Öú¹ö¶¯£¬ÈÃ¹ö¶¯±äµÃ¸üÆ½»¬
+			// ä½¿ç”¨Scrollerè¾…åŠ©æ»šåŠ¨ï¼Œè®©æ»šåŠ¨å˜å¾—æ›´å¹³æ»‘
 			mScroller.startScroll(getScrollX(), 0, delta, 0, 300);
 
 			mCurScreen = whichScreen;
-			invalidate(); // ÖØ»æ½çÃæ
+			invalidate(); // é‡ç»˜ç•Œé¢
 			if (mOnViewChangeListener != null) {
 				mOnViewChangeListener.OnViewChange(mCurScreen);
 			}
@@ -137,8 +137,8 @@ public class ScrollLayout extends ViewGroup {
 //		final float y = event.getY();
 //
 //		switch (action) {
-//		case MotionEvent.ACTION_DOWN:// 1,ÖÕÖ¹¹ö¶¯2,»ñÈ¡×îºóÒ»´ÎÊÂ¼şµÄxÖµ
-//			// System.out.println("¸¸Ààµã»÷onTouchEvent");
+//		case MotionEvent.ACTION_DOWN:// 1,ç»ˆæ­¢æ»šåŠ¨2,è·å–æœ€åä¸€æ¬¡äº‹ä»¶çš„xå€¼
+//			// System.out.println("çˆ¶ç±»ç‚¹å‡»onTouchEvent");
 //			Log.i("", "onTouchEvent  ACTION_DOWN");
 //			if (mVelocityTracker == null) {
 //				mVelocityTracker = VelocityTracker.obtain();
@@ -151,8 +151,8 @@ public class ScrollLayout extends ViewGroup {
 //			mLastMotionY = y;
 //			break;
 //
-//		case MotionEvent.ACTION_MOVE:// 1,»ñÈ¡×îºóÒ»´ÎÊÂ¼şµÄxÖµ2,¹ö¶¯µ½Ö¸¶¨Î»ÖÃ
-//			// System.out.println("¸¸Àà»¬¶¯onTouchEvent");
+//		case MotionEvent.ACTION_MOVE:// 1,è·å–æœ€åä¸€æ¬¡äº‹ä»¶çš„xå€¼2,æ»šåŠ¨åˆ°æŒ‡å®šä½ç½®
+//			// System.out.println("çˆ¶ç±»æ»‘åŠ¨onTouchEvent");
 //			int deltaX = (int) (mLastMotionX - x);
 //			if (IsCanMove(deltaX)) {
 //				if (mVelocityTracker != null) {
@@ -163,34 +163,34 @@ public class ScrollLayout extends ViewGroup {
 //			}
 //
 //			break;
-//		case MotionEvent.ACTION_UP:// 1,¼ÆËãÊÖÖ¸ÒÆ¶¯µÄËÙ¶È²¢µÃ³öÎÒÃÇĞèÒªµÄËÙ¶È2,Ñ¡Ôñ²»Í¬Çé¿öÏÂ¹ö¶¯µ½ÄÄ¸ö screen
-//			// System.out.println("¸¸Àà·Å¿ªonTouchEvent");
+//		case MotionEvent.ACTION_UP:// 1,è®¡ç®—æ‰‹æŒ‡ç§»åŠ¨çš„é€Ÿåº¦å¹¶å¾—å‡ºæˆ‘ä»¬éœ€è¦çš„é€Ÿåº¦2,é€‰æ‹©ä¸åŒæƒ…å†µä¸‹æ»šåŠ¨åˆ°å“ªä¸ª screen
+//			// System.out.println("çˆ¶ç±»æ”¾å¼€onTouchEvent");
 //			int velocityX = 0;
 //			if (mVelocityTracker != null) {
 //				mVelocityTracker.addMovement(event);
-//				// ÉèÖÃÊôĞÔÎª¼ÆËã1ÃëÔËĞĞ¶àÉÙ¸öÏñËØ
+//				// è®¾ç½®å±æ€§ä¸ºè®¡ç®—1ç§’è¿è¡Œå¤šå°‘ä¸ªåƒç´ 
 //				// computeCurrentVelocity(int
 //				// units, float
-//				// maxVelocity)ÉÏÃæµÄ1000¼´Îª´Ë´¦µÄunits¡£
-//				// maxVelocity±ØĞëÎªÕı£¬±íÊ¾µ±¼ÆËã³öµÄËÙÂÊ´óÓÚmaxVelocityÊ±ÎªmaxVelocity
-//				// Ğ¡ÓÚmaxVelocity¾ÍÎª¼ÆËã³öµÄËÙÂÊ
+//				// maxVelocity)ä¸Šé¢çš„1000å³ä¸ºæ­¤å¤„çš„unitsã€‚
+//				// maxVelocityå¿…é¡»ä¸ºæ­£ï¼Œè¡¨ç¤ºå½“è®¡ç®—å‡ºçš„é€Ÿç‡å¤§äºmaxVelocityæ—¶ä¸ºmaxVelocity
+//				// å°äºmaxVelocityå°±ä¸ºè®¡ç®—å‡ºçš„é€Ÿç‡
 //				mVelocityTracker.computeCurrentVelocity(1000);
 //				velocityX = (int) mVelocityTracker.getXVelocity();
 //			}
-//			// Èç¹ûËÙ¶ÈÎªÕı£¬Ôò±íÊ¾ÏòÓÒ»¬¶¯¡£ĞèÒªÖ¸¶¨mCurScreen´óÓÚ0£¬²ÅÄÜ»¬£¬²»È»¾Í²»×¼È·À²
+//			// å¦‚æœé€Ÿåº¦ä¸ºæ­£ï¼Œåˆ™è¡¨ç¤ºå‘å³æ»‘åŠ¨ã€‚éœ€è¦æŒ‡å®šmCurScreenå¤§äº0ï¼Œæ‰èƒ½æ»‘ï¼Œä¸ç„¶å°±ä¸å‡†ç¡®å•¦
 //			if (velocityX > SNAP_VELOCITY && mCurScreen > 0) {
 //				// Fling enough to move left
 //				Log.e(TAG, "snap left");
 //				snapToScreen(mCurScreen - 1);
 //			}
-//			// Èç¹ûËÙ¶ÈÎª¸º£¬Ôò±íÊ¾ÊÖÖ¸Ïò×ó»¬¶¯¡£ĞèÒªÖ¸¶¨mCurScreenĞ¡ÓÚ×îºóÒ»¸ö×ÓviewµÄid£¬²ÅÄÜ»¬£¬²»È»¾Í²»×¼È·À²
+//			// å¦‚æœé€Ÿåº¦ä¸ºè´Ÿï¼Œåˆ™è¡¨ç¤ºæ‰‹æŒ‡å‘å·¦æ»‘åŠ¨ã€‚éœ€è¦æŒ‡å®šmCurScreenå°äºæœ€åä¸€ä¸ªå­viewçš„idï¼Œæ‰èƒ½æ»‘ï¼Œä¸ç„¶å°±ä¸å‡†ç¡®å•¦
 //			else if (velocityX < -SNAP_VELOCITY
 //					&& mCurScreen < getChildCount() - 1) {
 //				// Fling enough to move right
 //				Log.e(TAG, "snap right");
 //				snapToScreen(mCurScreen + 1);
 //			}
-//			// ËÙ¶ÈĞ¡ÓÚÎÒÃÇ¹æ¶¨µÄ´ï±êËÙ¶È£¬ÄÇÃ´¾ÍÈÃ½çÃæ¸ú×ÅÊÖÖ¸»¬¶¯ÏÔÊ¾¡£×îºóÏÔÊ¾ÄÄ¸öscreenÔÙ×ö¼ÆËã£¨·½·¨ÖĞÓĞ¼ÆËã£©
+//			// é€Ÿåº¦å°äºæˆ‘ä»¬è§„å®šçš„è¾¾æ ‡é€Ÿåº¦ï¼Œé‚£ä¹ˆå°±è®©ç•Œé¢è·Ÿç€æ‰‹æŒ‡æ»‘åŠ¨æ˜¾ç¤ºã€‚æœ€åæ˜¾ç¤ºå“ªä¸ªscreenå†åšè®¡ç®—ï¼ˆæ–¹æ³•ä¸­æœ‰è®¡ç®—ï¼‰
 //			else {
 //				snapToDestination();
 //			}
@@ -213,20 +213,20 @@ public class ScrollLayout extends ViewGroup {
 //			return onInterceptTouchEvent(event);
 //		}
 //		switch (event.getAction()) {
-//		case MotionEvent.ACTION_DOWN:// ÅĞ¶Ï¹ö¶¯ÊÇ·ñÍ£Ö¹
-//			// System.out.println("¸¸Ààµã»÷onInterceptTouchEvent");
+//		case MotionEvent.ACTION_DOWN:// åˆ¤æ–­æ»šåŠ¨æ˜¯å¦åœæ­¢
+//			// System.out.println("çˆ¶ç±»ç‚¹å‡»onInterceptTouchEvent");
 //			if (isPass) {
 //				return true;
 //			}
 //			break;
-//		case MotionEvent.ACTION_MOVE:// ÅĞ¶ÏÊÇ·ñ´ï³É¹ö¶¯Ìõ¼ş
-//			// System.out.println("¸¸Àà»¬¶¯onInterceptTouchEvent");
+//		case MotionEvent.ACTION_MOVE:// åˆ¤æ–­æ˜¯å¦è¾¾æˆæ»šåŠ¨æ¡ä»¶
+//			// System.out.println("çˆ¶ç±»æ»‘åŠ¨onInterceptTouchEvent");
 //			if (isPass) {
 //				return true;
 //			}
 //			break;
-//		case MotionEvent.ACTION_UP:// °Ñ×´Ì¬µ÷ÕûÎª¿ÕÏĞ
-//			// System.out.println("¸¸Àà·Å¿ªonInterceptTouchEvent");
+//		case MotionEvent.ACTION_UP:// æŠŠçŠ¶æ€è°ƒæ•´ä¸ºç©ºé—²
+//			// System.out.println("çˆ¶ç±»æ”¾å¼€onInterceptTouchEvent");
 //			break;
 //		}
 		return super.onInterceptTouchEvent(event);
@@ -243,7 +243,7 @@ public class ScrollLayout extends ViewGroup {
 //		case MotionEvent.ACTION_DOWN:
 //			mLastMotionX = event.getX();
 //			mLastMotionY = event.getY();
-//			// System.out.println("¸¸Ààµã»÷dispatchTouchEvent");
+//			// System.out.println("çˆ¶ç±»ç‚¹å‡»dispatchTouchEvent");
 //			break;
 //		case MotionEvent.ACTION_MOVE:
 //			// System.out.println(Math.abs(event.getX() - mLastMotionX));
@@ -251,9 +251,9 @@ public class ScrollLayout extends ViewGroup {
 //			double tanNum = Math.atan(Math.abs(event.getY() - mLastMotionY)
 //					/ Math.abs(event.getX() - mLastMotionX));
 //			double retote = tanNum / 3.14 * 180;
-//			// System.out.println("½Ç¶È:" + retote);
+//			// System.out.println("è§’åº¦:" + retote);
 //			if (retote < 45) {
-//				// System.out.println("---------¸¸Àà»¬¶¯dispatchTouchEvent");
+//				// System.out.println("---------çˆ¶ç±»æ»‘åŠ¨dispatchTouchEvent");
 //				isPass = true;
 //			} else {
 //				isPass = false;
@@ -262,7 +262,7 @@ public class ScrollLayout extends ViewGroup {
 //			// System.out.println("***************" + isPass);
 //			break;
 //		case MotionEvent.ACTION_UP:
-//			// System.out.println("¸¸Àà·Å¿ªdispatchTouchEvent");
+//			// System.out.println("çˆ¶ç±»æ”¾å¼€dispatchTouchEvent");
 //			break;
 //		}
 		return super.dispatchTouchEvent(event);

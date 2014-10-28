@@ -27,10 +27,10 @@ public class ListViewMessageAdapter extends BaseAdapter implements SpeechSynthes
 	private Context context;
 	private List<MessagePush> messagePushs;
 	
-	// ¼ÓÔØ¶Ô»°¿ò
+	// åŠ è½½å¯¹è¯æ¡†
 	private LoadingDialog loadingDialog;
 
-	// ÓïÒôºÏ³É
+	// è¯­éŸ³åˆæˆ
 	private SpeechSynthesizer newspeechSynthesizer;
 	private Handler uiHandler;
 	private static final int SHOW_DIALOG = 0;
@@ -103,7 +103,7 @@ public class ListViewMessageAdapter extends BaseAdapter implements SpeechSynthes
 
 			@Override
 			public void onClick(View v) {
-				uiHandler = new Handler(context.getMainLooper()) {// ½çÃæ¿ØÖÆÆ÷
+				uiHandler = new Handler(context.getMainLooper()) {// ç•Œé¢æ§åˆ¶å™¨
 
 					@Override
 					public void handleMessage(Message msg) {
@@ -116,7 +116,7 @@ public class ListViewMessageAdapter extends BaseAdapter implements SpeechSynthes
 							loadingDialog.dismiss();
 							break;
 						case EXIST_ERROR:
-							Toast.makeText(context, "·¢Éú´íÎó", Toast.LENGTH_SHORT).show();
+							Toast.makeText(context, "å‘ç”Ÿé”™è¯¯", Toast.LENGTH_SHORT).show();
 							break;
 						default:
 							break;
@@ -201,6 +201,6 @@ public class ListViewMessageAdapter extends BaseAdapter implements SpeechSynthes
 
 	@Override
 	public void onStartWorking(SpeechSynthesizer arg0) {
-		uiHandler.sendMessage(uiHandler.obtainMessage(SHOW_DIALOG, "ÇëµÈ´ı..."));
+		uiHandler.sendMessage(uiHandler.obtainMessage(SHOW_DIALOG, "è¯·ç­‰å¾…..."));
 	}
 }

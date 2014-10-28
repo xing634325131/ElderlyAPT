@@ -7,10 +7,10 @@ import com.baidu.speechsynthesizer.SpeechSynthesizer;
 import com.baidu.speechsynthesizer.SpeechSynthesizerListener;
 
 /**
- * °Ù¶ÈÓïÒôºÏ³É
+ * ç™¾åº¦è¯­éŸ³åˆæˆ
  * 
  * @author xp
- * @created 2014Äê8ÔÂ16ÈÕ
+ * @created 2014å¹´8æœˆ16æ—¥
  */
 public class BaiduSpeech {
 	

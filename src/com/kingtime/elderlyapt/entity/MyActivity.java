@@ -14,10 +14,10 @@ import com.kingtime.elderlyapt.util.StreamTool;
 import com.kingtime.elderlyapt.util.StringUtils;
 
 /**
- * »î¶¯ÊµÌå
+ * æ´»åŠ¨å®ä½“
  * 
  * @author xp
- * @created 2014Äê8ÔÂ6ÈÕ
+ * @created 2014å¹´8æœˆ6æ—¥
  */
 public class MyActivity {
 
@@ -39,36 +39,36 @@ public class MyActivity {
 	private String remark;
 	private String mainPic;
 
-	public static final String[] CATEGORY = new String[] { "»¥Öú", "ÓéÀÖ", "¼ÒÎñ",
-			"Åã»¤", "Ë®µçÎ¬ĞŞ", "Ò½ÁÆ", "Ö¾Ô¸»î¶¯", "´ú°ì", "¶ÌÍ¾ÂÃÓÎ", "ÍÆ¼ö" };
-	public static final String[] STATE = new String[] { "Î´Í¨¹ıÉóºË", "´ıÉóºË", "±¨ÃûÖĞ", "±¨Ãû½ØÖ¹",
-			"¼´½«¿ªÊ¼", "½øĞĞÖĞ", "ÒÑ½áÊø" };
+	public static final String[] CATEGORY = new String[] { "äº’åŠ©", "å¨±ä¹", "å®¶åŠ¡",
+			"é™ªæŠ¤", "æ°´ç”µç»´ä¿®", "åŒ»ç–—", "å¿—æ„¿æ´»åŠ¨", "ä»£åŠ", "çŸ­é€”æ—…æ¸¸", "æ¨è" };
+	public static final String[] STATE = new String[] { "æœªé€šè¿‡å®¡æ ¸", "å¾…å®¡æ ¸", "æŠ¥åä¸­", "æŠ¥åæˆªæ­¢",
+			"å³å°†å¼€å§‹", "è¿›è¡Œä¸­", "å·²ç»“æŸ" };
 	/**
-	 * Î´Í¨¹ıÉóºË
+	 * æœªé€šè¿‡å®¡æ ¸
 	 */
 	public static final int ACTIVITY_CANCEL = 0x00;
 	/**
-	 * ´ıÉóºË
+	 * å¾…å®¡æ ¸
 	 */
 	public static final int ACTIVITY_REVIEW = 0x01;
 	/**
-	 * ±¨ÃûÖĞ
+	 * æŠ¥åä¸­
 	 */
 	public static final int ACTIVITY_APPLY = 0x02;
 	/**
-	 * ±¨Ãû½ØÖ¹
+	 * æŠ¥åæˆªæ­¢
 	 */
 	public static final int ACTIVITY_CLOSED = 0x03;
 	/**
-	 * ¼´½«¿ªÊ¼
+	 * å³å°†å¼€å§‹
 	 */
 	public static final int ACTIVITY_WILL_START = 0x04;
 	/**
-	 * ½øĞĞÖĞ
+	 * è¿›è¡Œä¸­
 	 */
 	public static final int ACTIVITY_RUNNING = 0x05;
 	/**
-	 * ÒÑ½áÊø
+	 * å·²ç»“æŸ
 	 */
 	public static final int ACTIVITY_END = 0x06;
 
@@ -228,7 +228,7 @@ public class MyActivity {
 	}
 
 	/**
-	 * ½«ÈÕÆÚµ÷ÕûÎªÖ¸¶¨¸ñÊ½
+	 * å°†æ—¥æœŸè°ƒæ•´ä¸ºæŒ‡å®šæ ¼å¼
 	 * 
 	 * @return
 	 */
@@ -242,21 +242,21 @@ public class MyActivity {
 		endCalendar.setTime(endDate);
 		int startMonth = startCalendar.get(Calendar.MONTH) + 1;
 		int endMonth = endCalendar.get(Calendar.MONTH) + 1;
-		dateString.append(startMonth).append("ÔÂ");
-		dateString.append(startCalendar.get(Calendar.DAY_OF_MONTH)).append("ÈÕ");
-		dateString.append("ÖÁ");
-		dateString.append(endMonth).append("ÔÂ");
-		dateString.append(endCalendar.get(Calendar.DAY_OF_MONTH)).append("ÈÕ");
+		dateString.append(startMonth).append("æœˆ");
+		dateString.append(startCalendar.get(Calendar.DAY_OF_MONTH)).append("æ—¥");
+		dateString.append("è‡³");
+		dateString.append(endMonth).append("æœˆ");
+		dateString.append(endCalendar.get(Calendar.DAY_OF_MONTH)).append("æ—¥");
 		System.out.println("Date:" + dateString.toString());
 		return dateString.toString();
 	}
 
 	/**
-	 * ½âÎöJSONÊı¾İ
+	 * è§£æJSONæ•°æ®
 	 * 
 	 * @param inputStream
-	 *            ÊäÈëÁ÷
-	 * @return »î¶¯ĞÅÏ¢ÁĞ±í
+	 *            è¾“å…¥æµ
+	 * @return æ´»åŠ¨ä¿¡æ¯åˆ—è¡¨
 	 * @throws JSONException
 	 * @throws Exception
 	 */
@@ -306,7 +306,7 @@ public class MyActivity {
 	}
 
 	/**
-	 * ´´½¨»î¶¯JSONÊı¾İ£¬±ãÓÚ·şÎñÆ÷½âÎö
+	 * åˆ›å»ºæ´»åŠ¨JSONæ•°æ®ï¼Œä¾¿äºæœåŠ¡å™¨è§£æ
 	 * 
 	 * @param pushActivity
 	 * @param addDutyList

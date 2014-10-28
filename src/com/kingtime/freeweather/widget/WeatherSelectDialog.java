@@ -51,10 +51,10 @@ public class WeatherSelectDialog extends Dialog {
 		initData();
 		setContentView(layout);
 
-		// ÉèÖÃwindowÊôĞÔ
+		// è®¾ç½®windowå±æ€§
 		lp = getWindow().getAttributes();
 		lp.gravity = Gravity.CENTER;
-		lp.dimAmount = (float) 0.5; // È¥±³¾°ÕÚ¸Ç
+		lp.dimAmount = (float) 0.5; // å»èƒŒæ™¯é®ç›–
 		lp.alpha = 1.0f;
 		getWindow().setAttributes(lp);
 	}

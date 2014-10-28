@@ -11,10 +11,10 @@ import org.json.JSONObject;
 import com.kingtime.elderlyapt.util.StreamTool;
 
 /**
- * ÌÖÂÛÊµÌå
+ * è®¨è®ºå®ä½“
  * 
  * @author xp
- * @created 2014Äê5ÔÂ10ÈÕ
+ * @created 2014å¹´5æœˆ10æ—¥
  */
 public class ChatRecord {
 
@@ -50,7 +50,7 @@ public class ChatRecord {
 	}
 
 	public String getChatTime() {
-		// ´¦ÀíÊı¾İ¿âÈÕÆÚ¸ñÊ½ÏÔÊ¾ĞÎÊ½
+		// å¤„ç†æ•°æ®åº“æ—¥æœŸæ ¼å¼æ˜¾ç¤ºå½¢å¼
 		return chatTime.substring(0, chatTime.length() - 2);
 	}
 
@@ -75,12 +75,12 @@ public class ChatRecord {
 	}
 
 	/**
-	 * ½âÎöJSONÊı¾İ
+	 * è§£æJSONæ•°æ®
 	 * 
 	 * @param inputStream
-	 * @return ÁÄÌìÁĞ±í
+	 * @return èŠå¤©åˆ—è¡¨
 	 * @throws JSONException
-	 *             Èç¹ûÎª¿ÕÔòÅ×³öÒì³£
+	 *             å¦‚æœä¸ºç©ºåˆ™æŠ›å‡ºå¼‚å¸¸
 	 */
 	public static List<ChatRecord> parse(InputStream inputStream) throws JSONException {
 		List<ChatRecord> recordList = new ArrayList<ChatRecord>();

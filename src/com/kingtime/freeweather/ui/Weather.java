@@ -38,7 +38,7 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 	private TextView titleTV;
 	private TextView setTV;
 
-	// »¬¶¯½çÃæºÍ¶¥²¿Ä£¿é
+	// æ»‘åŠ¨ç•Œé¢å’Œé¡¶éƒ¨æ¨¡å—
 	private ScrollLayout mScrollLayout;
 	private LinearLayout[] mImageViews;
 	private int mViewCount;
@@ -46,7 +46,7 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 	private TextView infoTV;
 	private TextView suggestTV;
 
-	// WeatherInfo ×î½üÌìÆøÇé¿ö
+	// WeatherInfo æœ€è¿‘å¤©æ°”æƒ…å†µ
 	private TextView locationTV;
 	private TextView tempTV;
 	private TextView predictTV;
@@ -61,7 +61,7 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 	private ListView dayLV;
 	private DayWeatherAdapter weatherAdapter;
 
-	// WeatherSuggest Éú»îĞ¡ÌùÊ¿
+	// WeatherSuggest ç”Ÿæ´»å°è´´å£«
 	private LinearLayout[] showSuggestLayouts;
 	private TextView[] tipDetailsTextViews;
 	private static int[] layoutIds = { R.id.suggest_layout_sunglass, R.id.suggest_layout_clothes, R.id.suggest_layout_tour,
@@ -84,7 +84,7 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 		
 		loadingDialog = new LoadingDialog(this);
 		weatherSelectDialog = new WeatherSelectDialog(this);
-		loadingDialog.setLoadText("Ë¢ĞÂÖĞ...");
+		loadingDialog.setLoadText("åˆ·æ–°ä¸­...");
 		SharedPreferencesMgr.init(getApplicationContext(), "weather");
 		weatherList = new ArrayList<>();
 		
@@ -96,8 +96,8 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
 		setTV = (TextView) findViewById(R.id.head_right);
-		titleTV.setText("ÌìÆø");
-		setTV.setText("ÉèÖÃ");
+		titleTV.setText("å¤©æ°”");
+		setTV.setText("è®¾ç½®");
 		setTV.setVisibility(View.VISIBLE);
 		backBtn.setOnClickListener(this);
 		setTV.setOnClickListener(this);
@@ -199,9 +199,9 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 		locationTV.setText(info.getPosition().getCityName());
 		int nowTemp = info.getDayDetail().getCommonTemp();
 		if(nowTemp == 999){
-			tempTV.setText("ÔİÎŞÊµ¿ö");
+			tempTV.setText("æš‚æ— å®å†µ");
 		}else{
-			tempTV.setText(info.getDayDetail().getCommonTemp() + "¡æ");
+			tempTV.setText(info.getDayDetail().getCommonTemp() + "â„ƒ");
 		}
 		// predictTV.setText("");
 		descTV.setText(info.getDayWeathers().get(0).getWeatherDesc());
@@ -209,13 +209,13 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 		windDrectionTV.setText(info.getDayDetail().getWindDirection());
 		int humidity = info.getDayDetail().getHumidityPercent();
 		if(humidity == 101){
-			humidityTV.setText("ÔİÎŞÊµ¿ö");
+			humidityTV.setText("æš‚æ— å®å†µ");
 		} else{
 			humidityTV.setText(info.getDayDetail().getHumidityPercent() + "%");
 		}
 		airQualityTV.setText(info.getDayDetail().getAirQuality());
 		raysTV.setText(info.getDayDetail().getUVIntensity());
-		lastRefreshTV.setText("Ë¢ĞÂÓÚ" + info.getLastRefreshTime());
+		lastRefreshTV.setText("åˆ·æ–°äº" + info.getLastRefreshTime());
 		
 		weatherAdapter = new DayWeatherAdapter(getApplicationContext(), info);
 		dayLV.setCacheColorHint(0);

@@ -8,7 +8,7 @@ import com.kingtime.elderlyapt.entity.MessagePush;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ25ÈÕ
+ * @created 2014å¹´8æœˆ25æ—¥
  */
 public class MessagePushService {
 	private List<MessagePush> activityPushs;
@@ -34,7 +34,7 @@ public class MessagePushService {
 	private int checkIsHasNewPush(List<MessagePush> messagePushs) {
 		int i = 0;
 		for (MessagePush messagePush : messagePushs) {
-			if (messagePush.getIsPushed() == 0) {// Î´¶ÁÏûÏ¢¼ì²â
+			if (messagePush.getIsPushed() == 0) {// æœªè¯»æ¶ˆæ¯æ£€æµ‹
 				i++;
 			}
 		}

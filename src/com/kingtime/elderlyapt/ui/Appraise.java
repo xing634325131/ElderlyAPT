@@ -60,7 +60,7 @@ public class Appraise extends Activity {
 
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
-		titleTV.setText("ÆÀÂÛ");
+		titleTV.setText("è¯„è®º");
 		backBtn.setOnClickListener(listener);
 
 		loadingDialog = new LoadingDialog(this);
@@ -69,7 +69,7 @@ public class Appraise extends Activity {
 	}
 
 	private void initData() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -84,14 +84,14 @@ public class Appraise extends Activity {
 
 				if (msg.what == 1) {
 					initLayout();
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else if (msg.what == 0) {// ·şÎñÆ÷·µ»ØÊı¾İÎª¿Õ£¬¼´ÔİÎŞÈËÔ±²Î¼Ó
+				} else if (msg.what == 0) {// æœåŠ¡å™¨è¿”å›æ•°æ®ä¸ºç©ºï¼Œå³æš‚æ— äººå‘˜å‚åŠ 
 					if (loadingDialog != null) {
 						loadingDialog.dismiss();
 					}
-					Toast.makeText(getApplicationContext(), "ÔİÎŞÈËÔ±²Î¼Ó£¡", Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+					Toast.makeText(getApplicationContext(), "æš‚æ— äººå‘˜å‚åŠ ï¼", Toast.LENGTH_LONG).show();
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -99,7 +99,7 @@ public class Appraise extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("»ñÈ¡ÓÃ»§ÁĞ±í...");
+			loadingDialog.setLoadText("è·å–ç”¨æˆ·åˆ—è¡¨...");
 			loadingDialog.show();
 		}
 
@@ -135,7 +135,7 @@ public class Appraise extends Activity {
 		sureBtn = (Button) findViewById(R.id.appraise_apply);
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
-		titleTV.setText("ÆÀÂÛ");
+		titleTV.setText("è¯„è®º");
 		backBtn.setOnClickListener(listener);
 		sureBtn.setOnClickListener(listener);
 		appraiseAdapter = new ListViewAppraiseAdapter(this, recordList);
@@ -175,7 +175,7 @@ public class Appraise extends Activity {
 		builder.append("]");
 		System.out.println("Evaluate json:" + builder.toString());
 
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -191,20 +191,20 @@ public class Appraise extends Activity {
 				if (msg.what == 1) {
 					boolean result = (boolean)msg.obj;
 					if(result == true){
-						Toast.makeText(Appraise.this, "ÆÀ¼Û³É¹¦£¡", Toast.LENGTH_SHORT).show();
+						Toast.makeText(Appraise.this, "è¯„ä»·æˆåŠŸï¼", Toast.LENGTH_SHORT).show();
 						finish();
 					} else{
-						Toast.makeText(Appraise.this, "ÆÀ¼ÛÊ§°Ü¡£ÇëÉÔºóÔÙÊÔ£¡", Toast.LENGTH_SHORT).show();
+						Toast.makeText(Appraise.this, "è¯„ä»·å¤±è´¥ã€‚è¯·ç¨åå†è¯•ï¼", Toast.LENGTH_SHORT).show();
 						return ;
 					}
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else if (msg.what == 0) {// ·şÎñÆ÷·µ»ØÊı¾İÎª¿Õ£¬¼´ÔİÎŞÈËÔ±²Î¼Ó
+				} else if (msg.what == 0) {// æœåŠ¡å™¨è¿”å›æ•°æ®ä¸ºç©ºï¼Œå³æš‚æ— äººå‘˜å‚åŠ 
 					if (loadingDialog != null) {
 						loadingDialog.dismiss();
 					}
-					Toast.makeText(getApplicationContext(), "ÔİÎŞÈËÔ±²Î¼Ó£¡", Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+					Toast.makeText(getApplicationContext(), "æš‚æ— äººå‘˜å‚åŠ ï¼", Toast.LENGTH_LONG).show();
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -212,7 +212,7 @@ public class Appraise extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("ÆÀ¼ÛÖĞ...");
+			loadingDialog.setLoadText("è¯„ä»·ä¸­...");
 			loadingDialog.show();
 		}
 

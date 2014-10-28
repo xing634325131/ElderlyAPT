@@ -27,30 +27,30 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ8ÈÕ
+ * @created 2014å¹´8æœˆ8æ—¥
  */
 public class ListViewJoinUserAdapter extends BaseAdapter {
 
 	private Context context;
 	private List<Record> records;
 	/**
-	 * ¸ºÔğ¼ÇÂ¼µ¥Ñ¡¿ò×´Ì¬£¬´«µİ½á¹û
+	 * è´Ÿè´£è®°å½•å•é€‰æ¡†çŠ¶æ€ï¼Œä¼ é€’ç»“æœ
 	 */
 	private List<Record> deleteRecords;
 	/**
-	 * ´´½¨ÕßID
+	 * åˆ›å»ºè€…ID
 	 */
 	private int postUserId;
 
-	// ÍøÂçÍ¼Æ¬»ñÈ¡
+	// ç½‘ç»œå›¾ç‰‡è·å–
 	private RequestQueue rQueue;
 	private ImageLoader imageLoader;
 
 	/**
 	 * @param c
-	 *            ÉÏÏÂÎÄ
+	 *            ä¸Šä¸‹æ–‡
 	 * @param userList
-	 *            ÓÃ»§ÁĞ±í
+	 *            ç”¨æˆ·åˆ—è¡¨
 	 */
 	public ListViewJoinUserAdapter(Context c, List<Record> recordList) {
 		this.context = c;
@@ -125,10 +125,10 @@ public class ListViewJoinUserAdapter extends BaseAdapter {
 		if (record.getUser().getUid() == postUserId
 				&& record.getUser().getRoleId() != User.COMMON_USER) {
 			holder.extraInfoTV.setVisibility(View.VISIBLE);
-			holder.extraInfoTV.setText("´´½¨Õß£»" + record.getUser().getRole());
+			holder.extraInfoTV.setText("åˆ›å»ºè€…ï¼›" + record.getUser().getRole());
 		} else if (record.getUser().getUid() == postUserId) {
 			holder.extraInfoTV.setVisibility(View.VISIBLE);
-			holder.extraInfoTV.setText("´´½¨Õß£»");
+			holder.extraInfoTV.setText("åˆ›å»ºè€…ï¼›");
 		} else if (record.getUser().getRoleId() != User.COMMON_USER) {
 			holder.extraInfoTV.setVisibility(View.VISIBLE);
 			holder.extraInfoTV.setText(record.getUser().getRole());

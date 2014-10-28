@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ11ÈÕ
+ * @created 2014å¹´8æœˆ11æ—¥
  */
 public class AddDuty extends Activity {
 
@@ -43,7 +43,7 @@ public class AddDuty extends Activity {
 	private EditText selectNumET;
 
 	private Duty nowDuty;
-	private BaiduASRDigitalDialog mDialog;// ÓïÒôÊ¶±ğ¶Ô»°¿ò
+	private BaiduASRDigitalDialog mDialog;// è¯­éŸ³è¯†åˆ«å¯¹è¯æ¡†
 
 	private AlertDialog.Builder selectDialogBuilder;
 
@@ -65,7 +65,7 @@ public class AddDuty extends Activity {
 		addSureBtn = (Button) findViewById(R.id.add_duty_sure);
 		voiceImageView = (ImageView) findViewById(R.id.add_voice_input);
 
-		titleTV.setText("Ìí¼ÓÖ°Ôğ");
+		titleTV.setText("æ·»åŠ èŒè´£");
 		backBtn.setOnClickListener(listener);
 		nowDuty = new Duty();
 		addSureBtn.setOnClickListener(listener);
@@ -111,7 +111,7 @@ public class AddDuty extends Activity {
 		nowDuty.setDutyContent(addContentET.getText().toString());
 		String integralString = addIntegralET.getText().toString();
 		if (StringUtils.isEmpty(integralString)) {
-			DialogTool.createMessageDialog(this, "ÌáÊ¾", "ÇëÊäÈëÕıÈ·µÄÊ±¼ä±Ò£¡", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(this, "æç¤º", "è¯·è¾“å…¥æ­£ç¡®çš„æ—¶é—´å¸ï¼", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			addIntegralET.setText("");
 			return false;
 		}
@@ -125,7 +125,7 @@ public class AddDuty extends Activity {
 		selectDialogBuilder = new AlertDialog.Builder(this);
 		final View view = getLayoutInflater().inflate(R.layout.select_dialog, null);
 		selectDialogBuilder.setView(view);
-		selectDialogBuilder.setTitle("²ÎÓëÊ±¼ä±Ò");
+		selectDialogBuilder.setTitle("å‚ä¸æ—¶é—´å¸");
 		radioGroup = (RadioGroup) view.findViewById(R.id.select_radio);
 		radioButton = (RadioButton)view.findViewById(R.id.select_out);
 		radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -143,10 +143,10 @@ public class AddDuty extends Activity {
 			public void onClick(DialogInterface dialog, int which) {
 				String textString = selectNumET.getText().toString();
 				if (!StringUtils.isEmpty(textString)) {
-					if (radioButton.getText().toString().equals("»ñµÃÊ±¼ä±Ò")) {
-						addIntegralET.setText("»ñµÃ  " + textString);
+					if (radioButton.getText().toString().equals("è·å¾—æ—¶é—´å¸")) {
+						addIntegralET.setText("è·å¾—  " + textString);
 					} else {
-						addIntegralET.setText("Ö§³ö " + textString);
+						addIntegralET.setText("æ”¯å‡º " + textString);
 					}
 				}
 			}
@@ -155,7 +155,7 @@ public class AddDuty extends Activity {
 	}
 
 	/**
-	 * Æô¶¯ÓïÒôÊ¶±ğ
+	 * å¯åŠ¨è¯­éŸ³è¯†åˆ«
 	 */
 	protected void startVoiceInput() {
 		DialogRecognitionListener mRecognitionListener = new DialogRecognitionListener() {

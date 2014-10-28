@@ -1,17 +1,17 @@
 package com.kingtime.elderlyapt.entity;
 
 /**
- * ·â×°ÉÏ´«ÎÄ¼şÊôĞÔ
+ * å°è£…ä¸Šä¼ æ–‡ä»¶å±æ€§
  * 
  * @author xp
- * @created 2014Äê4ÔÂ24ÈÕ
+ * @created 2014å¹´4æœˆ24æ—¥
  */
 public class FormFile {
 
-	private byte[] data;// ×Ö½ÚÁ÷Êı¾İ
-	private String filename;// ÎÄ¼şÃû³Æ
-	private String formname;// ±íµ¥ÊôĞÔÃû³Æ
-	private String contentType = "image/jpeg";// ÄÚÈİÀàĞÍ
+	private byte[] data;// å­—èŠ‚æµæ•°æ®
+	private String filename;// æ–‡ä»¶åç§°
+	private String formname;// è¡¨å•å±æ€§åç§°
+	private String contentType = "image/jpeg";// å†…å®¹ç±»å‹
 
 	public byte[] getData() {
 		return data;

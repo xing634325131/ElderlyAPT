@@ -9,11 +9,11 @@ import org.json.JSONObject;
 
 /**
  * @author xp
- * @created 2014Äê4ÔÂ24ÈÕ
+ * @created 2014å¹´4æœˆ24æ—¥
  */
 public class StreamTool {
 	/**
-	 * ¶ÁÈ¡ÊäÈëÁ÷Êı¾İ
+	 * è¯»å–è¾“å…¥æµæ•°æ®
 	 * 
 	 * @param inStream
 	 * @return
@@ -30,11 +30,11 @@ public class StreamTool {
 	}
 
 	/**
-	 * ´¦ÀíÊäÈëÁ÷£¨Ö¸¶¨¸ñÊ½ÎªJSONÊı¾İ£¬Èç[{result:1}]£©£¬·µ»Ø½âÎö½á¹û
+	 * å¤„ç†è¾“å…¥æµï¼ˆæŒ‡å®šæ ¼å¼ä¸ºJSONæ•°æ®ï¼Œå¦‚[{result:1}]ï¼‰ï¼Œè¿”å›è§£æç»“æœ
 	 * 
 	 * @param inputStream
-	 *            ÊäÈëÁ÷
-	 * @return resultµÄÊı¾İ·ÖÎö½á¹û
+	 *            è¾“å…¥æµ
+	 * @return resultçš„æ•°æ®åˆ†æç»“æœ
 	 * @throws JSONException
 	 */
 	public static boolean getResult(InputStream inputStream)

@@ -8,12 +8,12 @@ import android.widget.ListView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ12ÈÕ
+ * @created 2014å¹´8æœˆ12æ—¥
  */
 public class ListViewTool {
 
 	/**
-	 * ÔÚListviewÊı¾İ¸üĞÂºó£¬¸üĞÂÔÚScrollÀïµÄListview¸ß¶È
+	 * åœ¨Listviewæ•°æ®æ›´æ–°åï¼Œæ›´æ–°åœ¨Scrollé‡Œçš„Listviewé«˜åº¦
 	 * 
 	 * @param listView
 	 * @return
@@ -32,7 +32,7 @@ public class ListViewTool {
 		}
 		LayoutParams layoutParams = listView.getLayoutParams();
 		layoutParams.height = totalHeight
-				+ (listView.getDividerHeight() * (adapter.getCount() - 1));// ×ÜĞĞ¸ß+Ã¿ĞĞµÄ¼ä¾à
+				+ (listView.getDividerHeight() * (adapter.getCount() - 1));// æ€»è¡Œé«˜+æ¯è¡Œçš„é—´è·
 		return layoutParams;
 	}
 }

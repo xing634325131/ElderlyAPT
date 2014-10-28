@@ -30,7 +30,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ8ÈÕ
+ * @created 2014å¹´8æœˆ8æ—¥
  */
 public class DutyList extends Activity {
 
@@ -65,7 +65,7 @@ public class DutyList extends Activity {
 
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
-		titleTV.setText("»î¶¯Ö°ÔğÁĞ±í");
+		titleTV.setText("æ´»åŠ¨èŒè´£åˆ—è¡¨");
 		backBtn.setOnClickListener(listener);
 
 		loadingDialog = new LoadingDialog(this);
@@ -76,7 +76,7 @@ public class DutyList extends Activity {
 
 	private void initData() {
 		AppContext appContext = (AppContext) getApplication();
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK,
 					Toast.LENGTH_LONG).show();
 			return;
@@ -91,18 +91,18 @@ public class DutyList extends Activity {
 					if (loadingDialog != null) {
 						loadingDialog.dismiss();
 					}
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG)
 							.show();
-				} else if (msg.what == 0) {// ·şÎñÆ÷·µ»ØÊı¾İÎª¿Õ£¬¼´ÔİÎŞÈËÔ±²Î¼Ó
+				} else if (msg.what == 0) {// æœåŠ¡å™¨è¿”å›æ•°æ®ä¸ºç©ºï¼Œå³æš‚æ— äººå‘˜å‚åŠ 
 					if (loadingDialog != null) {
 						loadingDialog.dismiss();
 					}
 					Toast.makeText(getApplicationContext(),
-							"ÔİÎŞ¾ßÌå»î¶¯Ö°Ôğ£¡", Toast.LENGTH_LONG)
+							"æš‚æ— å…·ä½“æ´»åŠ¨èŒè´£ï¼", Toast.LENGTH_LONG)
 							.show();
-				}else {// Î´Öª´íÎó
+				}else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
@@ -111,7 +111,7 @@ public class DutyList extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("»ñÈ¡»î¶¯Ö°Ôğ...");
+			loadingDialog.setLoadText("è·å–æ´»åŠ¨èŒè´£...");
 			loadingDialog.show();
 		}
 
@@ -144,7 +144,7 @@ public class DutyList extends Activity {
 
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
-		titleTV.setText("»î¶¯Ö°ÔğÁĞ±í");
+		titleTV.setText("æ´»åŠ¨èŒè´£åˆ—è¡¨");
 		backBtn.setOnClickListener(listener);
 
 		dutyListView = (ListView) findViewById(R.id.duty_list);

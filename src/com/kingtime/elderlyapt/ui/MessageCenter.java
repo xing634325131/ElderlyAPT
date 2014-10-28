@@ -44,13 +44,13 @@
 //		DialogRecognitionListener mRecognitionListener = new DialogRecognitionListener() {
 //			@Override
 //			public void onResults(Bundle results) {
-//				// ÔÚResultsÖĞ»ñÈ¡Key ÎªDialogRecognitionListener
-//				// .RESULTS_RECOGNITIONµÄ
-//				// String ArrayList£¬¿ÉÄÜÎª¿Õ¡£»ñÈ¡µ½Ê¶±ğ½á¹ûºóÖ´ĞĞÏàÓ¦µÄÒµÎñÂß¼­¼´¿É£¬´Ë»Øµ÷»áÔÚÖ÷Ïß³Ìµ÷ÓÃ¡£
+//				// åœ¨Resultsä¸­è·å–Key ä¸ºDialogRecognitionListener
+//				// .RESULTS_RECOGNITIONçš„
+//				// String ArrayListï¼Œå¯èƒ½ä¸ºç©ºã€‚è·å–åˆ°è¯†åˆ«ç»“æœåæ‰§è¡Œç›¸åº”çš„ä¸šåŠ¡é€»è¾‘å³å¯ï¼Œæ­¤å›è°ƒä¼šåœ¨ä¸»çº¿ç¨‹è°ƒç”¨ã€‚
 //				ArrayList<String> rs = results != null ? results
 //						.getStringArrayList(RESULTS_RECOGNITION) : null;
 //				if (rs != null) {
-//					// ´Ë´¦´¦ÀíÊ¶±ğ½á¹û£¬Ê¶±ğ½á¹û¿ÉÄÜÓĞ¶à¸ö£¬°´ÖÃĞÅ¶È´Ó¸ßµ½µÍÅÅÁĞ£¬µÚÒ»¸öÔªËØÊÇÖÃĞÅ¶È×î¸ßµÄ½á¹û¡£
+//					// æ­¤å¤„å¤„ç†è¯†åˆ«ç»“æœï¼Œè¯†åˆ«ç»“æœå¯èƒ½æœ‰å¤šä¸ªï¼ŒæŒ‰ç½®ä¿¡åº¦ä»é«˜åˆ°ä½æ’åˆ—ï¼Œç¬¬ä¸€ä¸ªå…ƒç´ æ˜¯ç½®ä¿¡åº¦æœ€é«˜çš„ç»“æœã€‚
 //					testVoiceTV.setText(rs.get(0));
 //				}
 //			}
@@ -84,11 +84,11 @@
 //	}
 //
 //	protected void testVoiceOut() {
-//		// ×¢£ºµÚ¶ş¸ö²ÎÊıµ±Ç°Çë´«ÈëÈÎÒâ·Ç¿Õ×Ö·û´®¼´¿É
+//		// æ³¨ï¼šç¬¬äºŒä¸ªå‚æ•°å½“å‰è¯·ä¼ å…¥ä»»æ„éç©ºå­—ç¬¦ä¸²å³å¯
 //		SpeechSynthesizer speechSynthesizer =  new SpeechSynthesizer(getApplicationContext(), "holder", null);
-//		// ×¢£ºyour-apiKeyºÍyour-secretKeyĞèÒª»»³ÉÔÚ°Ù¶È¿ª·¢ÕßÖĞĞÄ×¢²áÓ¦ÓÃµÃµ½µÄ¶ÔÓ¦Öµ
+//		// æ³¨ï¼šyour-apiKeyå’Œyour-secretKeyéœ€è¦æ¢æˆåœ¨ç™¾åº¦å¼€å‘è€…ä¸­å¿ƒæ³¨å†Œåº”ç”¨å¾—åˆ°çš„å¯¹åº”å€¼
 //		speechSynthesizer.setApiKey("kslfNHwxFVQG1GWrIOriNWvq", "P8sh8YnPqG0DSqWCpU0ck9sSqgBedzj1");
-//		speechSynthesizer.speak("°Ù¶ÈÒ»ÏÂ");
+//		speechSynthesizer.speak("ç™¾åº¦ä¸€ä¸‹");
 //		
 //	}
 //	
@@ -135,11 +135,11 @@ import com.kingtime.elderlyapt.widget.ScrollLayout;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ24ÈÕ
+ * @created 2014å¹´8æœˆ24æ—¥
  */
 public class MessageCenter extends Activity implements OnClickListener, OnViewChangeListener {
 
-	// »¬¶¯½çÃæºÍ¶¥²¿Ä£¿é
+	// æ»‘åŠ¨ç•Œé¢å’Œé¡¶éƒ¨æ¨¡å—
 	private ScrollLayout mScrollLayout;
 	private LinearLayout[] mImageViews;
 	private int mViewCount;
@@ -202,7 +202,7 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 
 		backBtn = (Button) findViewById(R.id.head_back);
 		titleTV = (TextView) findViewById(R.id.head_title);
-		titleTV.setText("ÏûÏ¢");
+		titleTV.setText("æ¶ˆæ¯");
 		backBtn.setOnClickListener(this);
 	}
 
@@ -260,7 +260,7 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 	}
 
 	private void getActivity(final int activityId) {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -274,9 +274,9 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 				}
 				if (msg.what == 1) {
 
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -284,7 +284,7 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("ÇëÉÔºò...");
+			loadingDialog.setLoadText("è¯·ç¨å€™...");
 			loadingDialog.show();
 		}
 
@@ -324,7 +324,7 @@ public class MessageCenter extends Activity implements OnClickListener, OnViewCh
 			if (myActivity.getStateId() == MyActivity.ACTIVITY_REVIEW && user.getRoleId() == User.MANAGE_USER) {
 				intent = new Intent(MessageCenter.this, VerifyActivityDetails.class);
 			} else if (myActivity.getStateId() == MyActivity.ACTIVITY_REVIEW) {
-				DialogTool.createMessageDialog(MessageCenter.this, "ÌáĞÑ", "ÇëµÈ´ı»î¶¯Í¨¹ıÉóºË£¡", "È·¶¨", null, DialogTool.NO_ICON).show();
+				DialogTool.createMessageDialog(MessageCenter.this, "æé†’", "è¯·ç­‰å¾…æ´»åŠ¨é€šè¿‡å®¡æ ¸ï¼", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			} else {
 				intent = new Intent(MessageCenter.this, ActivityDetails.class);
 			}

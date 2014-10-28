@@ -4,7 +4,7 @@ import com.kingtime.elderlyapt.util.StringUtils;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ19ÈÕ
+ * @created 2014å¹´8æœˆ19æ—¥
  */
 public class Evaluate {
 

@@ -72,24 +72,24 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	private FrameLayout mylayoutLayout;
 	private ImageView playOutIV;
 
-	// ¼ÓÔØ¶Ô»°¿ò
+	// åŠ è½½å¯¹è¯æ¡†
 	private LoadingDialog loadingDialog;
 
-	// ÍøÂçÍ¼Æ¬»ñÈ¡
+	// ç½‘ç»œå›¾ç‰‡è·å–
 	private RequestQueue rQueue;
 	private ImageLoader imageLoader;
 
-	// Êı¾İ
+	// æ•°æ®
 	private int activityId;
 	private MyActivity nowActivity;
 	private User postUser;
 	private User nowUser;
 	private AppContext appContext;
 
-	// ×Ô¶¨ÒåµÄµ¯³ö¿òÀà
-	MenuWindow menuWindow; // µ¯³ö¿ò
+	// è‡ªå®šä¹‰çš„å¼¹å‡ºæ¡†ç±»
+	MenuWindow menuWindow; // å¼¹å‡ºæ¡†
 
-	// ÓïÒôºÏ³É
+	// è¯­éŸ³åˆæˆ
 	private SpeechSynthesizer newspeechSynthesizer;
 	private Handler uiHandler;
 	private static final int SHOW_DIALOG = 0;
@@ -123,7 +123,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	}
 
 	private void initData() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -147,16 +147,16 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 					detailContentTV.setText(nowActivity.getContent());
 					detailEndTimeTV.setText(getResources().getString(R.string.end_time) + nowActivity.getEndTime());
 					detailNameTV.setText(nowActivity.getPostName());
-					detailNeedNumTV.setText(String.valueOf(nowActivity.getNeedNum()) + "ÈË");
+					detailNeedNumTV.setText(String.valueOf(nowActivity.getNeedNum()) + "äºº");
 					detailPostUserTV.setText(postUser.getName());
 					detailStartTimeTV.setText(getResources().getString(R.string.begin_time) + nowActivity.getBeginTime());
 					detailStateTV.setText(nowActivity.getState());
 
 					String imageURL = ApiClient.formImageURL(URLs.REQUEST_COMMON_IMAGE, nowActivity.getMainPic());
 					detailImageIV.setImageUrl(imageURL, imageLoader);
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -164,7 +164,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("»ñÈ¡»î¶¯ÏêÇé...");
+			loadingDialog.setLoadText("è·å–æ´»åŠ¨è¯¦æƒ…...");
 			loadingDialog.show();
 		}
 
@@ -224,8 +224,8 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 		mylayoutLayout = (FrameLayout) findViewById(R.id.it_top);
 		playOutIV = (ImageView) findViewById(R.id.push_play_out);
 
-		titleTV.setText("»î¶¯ÏêÇé");
-		if (nowUser.getUid() == postUser.getUid()) {// ´´½¨ÕßÏÔÊ¾²Ëµ¥
+		titleTV.setText("æ´»åŠ¨è¯¦æƒ…");
+		if (nowUser.getUid() == postUser.getUid()) {// åˆ›å»ºè€…æ˜¾ç¤ºèœå•
 			rightBtn.setText("");
 			rightBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.right_menu));
 			LayoutParams params = rightBtn.getLayoutParams();
@@ -310,7 +310,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 			case R.id.head_right:
 				showMenu(ActivityDetails.this);
 				break;
-			case R.id.push_play_out:// ÎÄ×Ö×ªÓïÒô
+			case R.id.push_play_out:// æ–‡å­—è½¬è¯­éŸ³
 				voicePlayOut();
 				break;
 			default:
@@ -323,16 +323,16 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	public void showMenu(final Activity context) {
 
 		System.out.println("height-->" + mylayoutLayout.getHeight() + "ststus-->" + UIHelper.getStatusHeight(this));
-		// ÏÔÊ¾´°¿Ú
+		// æ˜¾ç¤ºçª—å£
 		menuWindow.showAtLocation(ActivityDetails.this.findViewById(R.id.head_right), Gravity.TOP | Gravity.RIGHT, 0,
-				mylayoutLayout.getHeight() + UIHelper.getStatusHeight(this) + 1); // ÉèÖÃlayoutÔÚPopupWindowÖĞÏÔÊ¾µÄÎ»ÖÃ
+				mylayoutLayout.getHeight() + UIHelper.getStatusHeight(this) + 1); // è®¾ç½®layoutåœ¨PopupWindowä¸­æ˜¾ç¤ºçš„ä½ç½®
 	}
 
 	/**
-	 * ÎÄ×Ö×ªÓïÒô
+	 * æ–‡å­—è½¬è¯­éŸ³
 	 */
 	protected void voicePlayOut() {
-		uiHandler = new Handler(getMainLooper()) {// ½çÃæ¿ØÖÆÆ÷
+		uiHandler = new Handler(getMainLooper()) {// ç•Œé¢æ§åˆ¶å™¨
 
 			@Override
 			public void handleMessage(Message msg) {
@@ -345,7 +345,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 					loadingDialog.dismiss();
 					break;
 				case EXIST_ERROR:
-					Toast.makeText(ActivityDetails.this, "·¢Éú´íÎó", Toast.LENGTH_SHORT).show();
+					Toast.makeText(ActivityDetails.this, "å‘ç”Ÿé”™è¯¯", Toast.LENGTH_SHORT).show();
 					break;
 				default:
 					break;
@@ -366,7 +366,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 		}).start();
 	}
 
-	// Îªµ¯³ö´°¿ÚÊµÏÖ¼àÌıÀà
+	// ä¸ºå¼¹å‡ºçª—å£å®ç°ç›‘å¬ç±»
 	private OnClickListener itemsOnClick = new OnClickListener() {
 
 		public void onClick(View v) {
@@ -375,7 +375,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	};
 
 	/**
-	 * Õì²â»î¶¯µ±Ç°×´Ì¬ÊÇ·ñ¿ÉÒÔ²ÎÓë
+	 * ä¾¦æµ‹æ´»åŠ¨å½“å‰çŠ¶æ€æ˜¯å¦å¯ä»¥å‚ä¸
 	 * 
 	 * @return
 	 */
@@ -391,7 +391,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	}
 
 	/**
-	 * Õì²â»î¶¯µ±Ç°ÈËÊıÊÇ·ñ¿ÉÒÔ²ÎÓë
+	 * ä¾¦æµ‹æ´»åŠ¨å½“å‰äººæ•°æ˜¯å¦å¯ä»¥å‚ä¸
 	 * 
 	 * @return
 	 */
@@ -417,10 +417,10 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	};
 
 	/**
-	 * ¼ì²â²ÎÓëÓÃ»§ÊÇ·ñÆÀÂÛ¹ı¸Ã»î¶¯
+	 * æ£€æµ‹å‚ä¸ç”¨æˆ·æ˜¯å¦è¯„è®ºè¿‡è¯¥æ´»åŠ¨
 	 */
 	protected void checkEvaluated() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -434,9 +434,9 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 				}
 				if (msg.what == 1) {
 					toEvaluate((int) msg.obj);
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -444,7 +444,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("ÇëÉÔºò...");
+			loadingDialog.setLoadText("è¯·ç¨å€™...");
 			loadingDialog.show();
 		}
 
@@ -468,10 +468,10 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	}
 
 	/**
-	 * ¼ì²â´´½¨ÕßÊÇ·ñÆÀÂÛ¹ı¸Ã»î¶¯²ÎÓëÕß
+	 * æ£€æµ‹åˆ›å»ºè€…æ˜¯å¦è¯„è®ºè¿‡è¯¥æ´»åŠ¨å‚ä¸è€…
 	 */
 	private void checkAppraise() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -496,9 +496,9 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 						appraiseIntent.putExtras(appraiseBundle);
 						startActivity(appraiseIntent);
 					}
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -506,7 +506,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("ÇëÉÔºò...");
+			loadingDialog.setLoadText("è¯·ç¨å€™...");
 			loadingDialog.show();
 		}
 
@@ -529,7 +529,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	}
 
 	private void toEvaluate(int stateId) {
-		if (stateId == Record.RECORD_NOT_EVALUATED)// ÎªÆÀÂÛ¹ı£¬È¥ÆÀÂÛ
+		if (stateId == Record.RECORD_NOT_EVALUATED)// ä¸ºè¯„è®ºè¿‡ï¼Œå»è¯„è®º
 		{
 			Intent evaluateIntent = new Intent(ActivityDetails.this, EvaluateActivity.class);
 			Bundle evaluateBundle = new Bundle();
@@ -548,10 +548,10 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	}
 
 	/**
-	 * ¼ì²âÊÇ·ñÉêÇë¼ÓÈë¹ı¸Ã»î¶¯
+	 * æ£€æµ‹æ˜¯å¦ç”³è¯·åŠ å…¥è¿‡è¯¥æ´»åŠ¨
 	 */
 	protected void checkedRecord() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -565,9 +565,9 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 				}
 				if (msg.what == 1) {
 					joinHandle((int) msg.obj);
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -575,7 +575,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("ÉêÇë¼ÓÈëÖĞ...");
+			loadingDialog.setLoadText("ç”³è¯·åŠ å…¥ä¸­...");
 			loadingDialog.show();
 		}
 
@@ -601,7 +601,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 	private void joinHandle(int stateId) {
 		AppContext appContext = (AppContext) getApplication();
 		User user = appContext.getLoginInfo();
-		if (user.getUid() == postUser.getUid()) {// ÅĞ¶Ï¼ÓÈëÕßÊÇ·ñÎª»î¶¯·¢ÆğÈË
+		if (user.getUid() == postUser.getUid()) {// åˆ¤æ–­åŠ å…¥è€…æ˜¯å¦ä¸ºæ´»åŠ¨å‘èµ·äºº
 			DialogTool.createMessageDialog(this, getResources().getString(R.string.hint),
 					getResources().getString(R.string.postuser_have_joined), getResources().getString(R.string.sure), null,
 					DialogTool.NO_ICON).show();
@@ -642,7 +642,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 
 		switch (requestCode) {
 		case 0x01:
-			onCreate(null);// Ë¢ĞÂ
+			onCreate(null);// åˆ·æ–°
 			break;
 
 		default:
@@ -714,7 +714,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 
 	@Override
 	public void onStartWorking(SpeechSynthesizer arg0) {
-		uiHandler.sendMessage(uiHandler.obtainMessage(SHOW_DIALOG, "ÇëµÈ´ı..."));
+		uiHandler.sendMessage(uiHandler.obtainMessage(SHOW_DIALOG, "è¯·ç­‰å¾…..."));
 	}
 
 }

@@ -30,7 +30,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ17ÈÕ
+ * @created 2014å¹´8æœˆ17æ—¥
  */
 public class MenuWindow extends PopupWindow {
 
@@ -41,7 +41,7 @@ public class MenuWindow extends PopupWindow {
 	private Activity c;
 	private String[] nowState;
 	private int selectId;
-	// ¼ÓÔØ¶Ô»°¿ò
+	// åŠ è½½å¯¹è¯æ¡†
 	private LoadingDialog loadingDialog;
 
 	public MenuWindow(final Activity context, OnClickListener itemsOnClick, MyActivity activity) {
@@ -76,21 +76,21 @@ public class MenuWindow extends PopupWindow {
 				showDialog();
 			}
 		});
-		// ÉèÖÃSelectPicPopupWindowµÄView
+		// è®¾ç½®SelectPicPopupWindowçš„View
 		this.setContentView(mMenuView);
-		// ÉèÖÃSelectPicPopupWindowµ¯³ö´°ÌåµÄ¿í
+		// è®¾ç½®SelectPicPopupWindowå¼¹å‡ºçª—ä½“çš„å®½
 		this.setWidth(w / 2 - 40);
-		// ÉèÖÃSelectPicPopupWindowµ¯³ö´°ÌåµÄ¸ß
+		// è®¾ç½®SelectPicPopupWindowå¼¹å‡ºçª—ä½“çš„é«˜
 		this.setHeight(LayoutParams.WRAP_CONTENT);
-		// ÉèÖÃSelectPicPopupWindowµ¯³ö´°Ìå¿Éµã»÷
+		// è®¾ç½®SelectPicPopupWindowå¼¹å‡ºçª—ä½“å¯ç‚¹å‡»
 		this.setFocusable(true);
-		// ÉèÖÃSelectPicPopupWindowµ¯³ö´°Ìå¶¯»­Ğ§¹û
+		// è®¾ç½®SelectPicPopupWindowå¼¹å‡ºçª—ä½“åŠ¨ç”»æ•ˆæœ
 		this.setAnimationStyle(R.style.menustyle);
-		// ÊµÀı»¯Ò»¸öColorDrawableÑÕÉ«Îª°ëÍ¸Ã÷
+		// å®ä¾‹åŒ–ä¸€ä¸ªColorDrawableé¢œè‰²ä¸ºåŠé€æ˜
 		ColorDrawable dw = new ColorDrawable(0000000000);
-		// ÉèÖÃSelectPicPopupWindowµ¯³ö´°ÌåµÄ±³¾°
+		// è®¾ç½®SelectPicPopupWindowå¼¹å‡ºçª—ä½“çš„èƒŒæ™¯
 		this.setBackgroundDrawable(dw);
-		// mMenuViewÌí¼ÓOnTouchListener¼àÌıÅĞ¶Ï»ñÈ¡´¥ÆÁÎ»ÖÃÈç¹ûÔÚÑ¡Ôñ¿òÍâÃæÔòÏú»Ùµ¯³ö¿ò
+		// mMenuViewæ·»åŠ OnTouchListenerç›‘å¬åˆ¤æ–­è·å–è§¦å±ä½ç½®å¦‚æœåœ¨é€‰æ‹©æ¡†å¤–é¢åˆ™é”€æ¯å¼¹å‡ºæ¡†
 		mMenuView.setOnTouchListener(new OnTouchListener() {
 
 			public boolean onTouch(View v, MotionEvent event) {
@@ -109,14 +109,14 @@ public class MenuWindow extends PopupWindow {
 
 	protected void showDialog() {
 		if (myActivity.getStateId() == MyActivity.ACTIVITY_CANCEL) {
-			DialogTool.createMessageDialog(c, "ÌáĞÑ", "»î¶¯Î´Í¨¹ıÉóºË£¬ÇëÁªÏµÉçÇø¹ÜÀíÔ±£¡", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(c, "æé†’", "æ´»åŠ¨æœªé€šè¿‡å®¡æ ¸ï¼Œè¯·è”ç³»ç¤¾åŒºç®¡ç†å‘˜ï¼", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			return;
 		}
 		if (myActivity.getStateId() == MyActivity.ACTIVITY_REVIEW) {
-			DialogTool.createMessageDialog(c, "ÌáĞÑ", "ÇëµÈ´ı»î¶¯Í¨¹ıÉóºË£¡", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(c, "æé†’", "è¯·ç­‰å¾…æ´»åŠ¨é€šè¿‡å®¡æ ¸ï¼", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			return;
 		}if (myActivity.getStateId() == MyActivity.ACTIVITY_END) {
-			DialogTool.createMessageDialog(c, "ÌáĞÑ", "»î¶¯ÒÑ½áÊø£¡", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(c, "æé†’", "æ´»åŠ¨å·²ç»“æŸï¼", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			return;
 		}
 		int stateNum = 6 - myActivity.getStateId();
@@ -125,16 +125,16 @@ public class MenuWindow extends PopupWindow {
 			nowState[i] = MyActivity.STATE[myActivity.getStateId() + i + 1];
 		}
 		AlertDialog.Builder builder = new AlertDialog.Builder(c);
-		builder.setTitle("¸ü¸Ä»î¶¯×´Ì¬").setSingleChoiceItems(nowState, -1, new DialogInterface.OnClickListener() {
+		builder.setTitle("æ›´æ”¹æ´»åŠ¨çŠ¶æ€").setSingleChoiceItems(nowState, -1, new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				selectId = which;
-				DialogTool.createConfirmDialog(c, "¾¯¸æ", "È·¶¨Òª½«»î¶¯×´Ì¬ÖÃÎª£º" + nowState[which], "È·¶¨", "È¡Ïû", changeListener, null,
+				DialogTool.createConfirmDialog(c, "è­¦å‘Š", "ç¡®å®šè¦å°†æ´»åŠ¨çŠ¶æ€ç½®ä¸ºï¼š" + nowState[which], "ç¡®å®š", "å–æ¶ˆ", changeListener, null,
 						DialogTool.NO_ICON).show();
 				dialog.dismiss();
 			}
-		}).setNegativeButton("È¡Ïû", null);
+		}).setNegativeButton("å–æ¶ˆ", null);
 		builder.show();
 	}
 
@@ -142,13 +142,13 @@ public class MenuWindow extends PopupWindow {
 
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
-			if (selectId == 0) {// µ±Ç°×´Ì¬£¬ÎŞĞè¸üĞÂ
+			if (selectId == 0) {// å½“å‰çŠ¶æ€ï¼Œæ— éœ€æ›´æ–°
 				return;
 			}
 			final int stateId = myActivity.getStateId(nowState[selectId]);
 
 			final AppContext appContext = (AppContext) c.getApplication();
-			if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+			if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 				Toast.makeText(c, R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 				return;
 			}
@@ -162,16 +162,16 @@ public class MenuWindow extends PopupWindow {
 					}
 
 					if (msg.what == 1) {
-						Toast.makeText(c, "¸üĞÂ³É¹¦£¡", Toast.LENGTH_LONG).show();
+						Toast.makeText(c, "æ›´æ–°æˆåŠŸï¼", Toast.LENGTH_LONG).show();
 						Intent intent = new Intent(c, ActivityDetails.class);
 						Bundle bundle = new Bundle();
 						bundle.putInt("activityId", myActivity.getActivityId());
 						intent.putExtras(bundle);
 						c.startActivity(intent);
 						c.finish();
-					} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+					} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 						Toast.makeText(c, R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-					} else {// Î´Öª´íÎó
+					} else {// æœªçŸ¥é”™è¯¯
 						Toast.makeText(c, R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 					}
 					super.handleMessage(msg);
@@ -179,7 +179,7 @@ public class MenuWindow extends PopupWindow {
 			};
 
 			if (loadingDialog != null) {
-				loadingDialog.setLoadText("¸üĞÂÖĞ...");
+				loadingDialog.setLoadText("æ›´æ–°ä¸­...");
 				loadingDialog.show();
 			}
 

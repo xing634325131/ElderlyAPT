@@ -30,7 +30,7 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ19ÈÕ
+ * @created 2014å¹´8æœˆ19æ—¥
  */
 public class EvaluateActivity extends Activity implements OnRatingBarChangeListener{
 
@@ -43,7 +43,7 @@ public class EvaluateActivity extends Activity implements OnRatingBarChangeListe
 	private Button sureBtn;
 	
 	private int activityId;
-	private BaiduASRDigitalDialog mDialog;// ÓïÒôÊ¶±ğ¶Ô»°¿ò
+	private BaiduASRDigitalDialog mDialog;// è¯­éŸ³è¯†åˆ«å¯¹è¯æ¡†
 	private Evaluate evaluate;
 	private AppContext appContext;
 	private LoadingDialog loading;
@@ -66,7 +66,7 @@ public class EvaluateActivity extends Activity implements OnRatingBarChangeListe
 		voiceIV = (ImageView)findViewById(R.id.evaluate_voice_input);
 		sureBtn = (Button)findViewById(R.id.evaluate_sure);
 		
-		titleTV.setText("ÆÀ¼Û");
+		titleTV.setText("è¯„ä»·");
 		backBtn.setOnClickListener(listener);
 		sureBtn.setOnClickListener(listener);
 		voiceIV.setOnClickListener(listener);
@@ -100,12 +100,12 @@ public class EvaluateActivity extends Activity implements OnRatingBarChangeListe
 	@Override
 	public void onRatingChanged(RatingBar ratingBar, float rating,
 			boolean fromUser) {
-		rateDescTV.setText("ÆÀ·Ö£º" + rating + "·Ö");
+		rateDescTV.setText("è¯„åˆ†ï¼š" + rating + "åˆ†");
 		
 	}
 
 	/**
-	 * Æô¶¯ÓïÒôÊ¶±ğ
+	 * å¯åŠ¨è¯­éŸ³è¯†åˆ«
 	 */
 	protected void startVoiceInput() {
 		DialogRecognitionListener mRecognitionListener = new DialogRecognitionListener() {
@@ -128,7 +128,7 @@ public class EvaluateActivity extends Activity implements OnRatingBarChangeListe
 		evaluate.setActivityId(activityId);
 		evaluate.setUid(appContext.getLoginInfo().getUid());
 		
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK,
 					Toast.LENGTH_LONG).show();
 			return;
@@ -145,17 +145,17 @@ public class EvaluateActivity extends Activity implements OnRatingBarChangeListe
 				if (msg.what == 1) {
 					boolean result = (boolean)msg.obj;
 					if(result == true){
-						Toast.makeText(EvaluateActivity.this, "ÆÀ¼Û³É¹¦£¡", Toast.LENGTH_SHORT).show();
+						Toast.makeText(EvaluateActivity.this, "è¯„ä»·æˆåŠŸï¼", Toast.LENGTH_SHORT).show();
 						setResult(RESULT_OK, null);
 						finish();
 					} else{
-						Toast.makeText(EvaluateActivity.this, "ÆÀ¼ÛÊ§°Ü¡£ÇëÉÔºóÔÙÊÔ£¡", Toast.LENGTH_SHORT).show();
+						Toast.makeText(EvaluateActivity.this, "è¯„ä»·å¤±è´¥ã€‚è¯·ç¨åå†è¯•ï¼", Toast.LENGTH_SHORT).show();
 					}
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG)
 							.show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(),
 							R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
@@ -164,7 +164,7 @@ public class EvaluateActivity extends Activity implements OnRatingBarChangeListe
 		};
 
 		if (loading != null) {
-			loading.setLoadText("ÆÀ¼ÛÖĞ...");
+			loading.setLoadText("è¯„ä»·ä¸­...");
 			loading.show();
 		}
 

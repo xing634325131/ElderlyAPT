@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê7ÔÂ26ÈÕ µÇÂ¼
+ * @created 2014å¹´7æœˆ26æ—¥ ç™»å½•
  */
 public class Login extends Activity {
 
@@ -58,7 +58,7 @@ public class Login extends Activity {
 	}
 
 	/**
-	 * ³õÊ¼»¯²¼¾Ö
+	 * åˆå§‹åŒ–å¸ƒå±€
 	 */
 	private void initLayout() {
 		titleTV = (TextView) findViewById(R.id.head_title);
@@ -70,7 +70,7 @@ public class Login extends Activity {
 		accountET = (EditText) findViewById(R.id.account);
 		passwordET = (EditText) findViewById(R.id.password);
 
-		titleTV.setText("µÇÂ¼");
+		titleTV.setText("ç™»å½•");
 		backBtn.setOnClickListener(listener);
 		loginBtn.setOnClickListener(listener);
 		registerBtn.setOnClickListener(listener);
@@ -80,7 +80,7 @@ public class Login extends Activity {
 	}
 
 	/**
-	 * ³õÊ¼»¯Êı¾İ Ö÷ÒªÎªÊÇ·ñÉèÖÃ±£ÁôÁËÕËºÅĞÅÏ¢
+	 * åˆå§‹åŒ–æ•°æ® ä¸»è¦ä¸ºæ˜¯å¦è®¾ç½®ä¿ç•™äº†è´¦å·ä¿¡æ¯
 	 */
 	private void initData() {
 		appContext = (AppContext) getApplication();
@@ -121,7 +121,7 @@ public class Login extends Activity {
 		}
 
 		/**
-		 * ¼ì²â±íµ¥Êı¾İÊÇ·ñºÏ·¨
+		 * æ£€æµ‹è¡¨å•æ•°æ®æ˜¯å¦åˆæ³•
 		 */
 		private boolean checkInput() {
 			account = accountET.getText().toString();
@@ -130,10 +130,10 @@ public class Login extends Activity {
 			System.out.println("login-->isrememberme-->" + rememberAccount);
 			appContext.setRememberMe(rememberAccount);
 			if (StringUtils.isEmpty(account) || StringUtils.isEmpty(password)) {
-				DialogTool.createMessageDialog(Login.this, "ÌáÊ¾", "ÓÃ»§Ãû»òÃÜÂë²»ÄÜÎª¿Õ", "È·¶¨", null, DialogTool.NO_ICON).show();
+				DialogTool.createMessageDialog(Login.this, "æç¤º", "ç”¨æˆ·åæˆ–å¯†ç ä¸èƒ½ä¸ºç©º", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 				return false;
 			} else if (password.length() < 8) {
-				DialogTool.createMessageDialog(Login.this, "ÌáÊ¾", "ÃÜÂë³¤¶È²»ÄÜÉÙÓÚ8Î»", "È·¶¨", null, DialogTool.NO_ICON).show();
+				DialogTool.createMessageDialog(Login.this, "æç¤º", "å¯†ç é•¿åº¦ä¸èƒ½å°‘äº8ä½", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 				return false;
 			}
 			return true;
@@ -141,7 +141,7 @@ public class Login extends Activity {
 	};
 
 	private void doLogin() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -154,26 +154,26 @@ public class Login extends Activity {
 
 				if (msg.what == 1) {
 					user = (User) msg.obj;
-					if (user != null) {// µÇÂ¼³É¹¦Ìø×ªµ½Ö÷½çÃæ
+					if (user != null) {// ç™»å½•æˆåŠŸè·³è½¬åˆ°ä¸»ç•Œé¢
 						AppContext ac = (AppContext) getApplication();
 						ac.saveLoginInfo(user);
 						
 						startActivity(new Intent(Login.this, Main.class));
 						finish();
 					}
-				} else if (msg.what == 0) {// ÓÃ»§Ãû»òÃÜÂë´íÎó
-					DialogTool.createMessageDialog(Login.this, "ÌáÊ¾", getResources().getString(R.string.ERROR_RESPONSE_LOGIN), "È·¶¨", null, DialogTool.NO_ICON).show();
+				} else if (msg.what == 0) {// ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯
+					DialogTool.createMessageDialog(Login.this, "æç¤º", getResources().getString(R.string.ERROR_RESPONSE_LOGIN), "ç¡®å®š", null, DialogTool.NO_ICON).show();
 					passwordET.setText("");
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 			}
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("ÕıÔÚµÇÂ¼...");
+			loadingDialog.setLoadText("æ­£åœ¨ç™»å½•...");
 			loadingDialog.show();
 		}
 

@@ -25,14 +25,14 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ20ÈÕ
+ * @created 2014å¹´8æœˆ20æ—¥
  */
 public class ListViewAppraiseAdapter extends BaseAdapter {
 
 	private Context context;
 	private List<Record> recordList;
 	private List<Evaluate> evaluates;
-	// ÍøÂçÍ¼Æ¬»ñÈ¡
+	// ç½‘ç»œå›¾ç‰‡è·å–
 	private RequestQueue rQueue;
 	private ImageLoader imageLoader;
 
@@ -94,7 +94,7 @@ public class ListViewAppraiseAdapter extends BaseAdapter {
 
 			@Override
 			public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-				// holder.credibilityDescTV.setText(rating + "·Ö");
+				// holder.credibilityDescTV.setText(rating + "åˆ†");
 				evaluates.get(position).setCredibility(rating);
 			}
 		});

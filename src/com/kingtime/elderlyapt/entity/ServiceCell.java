@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 
 /**
  * @author xp
- * @created 2014Äê7ÔÂ29ÈÕ
+ * @created 2014å¹´7æœˆ29æ—¥
  */
 public class ServiceCell {
 

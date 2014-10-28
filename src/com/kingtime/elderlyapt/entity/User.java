@@ -11,43 +11,43 @@ import org.json.JSONObject;
 import com.kingtime.elderlyapt.util.StreamTool;
 
 /**
- * ÓÃ»§ÊµÌå
+ * ç”¨æˆ·å®ä½“
  * 
  * @author xp
- * @created 2014Äê4ÔÂ24ÈÕ
+ * @created 2014å¹´4æœˆ24æ—¥
  */
 public class User {
 
 	/**
-	 * ÆÕÍ¨ÓÃ»§½ÇÉ«±àºÅ
+	 * æ™®é€šç”¨æˆ·è§’è‰²ç¼–å·
 	 */
 	public static final int COMMON_USER = 0x01;
 	/**
-	 * Ö¾Ô¸Õß±àºÅ
+	 * å¿—æ„¿è€…ç¼–å·
 	 */
 	public static final int VOLUNTEER_USER = 0x02;
 	/**
-	 * ·şÎñ»ú¹¹±àºÅ
+	 * æœåŠ¡æœºæ„ç¼–å·
 	 */
 	public static final int SERVICE_USER = 0x03;
 	/**
-	 * ÉçÇø¹ÜÀíÔ±±àºÅ
+	 * ç¤¾åŒºç®¡ç†å‘˜ç¼–å·
 	 */
 	public static final int MANAGE_USER = 0x04;
 	/**
-	 * ÆäËû½ÇÉ«ÓÃ»§±àºÅ
+	 * å…¶ä»–è§’è‰²ç”¨æˆ·ç¼–å·
 	 */
 	public static final int OTHER_USER = 0x05;
 	/**
-	 * ĞÔ±ğ£ºÄĞ
+	 * æ€§åˆ«ï¼šç”·
 	 */
-	public static final String GENDER_MALE = "ÄĞ";
+	public static final String GENDER_MALE = "ç”·";
 	/**
-	 * ĞÔ±ğ£ºÅ®
+	 * æ€§åˆ«ï¼šå¥³
 	 */
-	public static final String GENDER_FEMALE = "Å®";
-	private static final String[] ROLES = new String[] { "ÆÕÍ¨ÓÃ»§", "Ö¾Ô¸Õß", "·şÎñ»ú¹¹",
-			"ÉçÇø¹ÜÀíÔ±", "ÆäËûÓÃ»§" };
+	public static final String GENDER_FEMALE = "å¥³";
+	private static final String[] ROLES = new String[] { "æ™®é€šç”¨æˆ·", "å¿—æ„¿è€…", "æœåŠ¡æœºæ„",
+			"ç¤¾åŒºç®¡ç†å‘˜", "å…¶ä»–ç”¨æˆ·" };
 
 	private int uid;
 	private int roleId;
@@ -202,11 +202,11 @@ public class User {
 	}
 
 	/**
-	 * ½âÎöJSONÊı¾İ
+	 * è§£æJSONæ•°æ®
 	 * 
 	 * @param inputStream
-	 *            ÊäÈëÁ÷
-	 * @return ÓÃ»§ĞÅÏ¢
+	 *            è¾“å…¥æµ
+	 * @return ç”¨æˆ·ä¿¡æ¯
 	 * @throws JSONException
 	 * @throws Exception
 	 */

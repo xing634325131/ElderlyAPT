@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ6ÈÕ
+ * @created 2014å¹´8æœˆ6æ—¥
  */
 public class ListViewGeneralActivityAdapter extends BaseAdapter {
 
@@ -77,9 +77,9 @@ public class ListViewGeneralActivityAdapter extends BaseAdapter {
 
 		show.titleTV.setText(activity.getPostName());
 		show.dateTV.setText(activity.getSustained());
-		show.nowNumTV.setText(activity.getNowNum() + "ÈËÒÑ²ÎÓë");
+		show.nowNumTV.setText(activity.getNowNum() + "äººå·²å‚ä¸");
 		show.stateTV.setText(activity.getState());
-		//ÔİÊ±ÓĞÎÊÌâ£¬È¥µôÑÕÉ«±ä»¯
+		//æš‚æ—¶æœ‰é—®é¢˜ï¼Œå»æ‰é¢œè‰²å˜åŒ–
 //		System.out.println("stateid::::1---"+activity.getStateId());
 //		if (activity.getStateId() == MyActivity.ACTIVITY_END) {
 //			System.out.println("stateid::::2---"+activity.getStateId());
@@ -103,11 +103,11 @@ public class ListViewGeneralActivityAdapter extends BaseAdapter {
 	}
 
 	class Show {
-		NetworkImageView picIV;// »î¶¯Í¼Æ¬
-		TextView titleTV;// »î¶¯Ö÷Ìâ
-		TextView stateTV;// »î¶¯×´Ì¬
-		TextView dateTV;// »î¶¯ÈÕÆÚ
-		TextView nowNumTV;// »î¶¯µ±Ç°²ÎÓëÈËÊı
+		NetworkImageView picIV;// æ´»åŠ¨å›¾ç‰‡
+		TextView titleTV;// æ´»åŠ¨ä¸»é¢˜
+		TextView stateTV;// æ´»åŠ¨çŠ¶æ€
+		TextView dateTV;// æ´»åŠ¨æ—¥æœŸ
+		TextView nowNumTV;// æ´»åŠ¨å½“å‰å‚ä¸äººæ•°
 	}
 
 }

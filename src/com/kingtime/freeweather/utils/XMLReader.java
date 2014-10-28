@@ -9,7 +9,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 /**
  * @author xp
- * @created 2014Äê10ÔÂ3ÈÕ
+ * @created 2014å¹´10æœˆ3æ—¥
  */
 public class XMLReader {
 

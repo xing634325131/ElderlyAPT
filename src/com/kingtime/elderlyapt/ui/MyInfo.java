@@ -72,11 +72,11 @@ public class MyInfo extends Activity {
 	private LoadingDialog loading;
 	private AppContext appContext;
 
-	// ÍøÂçÍ¼Æ¬»ñÈ¡
+	// ç½‘ç»œå›¾ç‰‡è·å–
 	private RequestQueue rQueue;
 	private ImageLoader imageLoader;
 
-	// Í¼ÏñĞÅÏ¢´¦Àí
+	// å›¾åƒä¿¡æ¯å¤„ç†
 	private final static int CROP = 200;
 	private final static String FILE_SAVEPATH = Environment.getExternalStorageDirectory().getAbsolutePath()
 			+ "/ElderlyAPT/Portrait/";
@@ -118,9 +118,9 @@ public class MyInfo extends Activity {
 		createTimeTV = (TextView) findViewById(R.id.myinfo_my_createtime);
 		credibilityRating = (RatingBar) findViewById(R.id.myinfo_my_credibility);
 
-		titleTV.setText("¸öÈË×ÊÁÏ");
+		titleTV.setText("ä¸ªäººèµ„æ–™");
 		backBtn.setOnClickListener(listener);
-		saveBtn.setText("±£´æ");
+		saveBtn.setText("ä¿å­˜");
 		saveBtn.setVisibility(View.VISIBLE);
 		saveBtn.setOnClickListener(listener);
 		photoLayout.setOnClickListener(listener);
@@ -134,19 +134,19 @@ public class MyInfo extends Activity {
 	}
 
 	private void initData() {
-		// »ñÈ¡µÇÂ¼ÓÃ»§ĞÅÏ¢
+		// è·å–ç™»å½•ç”¨æˆ·ä¿¡æ¯
 		appContext = (AppContext) getApplication();
 		nowUser = appContext.getLoginInfo();
-		// ÍøÂçÍ¼Æ¬»ñÈ¡³õÊ¼»¯
+		// ç½‘ç»œå›¾ç‰‡è·å–åˆå§‹åŒ–
 		rQueue = Volley.newRequestQueue(this);
 		LruImageCache imageCache = LruImageCache.instance();
 		imageLoader = new ImageLoader(rQueue, imageCache);
 		loading = new LoadingDialog(this);
 
-		setData();// ³õÊ¼ÉèÖÃÎª±¾µØÊı¾İ
+		setData();// åˆå§‹è®¾ç½®ä¸ºæœ¬åœ°æ•°æ®
 
-		// ÔÚ»ñÈ¡ÍøÂçÊı¾İºó£¬¸üĞÂ±¾µØ¸öÈËĞÅÏ¢
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		// åœ¨è·å–ç½‘ç»œæ•°æ®åï¼Œæ›´æ–°æœ¬åœ°ä¸ªäººä¿¡æ¯
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -157,9 +157,9 @@ public class MyInfo extends Activity {
 			public void handleMessage(Message msg) {
 				if (msg.what == 1) {
 					setData();
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -170,7 +170,7 @@ public class MyInfo extends Activity {
 			public void run() {
 				Message msg = new Message();
 				try {
-					nowUser = ApiClient.getUserByUserId(nowUser.getUid());// ¸üĞÂÓÃ»§
+					nowUser = ApiClient.getUserByUserId(nowUser.getUid());// æ›´æ–°ç”¨æˆ·
 					msg.what = 1;
 				} catch (IOException e) {
 					System.out.println(e.toString());
@@ -189,7 +189,7 @@ public class MyInfo extends Activity {
 	}
 
 	/**
-	 * ÉèÖÃÏÔÊ¾Êı¾İ
+	 * è®¾ç½®æ˜¾ç¤ºæ•°æ®
 	 */
 	private void setData() {
 		if (nowUser.getPhotoName() != null) {
@@ -198,37 +198,37 @@ public class MyInfo extends Activity {
 		}
 		nameTV.setText(nowUser.getName());
 		if (nowUser.getPhone().equals("null") || StringUtils.isEmpty(nowUser.getPhone())) {
-			phoneTV.setText("ÇëÌîĞ´");
+			phoneTV.setText("è¯·å¡«å†™");
 			phoneTV.setTextColor(getResources().getColor(R.color.red));
 		} else {
 			phoneTV.setText(nowUser.getPhone());
 		}
 		if (nowUser.getResPhone().equals("null") || StringUtils.isEmpty(nowUser.getResPhone())) {
-			resphoneTV.setText("ÇëÌîĞ´");
+			resphoneTV.setText("è¯·å¡«å†™");
 			resphoneTV.setTextColor(getResources().getColor(R.color.red));
 		} else {
 			resphoneTV.setText(nowUser.getResPhone());
 		}
 		if (nowUser.getEmail().equals("null") || StringUtils.isEmpty(nowUser.getEmail())) {
-			emailTV.setText("ÇëÌîĞ´");
+			emailTV.setText("è¯·å¡«å†™");
 			emailTV.setTextColor(getResources().getColor(R.color.red));
 		} else {
 			emailTV.setText(nowUser.getEmail());
 		}
 		if (nowUser.getInterest().equals("null") || StringUtils.isEmpty(nowUser.getInterest())) {
-			interestTV.setText("ÇëÌîĞ´");
+			interestTV.setText("è¯·å¡«å†™");
 			interestTV.setTextColor(getResources().getColor(R.color.red));
 		} else {
 			interestTV.setText(nowUser.getInterest());
 		}
 		if (nowUser.getAddress().equals("null") || StringUtils.isEmpty(nowUser.getAddress())) {
-			addressTV.setText("ÇëÌîĞ´");
+			addressTV.setText("è¯·å¡«å†™");
 			addressTV.setTextColor(getResources().getColor(R.color.red));
 		} else {
 			addressTV.setText(nowUser.getAddress());
 		}
 		if (nowUser.getGender().equals("null") || StringUtils.isEmpty(nowUser.getGender())) {
-			genderTV.setText("ÇëÑ¡Ôñ");
+			genderTV.setText("è¯·é€‰æ‹©");
 			genderTV.setTextColor(getResources().getColor(R.color.red));
 		} else {
 			genderTV.setText(nowUser.getGender());
@@ -249,25 +249,25 @@ public class MyInfo extends Activity {
 				selectPhoto();
 				break;
 			case R.id.myinfo_name:
-				editDialog(R.id.myinfo_my_name, InputType.TYPE_CLASS_TEXT, "ÓÃ»§Ãû");
+				editDialog(R.id.myinfo_my_name, InputType.TYPE_CLASS_TEXT, "ç”¨æˆ·å");
 				break;
 			case R.id.myinfo_gender:
 				genderDialog();
 				break;
 			case R.id.myinfo_phone:
-				editDialog(R.id.myinfo_my_phone, InputType.TYPE_CLASS_PHONE, "ÁªÏµ·½Ê½");
+				editDialog(R.id.myinfo_my_phone, InputType.TYPE_CLASS_PHONE, "è”ç³»æ–¹å¼");
 				break;
 			case R.id.myinfo_resphone:
-				editDialog(R.id.myinfo_my_resphone, InputType.TYPE_CLASS_PHONE, "±¸ÓÃÁªÏµ·½Ê½");
+				editDialog(R.id.myinfo_my_resphone, InputType.TYPE_CLASS_PHONE, "å¤‡ç”¨è”ç³»æ–¹å¼");
 				break;
 			case R.id.myinfo_email:
-				editDialog(R.id.myinfo_my_email, InputType.TYPE_CLASS_TEXT, "ÓÊÏäµØÖ·");
+				editDialog(R.id.myinfo_my_email, InputType.TYPE_CLASS_TEXT, "é‚®ç®±åœ°å€");
 				break;
 			case R.id.myinfo_interest:
-				editDialog(R.id.myinfo_my_interest, InputType.TYPE_CLASS_TEXT, "ÌØ³¤ºÍ¶Ô¹«Ô¢µÄĞèÇó£¬ÒÔ·ÖºÅ¸ô¿ª");
+				editDialog(R.id.myinfo_my_interest, InputType.TYPE_CLASS_TEXT, "ç‰¹é•¿å’Œå¯¹å…¬å¯“çš„éœ€æ±‚ï¼Œä»¥åˆ†å·éš”å¼€");
 				break;
 			case R.id.myinfo_address:
-				editDialog(R.id.myinfo_my_address, InputType.TYPE_CLASS_TEXT, "ÏêÏ¸µØÖ·");
+				editDialog(R.id.myinfo_my_address, InputType.TYPE_CLASS_TEXT, "è¯¦ç»†åœ°å€");
 				break;
 			case R.id.head_right:
 				saveInfo();
@@ -281,7 +281,7 @@ public class MyInfo extends Activity {
 	protected void editDialog(final int id, int inputType, String title) {
 		final EditText inputServer = new EditText(this);
 		final TextView tempTextView = (TextView) findViewById(id);
-		if (tempTextView.getText().equals("ÇëÌîĞ´")) {
+		if (tempTextView.getText().equals("è¯·å¡«å†™")) {
 			inputServer.setText("");
 		} else {
 			inputServer.setText(tempTextView.getText());
@@ -289,8 +289,8 @@ public class MyInfo extends Activity {
 		inputServer.setInputType(inputType);
 		inputServer.setSelectAllOnFocus(true);
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(title).setView(inputServer).setNegativeButton("È¡Ïû", null);
-		builder.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+		builder.setTitle(title).setView(inputServer).setNegativeButton("å–æ¶ˆ", null);
+		builder.setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
 
 			public void onClick(DialogInterface dialog, int which) {
 				tempTextView.setText(inputServer.getText().toString());
@@ -301,28 +301,28 @@ public class MyInfo extends Activity {
 	}
 
 	protected void genderDialog() {
-		final String[] items = { "ÄĞ", "Å®" };
+		final String[] items = { "ç”·", "å¥³" };
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("ĞÔ±ğ").setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+		builder.setTitle("æ€§åˆ«").setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				genderTV.setText(items[which]);
 				dialog.dismiss();
 			}
-		}).setNegativeButton("È¡Ïû", null);
+		}).setNegativeButton("å–æ¶ˆ", null);
 		builder.show();
 	}
 
 	/**
-	 * Í¼Æ¬Ñ¡Ôñ
+	 * å›¾ç‰‡é€‰æ‹©
 	 */
 	protected void selectPhoto() {
 		CharSequence[] items = { getString(R.string.img_from_album), getString(R.string.img_from_camera) };
-		AlertDialog imageDialog = new AlertDialog.Builder(this).setTitle("ĞŞ¸ÄÍ·Ïñ")
+		AlertDialog imageDialog = new AlertDialog.Builder(this).setTitle("ä¿®æ”¹å¤´åƒ")
 				.setItems(items, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int item) {
-						// ÅĞ¶ÏÊÇ·ñ¹ÒÔØÁËSD¿¨
+						// åˆ¤æ–­æ˜¯å¦æŒ‚è½½äº†SDå¡
 						String storageState = Environment.getExternalStorageState();
 						if (storageState.equals(Environment.MEDIA_MOUNTED)) {
 							File savedir = new File(FILE_SAVEPATH);
@@ -330,28 +330,28 @@ public class MyInfo extends Activity {
 								savedir.mkdirs();
 							}
 						} else {
-							Toast.makeText(getApplicationContext(), "ÎŞ·¨±£´æÉÏ´«µÄÍ·Ïñ£¬Çë¼ì²éSD¿¨ÊÇ·ñ¹ÒÔØ", Toast.LENGTH_SHORT).show();
+							Toast.makeText(getApplicationContext(), "æ— æ³•ä¿å­˜ä¸Šä¼ çš„å¤´åƒï¼Œè¯·æ£€æŸ¥SDå¡æ˜¯å¦æŒ‚è½½", Toast.LENGTH_SHORT).show();
 							return;
 						}
 
-						// Êä³ö²Ã¼ôµÄÁÙÊ±ÎÄ¼ş
+						// è¾“å‡ºè£å‰ªçš„ä¸´æ—¶æ–‡ä»¶
 						String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-						// ÕÕÆ¬ÃüÃû
+						// ç…§ç‰‡å‘½å
 						String origFileName = "eapt_photo_" + timeStamp + ".jpg";
 						String cropFileName = "eapt_photo_crop_" + timeStamp + ".jpg";
 
-						// ²Ã¼ôÍ·ÏñµÄ¾ø¶ÔÂ·¾¶
+						// è£å‰ªå¤´åƒçš„ç»å¯¹è·¯å¾„
 						protraitPath = FILE_SAVEPATH + cropFileName;
 						protraitFile = new File(protraitPath);
 
 						origUri = Uri.fromFile(new File(FILE_SAVEPATH, origFileName));
 						cropUri = Uri.fromFile(protraitFile);
 
-						// Ïà²áÑ¡Í¼
+						// ç›¸å†Œé€‰å›¾
 						if (item == 0) {
 							startActionPickCrop(cropUri);
 						}
-						// ÊÖ»úÅÄÕÕ
+						// æ‰‹æœºæ‹ç…§
 						else if (item == 1) {
 							startActionCamera(origUri);
 						}
@@ -362,7 +362,7 @@ public class MyInfo extends Activity {
 	}
 
 	/**
-	 * Ñ¡ÔñÍ¼Æ¬²Ã¼ô
+	 * é€‰æ‹©å›¾ç‰‡è£å‰ª
 	 * 
 	 * @param output
 	 */
@@ -371,15 +371,15 @@ public class MyInfo extends Activity {
 		intent.setType("image/*");
 		intent.putExtra("output", output);
 		intent.putExtra("crop", "true");
-		intent.putExtra("aspectX", 1);// ²Ã¼ô¿ò±ÈÀı
+		intent.putExtra("aspectX", 1);// è£å‰ªæ¡†æ¯”ä¾‹
 		intent.putExtra("aspectY", 1);
-		intent.putExtra("outputX", CROP);// Êä³öÍ¼Æ¬´óĞ¡
+		intent.putExtra("outputX", CROP);// è¾“å‡ºå›¾ç‰‡å¤§å°
 		intent.putExtra("outputY", CROP);
-		startActivityForResult(Intent.createChooser(intent, "Ñ¡ÔñÍ¼Æ¬"), ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD);
+		startActivityForResult(Intent.createChooser(intent, "é€‰æ‹©å›¾ç‰‡"), ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD);
 	}
 
 	/**
-	 * Ïà»úÅÄÕÕ
+	 * ç›¸æœºæ‹ç…§
 	 * 
 	 * @param output
 	 */
@@ -390,30 +390,30 @@ public class MyInfo extends Activity {
 	}
 
 	/**
-	 * ÅÄÕÕºó²Ã¼ô
+	 * æ‹ç…§åè£å‰ª
 	 * 
 	 * @param data
-	 *            Ô­Ê¼Í¼Æ¬
+	 *            åŸå§‹å›¾ç‰‡
 	 * @param output
-	 *            ²Ã¼ôºóÍ¼Æ¬
+	 *            è£å‰ªåå›¾ç‰‡
 	 */
 	private void startActionCrop(Uri data, Uri output) {
 		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(data, "image/*");
 		intent.putExtra("output", output);
 		intent.putExtra("crop", "true");
-		intent.putExtra("aspectX", 1);// ²Ã¼ô¿ò±ÈÀı
+		intent.putExtra("aspectX", 1);// è£å‰ªæ¡†æ¯”ä¾‹
 		intent.putExtra("aspectY", 1);
-		intent.putExtra("outputX", CROP);// Êä³öÍ¼Æ¬´óĞ¡
+		intent.putExtra("outputX", CROP);// è¾“å‡ºå›¾ç‰‡å¤§å°
 		intent.putExtra("outputY", CROP);
 		startActivityForResult(intent, ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP);
 	}
 
 	/**
-	 * ÉÏ´«ĞÂÕÕÆ¬
+	 * ä¸Šä¼ æ–°ç…§ç‰‡
 	 */
 	private void uploadNewPhoto() {
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -423,27 +423,27 @@ public class MyInfo extends Activity {
 				if (loading != null)
 					loading.dismiss();
 				if (msg.what == 1) {
-					// ÏÔÊ¾Í¼Æ¬
+					// æ˜¾ç¤ºå›¾ç‰‡
 					photoIV.setImageBitmap(protraitBitmap);
 					boolean uploadResult = (boolean) msg.obj;
-					String toaString = uploadResult ? "Í·ÏñÉÏ´«³É¹¦" : "Í·ÏñÉÏ´«Ê§°Ü£¬ÇëÖØĞÂÑ¡ÔñÍ¼Æ¬ÉÏ´«";
+					String toaString = uploadResult ? "å¤´åƒä¸Šä¼ æˆåŠŸ" : "å¤´åƒä¸Šä¼ å¤±è´¥ï¼Œè¯·é‡æ–°é€‰æ‹©å›¾ç‰‡ä¸Šä¼ ";
 					Toast.makeText(getApplication(), toaString, Toast.LENGTH_LONG).show();
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 			}
 		};
 
 		if (loading != null) {
-			loading.setLoadText("ÕıÔÚÉÏ´«Í·Ïñ¡¤¡¤¡¤");
+			loading.setLoadText("æ­£åœ¨ä¸Šä¼ å¤´åƒÂ·Â·Â·");
 			loading.show();
 		}
 
 		new Thread() {
 			public void run() {
-				// »ñÈ¡Í·ÏñËõÂÔÍ¼
+				// è·å–å¤´åƒç¼©ç•¥å›¾
 				if (!StringUtils.isEmpty(protraitPath) && protraitFile.exists()) {
 					protraitBitmap = ImageUtils.loadImgThumbnail(protraitPath, 200, 200);
 				}
@@ -453,7 +453,7 @@ public class MyInfo extends Activity {
 					try {
 						boolean result = ApiClient.uploadUserPhoto(nowUser.getUid(), protraitFile);
 
-						// ±£´æÍ·Ïñµ½»º´æ
+						// ä¿å­˜å¤´åƒåˆ°ç¼“å­˜
 						String filename = FileUtils.getFileName(protraitFile.getPath());
 						ImageUtils.saveImage(MyInfo.this, filename, protraitBitmap);
 						msg.what = 1;
@@ -475,11 +475,11 @@ public class MyInfo extends Activity {
 
 		switch (requestCode) {
 		case ImageUtils.REQUEST_CODE_GETIMAGE_BYCAMERA:
-			startActionCrop(origUri, cropUri);// ÅÄÕÕºó²Ã¼ô
+			startActionCrop(origUri, cropUri);// æ‹ç…§åè£å‰ª
 			break;
 		case ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD:
 		case ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP:
-			uploadNewPhoto();// ÉÏ´«ĞÂÕÕÆ¬
+			uploadNewPhoto();// ä¸Šä¼ æ–°ç…§ç‰‡
 			break;
 		default:
 			break;
@@ -487,7 +487,7 @@ public class MyInfo extends Activity {
 	}
 
 	/**
-	 * ¸üĞÂ¸öÈËĞÅÏ¢
+	 * æ›´æ–°ä¸ªäººä¿¡æ¯
 	 */
 	protected void saveInfo() {
 		nowUser.setName(nameTV.getText().toString());
@@ -498,7 +498,7 @@ public class MyInfo extends Activity {
 		nowUser.setInterest(interestTV.getText().toString());
 		nowUser.setAddress(addressTV.getText().toString());
 
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(getApplicationContext(), R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -509,21 +509,21 @@ public class MyInfo extends Activity {
 					loading.dismiss();
 				if (msg.what == 1) {
 					User newUser = (User) msg.obj;
-					appContext.saveLoginInfo(newUser);// ¸üĞÂÍê¸öÈËĞÅÏ¢ºó±£´æµ½±¾µØ
-					String toaString = newUser != null ? "¸üĞÂ³É¹¦" : "¸üĞÂÊ§°Ü";
+					appContext.saveLoginInfo(newUser);// æ›´æ–°å®Œä¸ªäººä¿¡æ¯åä¿å­˜åˆ°æœ¬åœ°
+					String toaString = newUser != null ? "æ›´æ–°æˆåŠŸ" : "æ›´æ–°å¤±è´¥";
 					Toast.makeText(getApplication(), toaString, Toast.LENGTH_LONG).show();
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else if (msg.what == -2) {// ÒÑ´æÔÚ¸ÃÓÃ»§Ãû
-					DialogTool.createMessageDialog(MyInfo.this, "¸üĞÂÊ§°Ü", "ÒÑ´æÔÚ¸ÃÓÃ»§Ãû", "È·¶¨", null, DialogTool.NO_ICON).show();
-				} else {// Î´Öª´íÎó
+				} else if (msg.what == -2) {// å·²å­˜åœ¨è¯¥ç”¨æˆ·å
+					DialogTool.createMessageDialog(MyInfo.this, "æ›´æ–°å¤±è´¥", "å·²å­˜åœ¨è¯¥ç”¨æˆ·å", "ç¡®å®š", null, DialogTool.NO_ICON).show();
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 			}
 		};
 
 		if (loading != null) {
-			loading.setLoadText("ÕıÔÚ¸üĞÂ¸öÈËĞÅÏ¢¡¤¡¤¡¤");
+			loading.setLoadText("æ­£åœ¨æ›´æ–°ä¸ªäººä¿¡æ¯Â·Â·Â·");
 			loading.show();
 		}
 

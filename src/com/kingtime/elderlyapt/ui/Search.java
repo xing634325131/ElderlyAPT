@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 /**
  * @author xp
- * @created 2014Äê8ÔÂ21ÈÕ
+ * @created 2014å¹´8æœˆ21æ—¥
  */
 public class Search extends Activity {
 
@@ -92,7 +92,7 @@ public class Search extends Activity {
 			return;
 		}
 
-		if (appContext.getNetworkType() == 0) {// ÍøÂç´íÎó£¬ÎŞ·¨Á¬½Óµ½ÍøÂç
+		if (appContext.getNetworkType() == 0) {// ç½‘ç»œé”™è¯¯ï¼Œæ— æ³•è¿æ¥åˆ°ç½‘ç»œ
 			Toast.makeText(Search.this, R.string.ERROR_NO_NETWORK, Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -108,11 +108,11 @@ public class Search extends Activity {
 				if (msg.what == 1) {
 					activityAdapter.notifyDataSetChanged();
 					searchListView.setCacheColorHint(0);
-				} else if (msg.what == -1) {// ·şÎñÆ÷ÎŞÏìÓ¦
+				} else if (msg.what == -1) {// æœåŠ¡å™¨æ— å“åº”
 					Toast.makeText(Search.this, R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
-				} else if (msg.what == -2) {// ËÑË÷ÎŞ½á¹û
-					Toast.makeText(Search.this, "Ã»ÓĞËÑË÷µ½Ïà¹ØÄÚÈİ", Toast.LENGTH_LONG).show();
-				} else {// Î´Öª´íÎó
+				} else if (msg.what == -2) {// æœç´¢æ— ç»“æœ
+					Toast.makeText(Search.this, "æ²¡æœ‰æœç´¢åˆ°ç›¸å…³å†…å®¹", Toast.LENGTH_LONG).show();
+				} else {// æœªçŸ¥é”™è¯¯
 					Toast.makeText(Search.this, R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 				}
 				super.handleMessage(msg);
@@ -120,7 +120,7 @@ public class Search extends Activity {
 		};
 
 		if (loadingDialog != null) {
-			loadingDialog.setLoadText("ËÑË÷ÖĞ...");
+			loadingDialog.setLoadText("æœç´¢ä¸­...");
 			loadingDialog.show();
 		}
 
@@ -190,8 +190,8 @@ public class Search extends Activity {
 
 		switch (requestCode) {
 		case 0x01:
-			// ÓĞÒ»µãĞ¡ÎÊÌâ£¬ÔİÍ£Ê¹ÓÃË¢ĞÂ
-			// onCreate(null);//Ë¢ĞÂ½çÃæ
+			// æœ‰ä¸€ç‚¹å°é—®é¢˜ï¼Œæš‚åœä½¿ç”¨åˆ·æ–°
+			// onCreate(null);//åˆ·æ–°ç•Œé¢
 			break;
 
 		default:
@@ -203,7 +203,7 @@ public class Search extends Activity {
 
 	protected void checkData() {
 		if (StringUtils.isEmpty(searchString)) {
-			DialogTool.createMessageDialog(this, "ÌáÊ¾", "ÇëÊäÈëËÑË÷ÄÚÈİ", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(this, "æç¤º", "è¯·è¾“å…¥æœç´¢å†…å®¹", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			searchET.setText("");
 			return;
 		}

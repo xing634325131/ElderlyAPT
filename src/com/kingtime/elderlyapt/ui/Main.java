@@ -53,7 +53,7 @@ import android.widget.Toast;
 
 public class Main extends Activity implements OnViewChangeListener, OnClickListener {
 
-	// »¬¶¯½çÃæºÍµ×²¿Ä£¿é
+	// æ»‘åŠ¨ç•Œé¢å’Œåº•éƒ¨æ¨¡å—
 	private ScrollLayout mScrollLayout;
 	private LinearLayout[] mImageViews;
 	private int mViewCount;
@@ -63,7 +63,7 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 	private TextView searchTV;
 	private TextView myTV;
 
-	// ÍË³öÄ£¿é
+	// é€€å‡ºæ¨¡å—
 	private static boolean isExit = false;
 	private static Timer tExit = null;
 
@@ -99,19 +99,19 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 	// private LoadingDialog loadingDialog;
 	private User nowUser;
 
-	// ÍÆËÍÏûÏ¢¼ÇÂ¼£ººóÌ¨ÊÕ¼¯Êı¾İ
+	// æ¨é€æ¶ˆæ¯è®°å½•ï¼šåå°æ”¶é›†æ•°æ®
 	private String coinsString;
 	private String activityString;
 	private String evaluateString;
-	private static int times;// ¼ÆÊıÆ÷¡£µÚÒ»´ÎĞè¼ÓÔØÏûÏ¢£¬µÚ¶ş´ÎÈç¹ûÃ»ÓĞ¸üĞÂÔò²»ÓÃ¼ÓÔØÏûÏ¢
-	private int activityNum, evaluateNum, coinsNum;// ĞÂÏûÏ¢ÍÆËÍÌõÊı
+	private static int times;// è®¡æ•°å™¨ã€‚ç¬¬ä¸€æ¬¡éœ€åŠ è½½æ¶ˆæ¯ï¼Œç¬¬äºŒæ¬¡å¦‚æœæ²¡æœ‰æ›´æ–°åˆ™ä¸ç”¨åŠ è½½æ¶ˆæ¯
+	private int activityNum, evaluateNum, coinsNum;// æ–°æ¶ˆæ¯æ¨é€æ¡æ•°
 	private MessagePushService pushService;
 
 	private static final int REFRESH_TIME = 10 * 1000;
 	private Timer mainTimer;
 	private TimerTask messageTask;
 
-	// ½çÃæÏûÏ¢ÍÆËÍ
+	// ç•Œé¢æ¶ˆæ¯æ¨é€
 	private NotificationManager nManager;
 	private Notification notification;
 
@@ -204,7 +204,7 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 		joinedLayout.setOnClickListener(listener);
 		endedLayout.setOnClickListener(listener);
 		settingBtn.setOnClickListener(listener);
-		if (nowUser.getRoleId() == User.MANAGE_USER) {// ¹ÜÀíÔ±¿ÉÒÔÉóºË»î¶¯
+		if (nowUser.getRoleId() == User.MANAGE_USER) {// ç®¡ç†å‘˜å¯ä»¥å®¡æ ¸æ´»åŠ¨
 			verifyLayout.setVisibility(View.VISIBLE);
 		}
 		verifyLayout.setOnClickListener(listener);
@@ -262,10 +262,10 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 						evaluateNum = pushService.checkEvaluateMessage();
 						coinsNum = pushService.checkCoinsMessage();
 
-						if (times == 0 || activityNum > 0 || evaluateNum > 0 || coinsNum > 0) {// ÏûÏ¢ÓĞ¸üĞÂÊ±ĞèÖØĞÂ±£´æÎÄ¼ş
-							times++;// ¼ÆÊıÆ÷ÀÛ¼Ó
+						if (times == 0 || activityNum > 0 || evaluateNum > 0 || coinsNum > 0) {// æ¶ˆæ¯æœ‰æ›´æ–°æ—¶éœ€é‡æ–°ä¿å­˜æ–‡ä»¶
+							times++;// è®¡æ•°å™¨ç´¯åŠ 
 
-							// ±£´æÍÆËÍĞÅÏ¢
+							// ä¿å­˜æ¨é€ä¿¡æ¯
 							FileUtils.write(Main.this, "activityMessage", activityString);
 							FileUtils.write(Main.this, "evaluateMessage", evaluateString);
 							FileUtils.write(Main.this, "coinsMessage", coinsString);
@@ -285,7 +285,7 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 	}
 
 	/**
-	 * ÏÔÊ¾ÍÆËÍÏûÏ¢µ½½çÃæ
+	 * æ˜¾ç¤ºæ¨é€æ¶ˆæ¯åˆ°ç•Œé¢
 	 */
 	private void sendToUI() {
 		nManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -295,14 +295,14 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 			notification.when = System.currentTimeMillis();
 			notification.icon = R.drawable.logo;
 			notification.flags = Notification.FLAG_AUTO_CANCEL;
-			notification.tickerText = "ÄãÓĞĞÂµÄ»î¶¯Í¨Öª£¡";
+			notification.tickerText = "ä½ æœ‰æ–°çš„æ´»åŠ¨é€šçŸ¥ï¼";
 			notification.defaults = Notification.DEFAULT_SOUND;
 			PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, new Intent(Main.this, MessageCenter.class), 0);
-			if (activityNum == 1) {// ÍÆËÍµ¥ÌõÏûÏ¢
-				notification.setLatestEventInfo(this, "»î¶¯ÏûÏ¢", pushService.getSingleMessage(MessagePushService.ACTIVITY_CATEGORY)
+			if (activityNum == 1) {// æ¨é€å•æ¡æ¶ˆæ¯
+				notification.setLatestEventInfo(this, "æ´»åŠ¨æ¶ˆæ¯", pushService.getSingleMessage(MessagePushService.ACTIVITY_CATEGORY)
 						.getPushContent(), pendingIntent);
-			} else {// ¶àÌõÏûÏ¢ºÏ²¢ÍÆËÍ
-				notification.setLatestEventInfo(this, "»î¶¯Í¨Öª", "ÄãÓĞ¶àÌõ»î¶¯ÏûÏ¢£¬¿ìÈ¥¿´¿´°É£¡", pendingIntent);
+			} else {// å¤šæ¡æ¶ˆæ¯åˆå¹¶æ¨é€
+				notification.setLatestEventInfo(this, "æ´»åŠ¨é€šçŸ¥", "ä½ æœ‰å¤šæ¡æ´»åŠ¨æ¶ˆæ¯ï¼Œå¿«å»çœ‹çœ‹å§ï¼", pendingIntent);
 			}
 			nManager.notify(times, notification);
 		}
@@ -312,14 +312,14 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 			notification.when = System.currentTimeMillis();
 			notification.icon = R.drawable.logo;
 			notification.flags = Notification.FLAG_AUTO_CANCEL;
-			notification.tickerText = "ÄãÓĞĞÂµÄÆÀÂÛÏûÏ¢£¡";
+			notification.tickerText = "ä½ æœ‰æ–°çš„è¯„è®ºæ¶ˆæ¯ï¼";
 			notification.defaults = Notification.DEFAULT_SOUND;
 			PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, new Intent(Main.this, MessageCenter.class), 0);
 			if (evaluateNum == 1) {
-				notification.setLatestEventInfo(this, "ÆÀÂÛÍ¨Öª", pushService.getSingleMessage(MessagePushService.ACTIVITY_CATEGORY)
+				notification.setLatestEventInfo(this, "è¯„è®ºé€šçŸ¥", pushService.getSingleMessage(MessagePushService.ACTIVITY_CATEGORY)
 						.getPushContent(), pendingIntent);
 			} else {
-				notification.setLatestEventInfo(this, "ÆÀÂÛÍ¨Öª", "ÓĞÈËÆÀÂÛÁËÄãµÄ»î¶¯£¬¿ìÈ¥¿´¿´°É£¡", pendingIntent);
+				notification.setLatestEventInfo(this, "è¯„è®ºé€šçŸ¥", "æœ‰äººè¯„è®ºäº†ä½ çš„æ´»åŠ¨ï¼Œå¿«å»çœ‹çœ‹å§ï¼", pendingIntent);
 			}
 			nManager.notify(times * 2, notification);
 		}
@@ -329,14 +329,14 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 			notification.when = System.currentTimeMillis();
 			notification.icon = R.drawable.logo;
 			notification.flags = Notification.FLAG_AUTO_CANCEL;
-			notification.tickerText = "ÄãµÄÊ±¼ä±Ò·¢Éú±ä»¯À²£¡";
+			notification.tickerText = "ä½ çš„æ—¶é—´å¸å‘ç”Ÿå˜åŒ–å•¦ï¼";
 			notification.defaults = Notification.DEFAULT_SOUND;
 			PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, new Intent(Main.this, MessageCenter.class), 0);
 			if (coinsNum == 1) {
-				notification.setLatestEventInfo(this, "Ê±¼ä±ÒÍ¨Öª", pushService.getSingleMessage(MessagePushService.ACTIVITY_CATEGORY)
+				notification.setLatestEventInfo(this, "æ—¶é—´å¸é€šçŸ¥", pushService.getSingleMessage(MessagePushService.ACTIVITY_CATEGORY)
 						.getPushContent(), pendingIntent);
 			} else {
-				notification.setLatestEventInfo(this, "Ê±¼ä±ÒÍ¨Öª", "ÄãµÄÊ±¼ä±Ò±ä»¯ÁË£¬¿ìÈ¥¿´¿´°É£¡", pendingIntent);
+				notification.setLatestEventInfo(this, "æ—¶é—´å¸é€šçŸ¥", "ä½ çš„æ—¶é—´å¸å˜åŒ–äº†ï¼Œå¿«å»çœ‹çœ‹å§ï¼", pendingIntent);
 			}
 			nManager.notify(times * 3, notification);
 		}
@@ -376,12 +376,12 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 
 		@Override
 		public void onClick(View v) {
-			// »ñÈ¡µ±Ç°ÓÃ»§IDĞÅÏ¢
+			// è·å–å½“å‰ç”¨æˆ·IDä¿¡æ¯
 			Bundle userBundle = new Bundle();
 			Intent activityListIntent = new Intent(Main.this, ActivityList.class);
 			userBundle.putInt("uid", nowUser.getUid());
 
-			// °´Å¥µã»÷ÊÂ¼ş´¥·¢
+			// æŒ‰é’®ç‚¹å‡»äº‹ä»¶è§¦å‘
 			switch (v.getId()) {
 			case R.id.service_push_activity:
 				startActivity(new Intent(Main.this, PushActivity.class));
@@ -396,28 +396,28 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 				startActivity(new Intent(Main.this, MyInfo.class));
 				break;
 			case R.id.my_friend:
-				DialogTool.createMessageDialog(Main.this, "ÌáĞÑ", "¹¦ÄÜÕıÔÚ¿ª·¢ÖĞ£¬ÇëµÈ´ı¡£", "È·¶¨", null, DialogTool.NO_ICON).show();
+				DialogTool.createMessageDialog(Main.this, "æé†’", "åŠŸèƒ½æ­£åœ¨å¼€å‘ä¸­ï¼Œè¯·ç­‰å¾…ã€‚", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 				break;
 			case R.id.my_favorites:
-				DialogTool.createMessageDialog(Main.this, "ÌáĞÑ", "¹¦ÄÜÕıÔÚ¿ª·¢ÖĞ£¬ÇëµÈ´ı¡£", "È·¶¨", null, DialogTool.NO_ICON).show();
+				DialogTool.createMessageDialog(Main.this, "æé†’", "åŠŸèƒ½æ­£åœ¨å¼€å‘ä¸­ï¼Œè¯·ç­‰å¾…ã€‚", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 				break;
 			case R.id.my_ended:
 				Bundle endedBundle = new Bundle();
-				endedBundle.putString("titleName", "ÒÑ½áÊø»î¶¯");
+				endedBundle.putString("titleName", "å·²ç»“æŸæ´»åŠ¨");
 				endedBundle.putString("requestName", "requestEnded");
 				activityListIntent.putExtras(endedBundle);
 				startActivity(activityListIntent);
 				break;
 			case R.id.my_joined:
 				Bundle joinBundle = new Bundle();
-				joinBundle.putString("titleName", "Õı²Î¼ÓµÄ»î¶¯");
+				joinBundle.putString("titleName", "æ­£å‚åŠ çš„æ´»åŠ¨");
 				joinBundle.putString("requestName", "requestJoined");
 				activityListIntent.putExtras(joinBundle);
 				startActivity(activityListIntent);
 				break;
 			case R.id.my_published:
 				Bundle publishBundle = new Bundle();
-				publishBundle.putString("titleName", "ÒÑ·¢²¼»î¶¯");
+				publishBundle.putString("titleName", "å·²å‘å¸ƒæ´»åŠ¨");
 				publishBundle.putString("requestName", "requestPublished");
 				activityListIntent.putExtras(publishBundle);
 				startActivity(activityListIntent);
@@ -432,7 +432,7 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 				// System.out.println("to---->VerifyActivityList");
 				Bundle verifyBundle = new Bundle();
 				verifyBundle.putString("requestName", "requestVerify");
-				verifyBundle.putString("titleName", "´ıÉóºË»î¶¯");
+				verifyBundle.putString("titleName", "å¾…å®¡æ ¸æ´»åŠ¨");
 				activityListIntent.putExtras(verifyBundle);
 				startActivity(activityListIntent);
 				break;
@@ -449,7 +449,7 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 	private void startSearchForActivity() {
 		String searchString = searchET.getText().toString();
 		if (StringUtils.isEmpty(searchString)) {
-			DialogTool.createMessageDialog(this, "ÌáÊ¾", "ÇëÊäÈëËÑË÷ÄÚÈİ", "È·¶¨", null, DialogTool.NO_ICON).show();
+			DialogTool.createMessageDialog(this, "æç¤º", "è¯·è¾“å…¥æœç´¢å†…å®¹", "ç¡®å®š", null, DialogTool.NO_ICON).show();
 			searchET.setText("");
 			return;
 		}
@@ -514,7 +514,7 @@ public class Main extends Activity implements OnViewChangeListener, OnClickListe
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if ((keyCode == KeyEvent.KEYCODE_MENU)) {
 			return true;
-		} else if (keyCode == KeyEvent.KEYCODE_BACK) {// °´Á½´Î·µ»Ø¼üÍË³ö³ÌĞò
+		} else if (keyCode == KeyEvent.KEYCODE_BACK) {// æŒ‰ä¸¤æ¬¡è¿”å›é”®é€€å‡ºç¨‹åº
 			if (isExit == false) {
 				isExit = true;
 				if (tExit != null) {

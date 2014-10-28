@@ -3,15 +3,15 @@ package com.kingtime.elderlyapt.api;
 import java.io.Serializable;
 
 public class URLs implements Serializable {
-	public static final String HOST = "http://192.168.199.100:8080/ElderlyAPTServer/servlet/";
-	public static final String Pic_HOST = "http://192.168.199.100:8080/ElderlyAPTServer/servlet/RequestImageServlet";
+	public static final String HOST = "http://ftpxing.jsp103.jzidc88.com/servlet/";
+	public static final String Pic_HOST = "http://ftpxing.jsp103.jzidc88.com/servlet/RequestImageServlet";
 	public static final String URL_SPLITTER = "/";
 	/**
-	 * ·Ö¸ô·û
+	 * åˆ†éš”ç¬¦
 	 */
 	public static final String SEPARATE = "?";
 	/**
-	 * ·ÖÀë·û
+	 * åˆ†ç¦»ç¬¦
 	 */
 	public static final String PART = "&";
 	
@@ -31,11 +31,11 @@ public class URLs implements Serializable {
 	public static final String CHAT_RECORD = HOST + "ChatRecordServlet";
 	
 	/**
-	 * ÇëÇóÍ·ÏñÍ¼Æ¬
+	 * è¯·æ±‚å¤´åƒå›¾ç‰‡
 	 */
 	public static final int REQUEST_PHOTO_IMAGE = 0x01;
 	/**
-	 * ÇëÇóÆÕÍ¨»î¶¯Í¼Æ¬
+	 * è¯·æ±‚æ™®é€šæ´»åŠ¨å›¾ç‰‡
 	 */
 	public static final int REQUEST_COMMON_IMAGE = 0x02;
 }

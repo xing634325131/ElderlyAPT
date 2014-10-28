@@ -11,10 +11,10 @@ import org.json.JSONObject;
 import com.kingtime.elderlyapt.util.StreamTool;
 
 /**
- * Ö°ÔğÊµÌå
+ * èŒè´£å®ä½“
  * 
  * @author xp
- * @created 2014Äê8ÔÂ8ÈÕ
+ * @created 2014å¹´8æœˆ8æ—¥
  */
 public class Duty {
 
@@ -92,11 +92,11 @@ public class Duty {
 	}
 
 	/**
-	 * ½âÎöJSONÊı¾İ
+	 * è§£æJSONæ•°æ®
 	 * 
 	 * @param stream
-	 *            ÊäÈëÁ÷
-	 * @return Ö°ÔğĞÅÏ¢
+	 *            è¾“å…¥æµ
+	 * @return èŒè´£ä¿¡æ¯
 	 * @throws JSONException
 	 */
 	public static List<Duty> parse(InputStream stream) throws JSONException {

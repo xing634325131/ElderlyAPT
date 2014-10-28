@@ -5,10 +5,10 @@ import java.text.SimpleDateFormat;
 public class JudgeDate {
 
 	/**
-      * ÅĞ¶ÏÊÇ·ñÎªºÏ·¨µÄÈÕÆÚÊ±¼ä×Ö·û´®
+      * åˆ¤æ–­æ˜¯å¦ä¸ºåˆæ³•çš„æ—¥æœŸæ—¶é—´å­—ç¬¦ä¸²
       * @param str_input
       * @param str_input
-      * @return boolean;·ûºÏÎªtrue,²»·ûºÏÎªfalse
+      * @return boolean;ç¬¦åˆä¸ºtrue,ä¸ç¬¦åˆä¸ºfalse
       */
 	public static  boolean isDate(String str_input,String rDateFormat){
 		if (!isNull(str_input)) {
