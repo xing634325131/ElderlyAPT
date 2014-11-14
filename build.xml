@@ -87,6 +87,23 @@
          in order to avoid having your file be overridden by tools such as "android update project"
     -->
     <!-- version-tag: 1 -->
+
+    <property name="out.apk.dir" value="out" />
+	<property name="out.apk.absolute.dir" location="${out.apk.dir}"/>
+	<mkdir dir="${out.apk.absolute.dir}"/>
+	<property name="manifest" value="AndroidManifest.xml" />
+    <tstamp>
+        <format property="date" pattern="yyyyMMdd" />
+    </tstamp> 
+    <property name="out.release.file" value="${out.apk.absolute.dir}/${ant.project.name}_release_${productVersion}_${date}.apk"/>
+
     <import file="rules.xml" />
 
+    <target name="-init-clean-" >
+        <delete dir="${out.absolute.dir}" verbose="${verbose}" />
+        <delete dir="${gen.absolute.dir}" verbose="${verbose}"/>
+    </target>
+    
+    <!-- 自定义产生release文件，@TODO -->
+    <target name="release-debug" depends="-init-clean-"></target>
 </project>
