@@ -261,7 +261,7 @@ public class VerifyActivityDetails extends Activity {
 				}
 				
 				if (msg.what == 1) {
-					boolean result = (boolean)msg.obj;
+					boolean result = (Boolean)msg.obj;
 					String tipsString = null;
 					if(result == true){
 						tipsString = "操作成功！";

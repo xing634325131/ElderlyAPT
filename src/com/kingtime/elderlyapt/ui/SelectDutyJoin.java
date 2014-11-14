@@ -201,7 +201,7 @@ public class SelectDutyJoin extends Activity{
 						loadingDialog.dismiss();
 					}
 					if (msg.what == 1) {
-						boolean result = (boolean)msg.obj;
+						boolean result = (Boolean)msg.obj;
 						if(result == true){
 							Toast.makeText(getApplicationContext(), "申请已提交", Toast.LENGTH_SHORT).show();
 						} else{

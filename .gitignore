@@ -4,3 +4,4 @@ out
 gen
 .settings
 .classpath
+${out.release.file}
