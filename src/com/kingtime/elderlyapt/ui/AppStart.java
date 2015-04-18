@@ -51,7 +51,7 @@ public class AppStart extends Activity {
 						} else {// Î´Öª´íÎó
 							Toast.makeText(getApplicationContext(), R.string.ERROR_OTHERS, Toast.LENGTH_LONG).show();
 						}
-						Intent intent = new Intent(AppStart.this, Main.class);
+						Intent intent = new Intent(AppStart.this, Login.class);
 						startActivity(intent);
 						finish();
 						super.handleMessage(msg);

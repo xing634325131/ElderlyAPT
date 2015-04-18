@@ -425,7 +425,7 @@ public class MyInfo extends Activity {
 				if (msg.what == 1) {
 					// 显示图片
 					photoIV.setImageBitmap(protraitBitmap);
-					boolean uploadResult = (boolean) msg.obj;
+					boolean uploadResult = (Boolean) msg.obj;
 					String toaString = uploadResult ? "头像上传成功" : "头像上传失败，请重新选择图片上传";
 					Toast.makeText(getApplication(), toaString, Toast.LENGTH_LONG).show();
 				} else if (msg.what == -1) {// 服务器无响应

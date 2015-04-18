@@ -433,7 +433,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 					loadingDialog.dismiss();
 				}
 				if (msg.what == 1) {
-					toEvaluate((int) msg.obj);
+					toEvaluate((Integer) msg.obj);
 				} else if (msg.what == -1) {// 服务器无响应
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
 				} else {// 未知错误
@@ -484,7 +484,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 					loadingDialog.dismiss();
 				}
 				if (msg.what == 1) {
-					boolean state = (boolean) msg.obj;
+					boolean state = (Boolean) msg.obj;
 					if (state == true) {
 						DialogTool.createMessageDialog(ActivityDetails.this, getResources().getString(R.string.hint),
 								getResources().getString(R.string.have_evaluated), getResources().getString(R.string.sure), null,
@@ -564,7 +564,7 @@ public class ActivityDetails extends Activity implements SpeechSynthesizerListen
 					loadingDialog.dismiss();
 				}
 				if (msg.what == 1) {
-					joinHandle((int) msg.obj);
+					joinHandle((Integer) msg.obj);
 				} else if (msg.what == -1) {// 服务器无响应
 					Toast.makeText(getApplicationContext(), R.string.ERROR_CONNECT_NETWORK, Toast.LENGTH_LONG).show();
 				} else {// 未知错误

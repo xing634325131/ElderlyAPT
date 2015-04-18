@@ -3,8 +3,8 @@ package com.kingtime.elderlyapt.api;
 import java.io.Serializable;
 
 public class URLs implements Serializable {
-	public static final String HOST = "http://192.168.199.100:8080/ElderlyAPTServer/servlet/";
-	public static final String Pic_HOST = "http://192.168.199.100:8080/ElderlyAPTServer/servlet/RequestImageServlet";
+	public static final String HOST = "http://www.kingtime.me:8080/ElderlyAPTServer/servlet/";
+	public static final String Pic_HOST = "http://www.kingtime.me:8080/ElderlyAPTServer/servlet/RequestImageServlet";
 	public static final String URL_SPLITTER = "/";
 	/**
 	 * ·Ö¸ô·û

@@ -86,7 +86,7 @@ public class Weather extends Activity implements OnClickListener, OnViewChangeLi
 		weatherSelectDialog = new WeatherSelectDialog(this);
 		loadingDialog.setLoadText("Ë¢ÐÂÖÐ...");
 		SharedPreferencesMgr.init(getApplicationContext(), "weather");
-		weatherList = new ArrayList<>();
+		weatherList = new ArrayList<String>();
 		
 		preInit();
 		loadData();

@@ -224,7 +224,7 @@ public class Chat extends Activity {
 			@Override
 			public void handleMessage(Message msg) {
 				if (msg.what == 1) {
-					boolean result = (boolean) msg.obj;
+					boolean result = (Boolean) msg.obj;
 					if (result == false) {
 						Toast.makeText(getApplicationContext(), "∑¢ÀÕ ß∞‹", Toast.LENGTH_LONG).show();
 					} else {

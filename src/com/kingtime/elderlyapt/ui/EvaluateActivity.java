@@ -143,7 +143,7 @@ public class EvaluateActivity extends Activity implements OnRatingBarChangeListe
 				}
 				
 				if (msg.what == 1) {
-					boolean result = (boolean)msg.obj;
+					boolean result = (Boolean)msg.obj;
 					if(result == true){
 						Toast.makeText(EvaluateActivity.this, "ÆÀ¼Û³É¹¦£¡", Toast.LENGTH_SHORT).show();
 						setResult(RESULT_OK, null);

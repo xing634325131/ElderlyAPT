@@ -189,7 +189,7 @@ public class Appraise extends Activity {
 				}
 
 				if (msg.what == 1) {
-					boolean result = (boolean)msg.obj;
+					boolean result = (Boolean)msg.obj;
 					if(result == true){
 						Toast.makeText(Appraise.this, "ÆÀ¼Û³É¹¦£¡", Toast.LENGTH_SHORT).show();
 						finish();
