@@ -8,7 +8,6 @@ import com.kingtime.elderlyapt.api.ApiClient;
 import com.kingtime.elderlyapt.util.FileUtils;
 import com.kingtime.elderlyapt.util.StreamTool;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,7 +19,7 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.Toast;
 
-public class AppStart extends Activity {
+public class AppStart extends BaseActivity {
 
 	private String recommendContent;
 

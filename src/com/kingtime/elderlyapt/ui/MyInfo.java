@@ -23,7 +23,6 @@ import com.kingtime.elderlyapt.util.StringUtils;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 import com.kingtime.elderlyapt.widget.LruImageCache;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -44,7 +43,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MyInfo extends Activity {
+public class MyInfo extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;

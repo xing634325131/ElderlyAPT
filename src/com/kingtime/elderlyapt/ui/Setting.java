@@ -2,7 +2,6 @@ package com.kingtime.elderlyapt.ui;
 
 import com.kingtime.elderlyapt.R;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -17,7 +16,7 @@ import android.widget.TextView;
  * @author xp
  * @created 2014Äê8ÔÂ14ÈÕ
  */
-public class Setting extends Activity {
+public class Setting extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;

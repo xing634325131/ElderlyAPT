@@ -9,7 +9,6 @@ import com.kingtime.elderlyapt.R;
 import com.kingtime.elderlyapt.api.ApiClient;
 import com.kingtime.elderlyapt.entity.User;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,7 +24,7 @@ import android.widget.Toast;
  * @author xp
  * @created 2014Äê8ÔÂ14ÈÕ
  */
-public class MyCoins extends Activity {
+public class MyCoins extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;

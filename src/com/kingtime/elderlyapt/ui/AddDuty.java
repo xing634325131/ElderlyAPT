@@ -9,7 +9,6 @@ import com.kingtime.elderlyapt.entity.Duty;
 import com.kingtime.elderlyapt.util.DialogTool;
 import com.kingtime.elderlyapt.util.StringUtils;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,7 +27,7 @@ import android.widget.TextView;
  * @author xp
  * @created 2014Äê8ÔÂ11ÈÕ
  */
-public class AddDuty extends Activity {
+public class AddDuty extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;

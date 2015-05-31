@@ -14,7 +14,6 @@ import com.kingtime.elderlyapt.entity.Evaluate;
 import com.kingtime.elderlyapt.entity.Record;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,7 +26,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Appraise extends Activity {
+public class Appraise extends BaseActivity {
 
 	private static final String TAG = "Appraise";
 

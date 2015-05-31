@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.kingtime.elderlyapt.R;
 import com.kingtime.elderlyapt.api.ApiClient;
+import com.kingtime.elderlyapt.ui.BaseActivity;
 import com.kingtime.elderlyapt.util.FileUtils;
 import com.kingtime.elderlyapt.util.StreamTool;
 import com.kingtime.elderlyapt.util.StringUtils;
@@ -17,7 +18,6 @@ import com.kingtime.freeweather.helper.SharedPreferencesMgr;
 import com.kingtime.freeweather.utils.XMLReader;
 import com.kingtime.freeweather.widget.WeatherSelectDialog;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,7 +32,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Weather extends Activity implements OnClickListener, OnViewChangeListener {
+public class Weather extends BaseActivity implements OnClickListener, OnViewChangeListener {
 
 	private Button backBtn;
 	private TextView titleTV;

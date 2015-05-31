@@ -27,7 +27,6 @@ import com.kingtime.elderlyapt.widget.LoadingDialog;
 import com.widget.time.ScreenInfo;
 import com.widget.time.WheelMain;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -49,7 +48,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PushActivity extends Activity {
+public class PushActivity extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;

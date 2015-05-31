@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kingtime.elderlyapt"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    
+    android:versionCode="2"
+    android:versionName="1.0.1" >
+    
+    <!-- 改版本时，记得改下面的说明 -->
+    <!-- 2  1.0.1-->
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -92,6 +96,9 @@
         </activity>
         <activity android:name="com.kingtime.freeweather.ui.Weather" >
         </activity>
+        
+        <meta-data android:value="5473473efd98c5aa0c000578" android:name="UMENG_APPKEY"></meta-data>
+		<meta-data android:value="KingTime" android:name="UMENG_CHANNEL"/>
     </application>
 
 </manifest>

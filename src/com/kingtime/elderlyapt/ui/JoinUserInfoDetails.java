@@ -16,7 +16,6 @@ import com.kingtime.elderlyapt.entity.User;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 import com.kingtime.elderlyapt.widget.LruImageCache;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,7 +35,7 @@ import android.widget.Toast;
  * @author xp
  * @created 2014Äê8ÔÂ8ÈÕ
  */
-public class JoinUserInfoDetails extends Activity {
+public class JoinUserInfoDetails extends BaseActivity {
 
 	private static final String TAG = "JoinUserInfoDetails";
 

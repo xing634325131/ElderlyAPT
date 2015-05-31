@@ -11,7 +11,6 @@ import com.kingtime.elderlyapt.util.StringUtils;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 import com.kingtime.elderlyapt.api.ApiClient;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,7 +29,7 @@ import android.widget.Toast;
  * @author xp
  * @created 2014Äê7ÔÂ26ÈÕ µÇÂ¼
  */
-public class Login extends Activity {
+public class Login extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;

@@ -1,6 +1,5 @@
 package com.kingtime.elderlyapt.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,7 +12,7 @@ import com.kingtime.elderlyapt.R;
  * @author xp
  * @created 2014Äê8ÔÂ14ÈÕ
  */
-public class AboutCoins extends Activity {
+public class AboutCoins extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;

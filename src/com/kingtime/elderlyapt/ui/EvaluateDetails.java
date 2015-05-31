@@ -3,7 +3,6 @@ package com.kingtime.elderlyapt.ui;
 import com.kingtime.elderlyapt.R;
 import com.kingtime.elderlyapt.util.StringUtils;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,7 +13,7 @@ import android.widget.TextView;
  * @author xp
  * @created 2014Äê8ÔÂ14ÈÕ
  */
-public class EvaluateDetails extends Activity {
+public class EvaluateDetails extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;

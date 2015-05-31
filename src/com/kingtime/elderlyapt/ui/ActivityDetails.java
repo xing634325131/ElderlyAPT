@@ -46,7 +46,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ActivityDetails extends Activity implements SpeechSynthesizerListener {
+public class ActivityDetails extends BaseActivity implements SpeechSynthesizerListener {
 
 	private TextView titleTV;
 	private Button backBtn;

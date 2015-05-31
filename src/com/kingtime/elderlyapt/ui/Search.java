@@ -15,7 +15,6 @@ import com.kingtime.elderlyapt.util.DialogTool;
 import com.kingtime.elderlyapt.util.StringUtils;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,7 +33,7 @@ import android.widget.Toast;
  * @author xp
  * @created 2014Äê8ÔÂ21ÈÕ
  */
-public class Search extends Activity {
+public class Search extends BaseActivity {
 
 	private EditText searchET;
 	private Button searchBtn;

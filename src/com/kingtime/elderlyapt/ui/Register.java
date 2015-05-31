@@ -12,7 +12,6 @@ import com.kingtime.elderlyapt.util.DialogTool;
 import com.kingtime.elderlyapt.util.StringUtils;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -30,7 +29,7 @@ import android.widget.Toast;
  * @author xp
  * @created 2014Äê7ÔÂ27ÈÕ
  */
-public class Register extends Activity {
+public class Register extends BaseActivity {
 
 	private Button backBtn;
 	private TextView titleTV;

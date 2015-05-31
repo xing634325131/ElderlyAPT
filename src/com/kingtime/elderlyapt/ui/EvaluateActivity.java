@@ -12,7 +12,6 @@ import com.kingtime.elderlyapt.entity.Evaluate;
 import com.kingtime.elderlyapt.util.DialogTool;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,7 +31,7 @@ import android.widget.TextView;
  * @author xp
  * @created 2014Äê8ÔÂ19ÈÕ
  */
-public class EvaluateActivity extends Activity implements OnRatingBarChangeListener{
+public class EvaluateActivity extends BaseActivity implements OnRatingBarChangeListener{
 
 	private TextView titleTV;
 	private Button backBtn;

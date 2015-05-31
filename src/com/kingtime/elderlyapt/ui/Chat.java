@@ -17,7 +17,6 @@ import com.kingtime.elderlyapt.entity.User;
 import com.kingtime.elderlyapt.util.StringUtils;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -35,7 +34,7 @@ import android.widget.Toast;
  * @author xp
  * @created 2014Äê8ÔÂ26ÈÕ
  */
-public class Chat extends Activity {
+public class Chat extends BaseActivity {
 	private TextView titleTV;
 	private Button backBtn;
 	private Button sendBtn;

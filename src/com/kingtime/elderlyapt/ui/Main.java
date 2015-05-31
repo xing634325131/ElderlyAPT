@@ -11,7 +11,6 @@ import org.json.JSONException;
 
 import com.kingtime.elderlyapt.AppContext;
 import com.kingtime.elderlyapt.R;
-import com.kingtime.elderlyapt.WeatherApplication;
 import com.kingtime.elderlyapt.adapter.GridViewServiceAdapter;
 import com.kingtime.elderlyapt.adapter.ListViewGeneralActivityAdapter;
 import com.kingtime.elderlyapt.api.ApiClient;
@@ -51,7 +50,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main extends Activity implements OnViewChangeListener, OnClickListener {
+public class Main extends BaseActivity implements OnViewChangeListener, OnClickListener {
 
 	// 滑动界面和底部模块
 	private ScrollLayout mScrollLayout;

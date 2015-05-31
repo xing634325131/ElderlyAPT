@@ -2,10 +2,9 @@ package com.kingtime.elderlyapt.ui;
 
 import com.kingtime.elderlyapt.R;
 
-import android.app.Activity;
 import android.os.Bundle;
 
-public class MyFriends extends Activity{
+public class MyFriends extends BaseActivity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

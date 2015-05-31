@@ -18,7 +18,6 @@ import com.kingtime.elderlyapt.entity.User;
 import com.kingtime.elderlyapt.util.DialogTool;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,7 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class SelectDutyJoin extends Activity{
+public class SelectDutyJoin extends BaseActivity{
 	
 	private static final String TAG = "SelectDutyJoin";
 

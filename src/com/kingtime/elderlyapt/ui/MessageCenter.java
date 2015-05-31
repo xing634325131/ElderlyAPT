@@ -103,7 +103,6 @@ import java.util.List;
 
 import org.json.JSONException;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioManager;
@@ -137,7 +136,7 @@ import com.kingtime.elderlyapt.widget.ScrollLayout;
  * @author xp
  * @created 2014年8月24日
  */
-public class MessageCenter extends Activity implements OnClickListener, OnViewChangeListener {
+public class MessageCenter extends BaseActivity implements OnClickListener, OnViewChangeListener {
 
 	// 滑动界面和顶部模块
 	private ScrollLayout mScrollLayout;

@@ -16,7 +16,6 @@ import com.kingtime.elderlyapt.entity.User;
 import com.kingtime.elderlyapt.util.DialogTool;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,7 +36,7 @@ import android.widget.Toast;
  * @author xp
  * @created 2014Äê8ÔÂ8ÈÕ
  */
-public class JoinUserList extends Activity {
+public class JoinUserList extends BaseActivity {
 
 	private static final String TAG = "JoinUserList";
 

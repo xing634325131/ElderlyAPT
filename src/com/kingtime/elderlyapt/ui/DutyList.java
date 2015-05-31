@@ -13,7 +13,6 @@ import com.kingtime.elderlyapt.api.ApiClient;
 import com.kingtime.elderlyapt.entity.Duty;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,7 +31,7 @@ import android.widget.AdapterView.OnItemClickListener;
  * @author xp
  * @created 2014Äê8ÔÂ8ÈÕ
  */
-public class DutyList extends Activity {
+public class DutyList extends BaseActivity {
 
 	private static final String TAG = "DutyList";
 

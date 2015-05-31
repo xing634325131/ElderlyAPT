@@ -17,7 +17,6 @@ import com.kingtime.elderlyapt.entity.User;
 import com.kingtime.elderlyapt.widget.LoadingDialog;
 import com.kingtime.elderlyapt.widget.LruImageCache;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,7 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class VerifyActivityDetails extends Activity {
+public class VerifyActivityDetails extends BaseActivity {
 
 	private TextView titleTV;
 	private Button backBtn;
